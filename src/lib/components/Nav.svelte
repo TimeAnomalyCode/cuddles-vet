@@ -24,7 +24,10 @@
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
 	<div class="container-fluid">
-		<a class="navbar-brand" href="/">Cuddles Vet</a>
+		<a class="navbar-brand" href="/">
+			<img src="Logo.png" alt="Logo" width="46" height="50" class="d-inline-block align-text-center">
+			Cuddles Vet Clinic
+		</a>
 		<button
 			class="navbar-toggler"
 			type="button"
