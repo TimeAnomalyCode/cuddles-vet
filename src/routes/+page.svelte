@@ -8,21 +8,36 @@
     <p1>
         Where Every Paw Finds Compassion
     </p1>
-    <p2>
+    <h2>
         <img src="/tel.png" alt="Telephone icon" class="icon">
         012-714 1538
-    
-    </p2>
-    <p3>
+    </h2>
+    <h3>
         <img src="/operatingHours.png" alt="Telephone icon" class="icon">
         9:00 a.m. - 10:00 p.m.
-    </p3>
+    </h3>
 </div>
 <div class=section2>
-    <h1>OUR HISTORY</h1>
-    
+    <h4>OUR HISTORY</h4>
+    <div class="content-container">
+        <content1> 
+                    Cuddles Veterinary Clinic's history is a 
+            <br>heartwarming tale of dedication and compassion. 
+            <br>Founded in [Year] by the visionary Dr. [Founder's 
+            <br>Name], our journey began with a singular mission: 
+            <br>to champion the well-being of pets in [Location].
 
-
+        </content1>
+        <content2>
+            <br>Through the years, Cuddles Veterinary 
+            <br>Clinic has earned its place as a trusted institution, 
+            <br>deeply rooted in our love for animals and our 
+            <br>commitment to delivering exceptional veterinary 
+            <br>services. Our story is one of countless tails 
+            <br>wagged, purrs of contentment, and families finding
+            <br>solace in our care.
+        </content2>
+    </div>
 </div>
 <head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter" />
@@ -59,14 +74,14 @@
         font-family: 'Inter', sans-serif;
         color: #736D69;
     }
-    p2{
+    h2{
         padding: 10px 60px 0;
         font-size:13px;
         font-family: 'Inter', sans-serif;
         color: #736D69;
     }
-    p3{
-        padding: 5px 60px 0;
+    h3{
+        padding: 5px 60px ;
         font-size:13px;
         font-family: 'Inter', sans-serif;
         color: #736D69;
@@ -74,6 +89,22 @@
     .icon{
         width:20px;
         height:20px;
+    }
+    .section2 {
+    width: 100%;
+    font-size:13px;
+    text-align: center;
+    height: 450px;
+    padding: 0 0px; /* Add padding to control the space between content and the right side */
+    }
+    .content-container {
+    float: right; /* Float the content container to the right */
+    width: 50%; /* Adjust the width as needed */
+    }
+    h4{
+        font-size: 80px;
+        color:rgba(115, 109, 105, 0.2)
+        
     }
 
 </style>
