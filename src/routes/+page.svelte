@@ -1,8 +1,8 @@
 <head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter" />
 </head>
-    <div class=section1>
-    <img src="/homepage1.png" alt="Dog and cat" class="image1">
+<div class=section1>
+    <img src="/homepage1.png" alt="Dog and cat with stethoscope 1" class="image1">
     <h1>
         Cuddles 
         <br>Veterinary 
@@ -21,8 +21,11 @@
     </h3>
 </div>
 <h4>OUR HISTORY</h4>
+<img src="homepage2.png" alt="Dog and cat with stethoscope 2"  class= "image2">
 <div class=section2>
+    
     <div class="content-container">
+        
         <content1> 
                     Cuddles Veterinary Clinic's history is a 
             <br>heartwarming tale of dedication and compassion. 
@@ -46,11 +49,10 @@
 <style>
 
     .section1{
-        width:100%;
+        width: 100%;
         background-color: #D0C4BE4D;
         text-align: left;
         height: 450px;
-        margin-right: 500px;
         
     }
 
@@ -58,6 +60,14 @@
         float:right;
         padding: 0px 60px 0;
     
+    }
+
+    .image2{
+        float:left;
+        margin-top:-110px;
+        margin-left: 130px;
+        width:550px;
+        height:390px;
     }
 
     h1{
@@ -94,27 +104,24 @@
     }
     .section2 {
     width: 100%;
-    font-size:13px;
+    
     text-align: center;
     height: 450px;
-    padding: 0 0px; /* Add padding to control the space between content and the right side */
     }
     .content-container {
     float: right; /* Float the content container to the right */
     width: 50%; /* Adjust the width as needed */
-    padding: 10px90px;
+    margin-top:-290px;
+    font-size:17px;
     }
     h4{
-        font-size: 90px;
+        font-size: 125px;
         color:#736D6933;
-        font-weight:900;
+        font-weight:800;
         margin:0 auto;
         width: fit-content;
         white-space: nowrap;
-    }
-    body{
-        margin: 0;
-        padding: 0;
+        padding: 60px;
     }
 
 </style>
