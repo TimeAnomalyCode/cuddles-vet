@@ -14,44 +14,40 @@
     <h2>
         <img src="tel.png" alt="Telephone icon" class="icon">
         012-714 1538
-    </h2>
-    <h3>
+        <br>
         <img src="operatingHours.png" alt="Telephone icon" class="icon">
         9:00 a.m. - 10:00 p.m.
-    </h3>
+    </h2>
 </div>
 <h4>OUR HISTORY</h4>
 <img src="homepage2.png" alt="Dog and cat with stethoscope 2"  class= "image2">
-<div class=section2>
-    
-    <div class="content-container">
-        
-        <content1> 
-                    Cuddles Veterinary Clinic's history is a 
-            <br>heartwarming tale of dedication and compassion. 
-            <br>Founded in [Year] by the visionary Dr. [Founder's 
-            <br>Name], our journey began with a singular mission: 
-            <br>to champion the well-being of pets in [Location].
+<div class="content-container">     
+    <content1> 
+                Cuddles Veterinary Clinic's history is a 
+        <br>heartwarming tale of dedication and compassion. 
+        <br>Founded in [Year] by the visionary Dr. [Founder's 
+        <br>Name], our journey began with a singular mission: 
+        <br>to champion the well-being of pets in [Location].
 
-        </content1>
-        <content2>
-            <br>Through the years, Cuddles Veterinary 
-            <br>Clinic has earned its place as a trusted institution, 
-            <br>deeply rooted in our love for animals and our 
-            <br>commitment to delivering exceptional veterinary 
-            <br>services. Our story is one of countless tails 
-            <br>wagged, purrs of contentment, and families finding
-            <br>solace in our care.
-        </content2>
-    </div>
+    </content1>
+    <content2 class=indented-paragraph>
+        
+        <br>Through the years, Cuddles Veterinary 
+        <br>Clinic has earned its place as a trusted institution, 
+        <br>deeply rooted in our love for animals and our 
+        <br>commitment to delivering exceptional veterinary 
+        <br>services. Our story is one of countless tails 
+        <br>wagged, purrs of contentment, and families finding
+        <br>solace in our care.
+    </content2>
 </div>
+
 
 <style>
 
     .section1{
         width: 100%;
         background-color: #D0C4BE4D;
-        text-align: left;
         height: 450px;
         
     }
@@ -92,27 +88,19 @@
         font-family: 'Inter', sans-serif;
         color: #736D69;
     }
-    h3{
-        padding: 5px 60px ;
-        font-size:13px;
-        font-family: 'Inter', sans-serif;
-        color: #736D69;
-    }
     .icon{
         width:20px;
         height:20px;
     }
-    .section2 {
-    width: 100%;
-    
-    text-align: center;
-    height: 450px;
-    }
     .content-container {
-    float: right; /* Float the content container to the right */
-    width: 50%; /* Adjust the width as needed */
-    margin-top:-290px;
-    font-size:17px;
+        float: right; /* Float the content container to the right */
+        width: 50%; /* Adjust the width as needed */
+        margin-top:-290px;
+        font-size:17px;
+        color: #736D69B3;
+        padding-left:90px;
+        text-indent:50px;
+
     }
     h4{
         font-size: 125px;
@@ -122,6 +110,10 @@
         width: fit-content;
         white-space: nowrap;
         padding: 60px;
+    }
+
+    .indented-paragraph{
+        text-indent: 50px;
     }
 
 </style>
