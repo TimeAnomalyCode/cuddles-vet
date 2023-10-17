@@ -27,9 +27,14 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Cuddles Vet - Login</title>
+</svelte:head>
+
 <div class="row">
 	<div class="col">
-		<h1>Login</h1>
+		<h5>Sign in to</h5>
+		<h1>Cuddles Veterinary Clinic</h1>
 	</div>
 </div>
 
@@ -43,7 +48,15 @@
 		<a href="/forgot-password" class="btn btn-warning w-100">Forgot Password</a>
 	</div>
 </div>
+<div class="signup">
+	<p>
+		Don't have an account? <a href="/signup">Create one now</a>
+	</p>
+</div>
 
-<svelte:head>
-	<title>Cuddles Vet - Login</title>
-</svelte:head>
+<style>
+	h5, h1, p{
+		font-family: inter;
+		text-align: center;
+	}
+</style>
