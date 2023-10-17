@@ -1,11 +1,24 @@
-<div class="row">
-	<div class="col" >
-	</div>
-</div>
-
 <head>
 	<title>Cuddles Vet - Appointment</title>
+	<script>
+
+	</script>
 </head>
-<body style="background-color:rgba(208, 204, 190, 0.4)">
-	<p style="text-align:center">Give your pet the best care. Book an appointment now!</p>
+<body>
+	<h5>Give your pet the best care. Book an appointment now!</h5>
 </body>
+<style>
+	h5{
+		margin-top: 20px;
+		font-family: inter;
+		font-weight: bolder;
+		text-align: center;
+		color: #5C5957;
+	}
+	body {
+		background-image: url('Background.png');
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-size: 100% 100%;
+	}
+	</style>
