@@ -4,9 +4,9 @@
 
 	</script>
 </head>
-<body>
+<div>
 	<h5>Give your pet the best care. Book an appointment now!</h5>
-</body>
+</div>
 <style>
 	h5{
 		margin-top: 20px;
@@ -15,10 +15,10 @@
 		text-align: center;
 		color: #5C5957;
 	}
-	body {
+	div {
 		background-image: url('Background.png');
-		background-repeat: no-repeat;
-		background-attachment: fixed;
-		background-size: 100% 100%;
+    	background-repeat: no-repeat;
+   		background-attachment: fixed;
+    	background-size: cover;
 	}
 	</style>

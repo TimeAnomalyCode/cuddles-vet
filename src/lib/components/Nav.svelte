@@ -103,7 +103,7 @@
 	}
 	div div ul li {
 		float: left;
-		padding: 20px;
+		padding: 18px;
 		color: #5c5957;
 		text-decoration: none;
 		font-size: large;
