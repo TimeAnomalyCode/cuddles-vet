@@ -9,16 +9,16 @@
         Where Every Paw Finds Compassion
     </p1>
     <h2>
-        <img src="/tel.png" alt="Telephone icon" class="icon">
+        <img src="tel.png" alt="Telephone icon" class="icon">
         012-714 1538
     </h2>
     <h3>
-        <img src="/operatingHours.png" alt="Telephone icon" class="icon">
+        <img src="operatingHours.png" alt="Telephone icon" class="icon">
         9:00 a.m. - 10:00 p.m.
     </h3>
 </div>
+<h4>OUR HISTORY</h4>
 <div class=section2>
-    <h4>OUR HISTORY</h4>
     <div class="content-container">
         <content1> 
                     Cuddles Veterinary Clinic's history is a 
@@ -49,6 +49,7 @@
         background-color: #D0C4BE4D;
         text-align: left;
         height: 450px;
+        margin-right: 500px;
         
     }
 
@@ -100,11 +101,15 @@
     .content-container {
     float: right; /* Float the content container to the right */
     width: 50%; /* Adjust the width as needed */
+    padding: 10px90px;
     }
     h4{
-        font-size: 80px;
-        color:rgba(115, 109, 105, 0.2)
-        
+        font-size: 90px;
+        color:#736D6933;
+        font-weight:900;
+        margin:0 auto;
+        width: fit-content;
+        white-space: nowrap;
     }
 
 </style>
