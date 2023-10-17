@@ -1,4 +1,7 @@
-<div class=section1>
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter" />
+</head>
+    <div class=section1>
     <img src="/homepage1.png" alt="Dog and cat" class="image1">
     <h1>
         Cuddles 
@@ -39,9 +42,7 @@
         </content2>
     </div>
 </div>
-<head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter" />
-</head>
+
 <style>
 
     .section1{
@@ -110,6 +111,10 @@
         margin:0 auto;
         width: fit-content;
         white-space: nowrap;
+    }
+    body{
+        margin: 0;
+        padding: 0;
     }
 
 </style>
