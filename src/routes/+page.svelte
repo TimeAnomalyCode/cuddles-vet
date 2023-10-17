@@ -14,11 +14,10 @@
     <h2>
         <img src="tel.png" alt="Telephone icon" class="icon">
         012-714 1538
-    </h2>
-    <h3>
+        <br>
         <img src="operatingHours.png" alt="Telephone icon" class="icon">
         9:00 a.m. - 10:00 p.m.
-    </h3>
+    </h2>
 </div>
 <h4>OUR HISTORY</h4>
 <img src="homepage2.png" alt="Dog and cat with stethoscope 2"  class= "image2">
@@ -32,7 +31,7 @@
 
     </content1>
     <content2 class=indented-paragraph>
-        <br>
+        
         <br>Through the years, Cuddles Veterinary 
         <br>Clinic has earned its place as a trusted institution, 
         <br>deeply rooted in our love for animals and our 
@@ -89,12 +88,6 @@
         font-family: 'Inter', sans-serif;
         color: #736D69;
     }
-    h3{
-        padding: 5px 60px ;
-        font-size:13px;
-        font-family: 'Inter', sans-serif;
-        color: #736D69;
-    }
     .icon{
         width:20px;
         height:20px;
@@ -120,11 +113,7 @@
     }
 
     .indented-paragraph{
-        margin-top:20px;
-        content:"    ";
-        display: inline-block; /* Make it an inline block to set width */
-        width: 20px; /* Adjust the width as needed */
-        text-indent: 0;
+        text-indent: 50px;
     }
 
 </style>

@@ -25,7 +25,7 @@
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
 	<div class="container-fluid">
-		<span style="font-size: 21.5px">
+		<span style="font-size: 22.5px">
 			<img
 				src="Logo.png"
 				alt="Logo"
@@ -99,13 +99,14 @@
 	div {
 		font-family: inter;
 		color: #5c5957;
-		font-weight: bold;
+		font-weight: 900;
 	}
 	div div ul li {
 		float: left;
 		padding: 10px;
 		color: #5c5957;
 		text-decoration: none;
-		font-size: 16.5px;
+		font-size: 17px;
+
 	}
 </style>
