@@ -25,7 +25,7 @@
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
 	<div class="container-fluid">
-		<span style="font-size: 25px">
+		<span style="font-size: 21.5px">
 			<img
 				src="Logo.png"
 				alt="Logo"
@@ -106,6 +106,6 @@
 		padding: 10px;
 		color: #5c5957;
 		text-decoration: none;
-		font-size: large;
+		font-size: 16.5px;
 	}
 </style>
