@@ -23,9 +23,9 @@
 	}
 </script>
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-sm bg-white">
 	<div class="container-fluid">
-		<span style="font-size: 25px">
+		<span style="font-size: 25px;">
 			<img
 				src="Logo.png"
 				alt="Logo"
@@ -99,7 +99,7 @@
 	div {
 		font-family: inter;
 		color: #5c5957;
-		font-weight: bold;
+		font-weight: bolder;
 	}
 	div div ul li {
 		float: left;
