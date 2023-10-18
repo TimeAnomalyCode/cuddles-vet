@@ -63,4 +63,6 @@ export async function deleteDoctor(id) {
 
 // Reviews
 
+// Cart
+
 // Orders + Approve/Deny
