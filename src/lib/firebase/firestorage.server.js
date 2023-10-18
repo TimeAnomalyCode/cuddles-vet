@@ -29,3 +29,24 @@ async function saveFileToDisk(file) {
 
     return filePath
 }
+
+// /**
+//  * @param {string} destination 
+//  */
+// export async function deleteFileFromBucket(destination) {
+//     const [isFileExist] = await storage.bucket(PUBLIC_STORAGE_BUCKET).file(destination).exists()
+//     console.log(isFileExist)
+
+//     if (isFileExist) {
+//         await storage.bucket(PUBLIC_STORAGE_BUCKET).file(destination).delete()
+//     }
+// }
+
+/**
+ * @param {string} prefix
+ */
+export async function deleteFolderFromBucket(prefix) {
+    await storage.bucket(PUBLIC_STORAGE_BUCKET).deleteFiles({
+        prefix: prefix
+    })
+}
