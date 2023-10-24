@@ -3,50 +3,83 @@
 </head>
 <div class=section1>
     <img src="/homepage1.png" alt="Dog and cat with stethoscope 1" class="image1">
-    <h1>
+    <h1 class="title">
         Cuddles 
         <br>Veterinary 
         <br>Clinic
     </h1>
-    <p1>
+    <p1 class="slogan">
         Where Every Paw Finds Compassion
-    </p1>
-    <h2>
-        <img src="tel.png" alt="Telephone icon" class="icon">
-        012-714 1538
         <br>
+    </p1>
+    <div class="info">
+        <p>
+            <img src="tel.png" alt="Telephone icon" class="icon">
+            012-714 1538
+        </p>    
+        <p>
         <img src="operatingHours.png" alt="Telephone icon" class="icon">
         9:00 a.m. - 10:00 p.m.
-    </h2>
+        </p>
+    </div>
 </div>
-<h4>OUR HISTORY</h4>
+<h1 class="title2">OUR HISTORY</h1>
 <img src="homepage2.png" alt="Dog and cat with stethoscope 2"  class= "image2">
-<div class="content-container">     
-    <content1> 
+<div class="paragraph1">     
+    <p>
                 Cuddles Veterinary Clinic's history is a 
         <br>heartwarming tale of dedication and compassion. 
         <br>Founded in [Year] by the visionary Dr. [Founder's 
         <br>Name], our journey began with a singular mission: 
         <br>to champion the well-being of pets in [Location].
-
-    </content1>
-    <content2 class=indented-paragraph>
-        
-        <br>Through the years, Cuddles Veterinary 
+        <br>
+        <br>
+    </p>
+</div>
+<div class="paragraph2">
+    <p>
+            Through the years, Cuddles Veterinary 
         <br>Clinic has earned its place as a trusted institution, 
         <br>deeply rooted in our love for animals and our 
         <br>commitment to delivering exceptional veterinary 
         <br>services. Our story is one of countless tails 
         <br>wagged, purrs of contentment, and families finding
         <br>solace in our care.
-    </content2>
+    </p>
 </div>
 
+<h1 class="title3">
+    OUR GALLERY
+</h1>
+<img src="Paw Prints.png" alt="Paw prints"  class= "image3">
+
+<script>
+    let currentIndex = 0;
+  
+    const images = ['gallery1.png','gallery2.png','gallery3.png'];
+  
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % images.length;
+      }
+    
+  
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+    }
+</script>
+<div class="slideshow">
+    <img src={images[currentIndex]} alt="Gallery" />
+</div>
+<div class="controls">
+    <button on:click={prevSlide}>Previous</button>
+    <button on:click={nextSlide}>Next</button>
+  </div>
 
 <style>
 
     .section1{
-        width: 100%;
+        margin-left:-110px;
+        width: 1517.5px;
         background-color: #D0C4BE4D;
         height: 450px;
         
@@ -55,6 +88,7 @@
     .image1{
         float:right;
         padding: 0px 60px 0;
+        margin-right:90px;
     
     }
 
@@ -66,9 +100,10 @@
         height:390px;
     }
 
-    h1{
-        padding: 60px 60px 0;
-        font-size:70px;
+    .title{
+        margin-left:120px;
+        padding: 50px 60px 0;
+        font-size:72px;
         font-family: 'Inter', sans-serif;
         font-weight: 900;
         text-shadow: 3px 0 #736D69;
@@ -76,14 +111,16 @@
 
     }
 
-    p1{
+    .slogan{
+        margin-left:120px;
         padding: 5px 60px 0;
         font-size:15px;
         font-family: 'Inter', sans-serif;
         color: #736D69;
     }
-    h2{
-        padding: 10px 60px 0;
+    .info{
+        margin-left:120px;
+        padding: 20px 60px 0;
         font-size:13px;
         font-family: 'Inter', sans-serif;
         color: #736D69;
@@ -92,17 +129,27 @@
         width:20px;
         height:20px;
     }
-    .content-container {
+    .paragraph1 {
         float: right; /* Float the content container to the right */
         width: 50%; /* Adjust the width as needed */
-        margin-top:-290px;
-        font-size:17px;
+        margin-top:-310px;
+        font-size:15px;
         color: #736D69B3;
         padding-left:90px;
         text-indent:50px;
 
     }
-    h4{
+    .paragraph2 {
+        float: right; /* Float the content container to the right */
+        width: 50%; /* Adjust the width as needed */
+        margin-top:-180px;
+        font-size:15px;
+        color: #736D69B3;
+        padding-left:90px;
+        text-indent:50px;
+
+    }
+    .title2{
         font-size: 125px;
         color:#736D6933;
         font-weight:800;
@@ -112,8 +159,38 @@
         padding: 60px;
     }
 
-    .indented-paragraph{
-        text-indent: 50px;
+    .title3{
+        font-size: 125px;
+        color:#736D6933;
+        font-weight:800;
+        white-space: nowrap;
+        width: fit-content;
+        padding:213px;
+        margin-top:120px;
+
     }
+
+    .image3{
+        float:left;
+        margin-top:-310px;
+        margin-left:100px;
+        width:190px;
+        height:200px;
+    }
+
+    .slideshow {
+    display: flex;
+    margin-top:-150px;
+    justify-content: center;
+  }
+
+  .controls{
+    margin-top:100px;
+    margin-left:500px;
+  }
+
+  
+
+    
 
 </style>
