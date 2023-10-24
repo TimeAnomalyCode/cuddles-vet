@@ -4,9 +4,13 @@
 
 	</script>
 </head>
-<div>
-	<h5>Give your pet the best care. Book an appointment now!</h5>
-</div>
+<body>
+	<div>
+		<img src="Background.png" alt="background" class="image1">
+		<h5>Give your pet the best care. Book an appointment now!</h5>
+	</div>
+</body>
+
 <style>
 	h5{
 		margin-top: 20px;
@@ -15,10 +19,8 @@
 		text-align: center;
 		color: #5C5957;
 	}
-	div {
-		background-image: url('Background.png');
-    	background-repeat: no-repeat;
-   		background-attachment: fixed;
-    	background-size: cover;
+	.image1 {
+    	width: 100%;
+		margin-inline-start: -75px;
 	}
 	</style>
