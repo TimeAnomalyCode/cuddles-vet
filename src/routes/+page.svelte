@@ -78,8 +78,7 @@
 <style>
 
     .section1{
-        margin-left:-110px;
-        width: 1517.5px;
+        width:100%;
         background-color: #D0C4BE4D;
         height: 450px;
         
@@ -101,7 +100,7 @@
     }
 
     .title{
-        margin-left:120px;
+        margin-left:100px;
         padding: 50px 60px 0;
         font-size:72px;
         font-family: 'Inter', sans-serif;
@@ -112,14 +111,14 @@
     }
 
     .slogan{
-        margin-left:120px;
+        margin-left:100px;
         padding: 5px 60px 0;
         font-size:15px;
         font-family: 'Inter', sans-serif;
         color: #736D69;
     }
     .info{
-        margin-left:120px;
+        margin-left:100px;
         padding: 20px 60px 0;
         font-size:13px;
         font-family: 'Inter', sans-serif;
