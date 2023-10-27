@@ -3,7 +3,11 @@
 <head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter" />
     <style>
-        /* Your CSS styles here */
+        .body{
+            margin: 0;
+            padding: 0;
+        }
+
         .section1 {
             width: 100%;
             background-color: #D0C4BE4D;
@@ -149,8 +153,8 @@
         }
     </style>
 </head>
-<body>
-    <div class="section1">
+<body class="body">
+    <div class="section1" >
         <img src="/homepage1.png" alt="Dog and cat with stethoscope 1" class="image1">
         <h1 class="title">
             Cuddles
