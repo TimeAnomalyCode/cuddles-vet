@@ -7,7 +7,7 @@
 <body>
 	<div>
 		<img src="Background.png" alt="background" class="image1">
-		<h5>Give your pet the best care. Book an appointment now!</h5>
+		<h5 class="top-center">Give your pet the best care. Book an appointment now!</h5>
 	</div>
 </body>
 
@@ -21,6 +21,14 @@
 	}
 	.image1 {
     	width: 100%;
-		margin-inline-start: -75px;
 	}
+
+	/* Top left text */
+	.top-center {
+  		position: absolute;
+  		top: 20%;
+  		left: 50%;
+  		transform: translate(-50%, -50%);
+	}
+
 	</style>
