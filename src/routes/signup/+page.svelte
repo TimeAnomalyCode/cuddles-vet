@@ -54,7 +54,7 @@
 		<p>or</p>
 			<AuthForm on:submit={register} btnName="Create Account" />
 
-		<div class="signup">
+		<div class="login">
 			<p>
 				Already have an account? <a href="/login">Log in</a>
 			</p>
@@ -72,7 +72,7 @@
 		text-align: center;
 		color:#736D69
 	}
-	h5, p, .signup{
+	h5, p, .login{
 		font-size:16px;
 		font-weight: bold;
 		
