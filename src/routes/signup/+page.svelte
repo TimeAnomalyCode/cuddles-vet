@@ -77,6 +77,9 @@
 		font-weight: bold;
 		
 	}
+	p{
+		margin-top: 20px;
+	}
 
 	h2{
 		font-size:28px;
@@ -104,24 +107,10 @@
 		background-color: rgba(255, 255, 255, 0.6);
 	}
 
-	.btn{
-		width:320px;
-		background-color: #736D69;
-    	color: #ffffff;
-		margin-top:15px;
-    	padding: 15px 20px;
-    	border: none;
-    	border-radius: 10px;
-    	cursor: pointer;
-    	font-size: 13px;
-		font-family: inter;
-		margin-left:20px;
-
-	}
-
-	.signup{
+	.login{
 		margin-top:20px;
 	}
+
 
 	
 </style>
