@@ -41,7 +41,9 @@
 		<h2>Cuddles Veterinary Clinic</h2>
 		<LoginWithGoogle />
 		<p>or</p>
-		<AuthForm btnName="Login" on:submit={onLogin} />
+
+			<AuthForm btnName="Login" on:submit={onLogin} />
+
 		
 		<div class="row">
 			<div class="col">
@@ -61,8 +63,17 @@
 <style>
 	h5, h2, p{
 		font-family: inter;
-		text-align: center;
-		font-weight: bold;
+		color:#736D69
+	}
+	h5{
+		font-size:16px;
+		
+	}
+
+	h2{
+		font-size:28px;
+		font-weight:900;
+		text-shadow: 1px 0 #736D69;
 	}
 	.image1{
   		/* Control the height of the image */
@@ -78,9 +89,25 @@
 	.container {
 		position: absolute;
 		left: 120px;
-		margin: 20px;
-		max-width: 35%;
-		padding: 20px;
-		background-color: rgba(255, 255, 255, 0.7);
+		margin-left: 50px;
+		margin-top: 50px;
+		max-width: 29%;
+		padding: 40px;
+		background-color: rgba(255, 255, 255, 0.6);
 	}
+
+	.btn{
+		background-color: #736D69;
+    	color: #ffffff;
+		margin-top:10px;
+    	padding: 15px 20px;
+    	border: none;
+    	border-radius: 10px;
+    	cursor: pointer;
+    	font-size: 13px;
+		font-family: inter;
+
+	}
+
+	
 </style>
