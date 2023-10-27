@@ -47,7 +47,7 @@
 		
 		<div class="row">
 			<div class="col">
-				<a href="/forgot-password" class="btn btn-warning w-100">Forgot Password</a>
+				<a href="/forgot-password" class="btn btn-warning">Forgot Password</a>
 			</div>
 		</div>
 		<div class="signup">
@@ -63,10 +63,12 @@
 <style>
 	h5, h2, p{
 		font-family: inter;
+		text-align: center;
 		color:#736D69
 	}
-	h5{
+	h5, p, .signup{
 		font-size:16px;
+		font-weight: bold;
 		
 	}
 
@@ -97,16 +99,22 @@
 	}
 
 	.btn{
+		width:320px;
 		background-color: #736D69;
     	color: #ffffff;
-		margin-top:10px;
+		margin-top:15px;
     	padding: 15px 20px;
     	border: none;
     	border-radius: 10px;
     	cursor: pointer;
     	font-size: 13px;
 		font-family: inter;
+		margin-left:20px;
 
+	}
+
+	.signup{
+		margin-top:20px;
 	}
 
 	
