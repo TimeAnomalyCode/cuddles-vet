@@ -29,9 +29,11 @@
 
 <style>
 	button{
-		width: 90%;
+		width: 320px;
+		height:50px;
 		padding: 10px;
-		background-color: rgba(255,255,255,0.7);
+		background-color: rgba(255,255,255,0.0);
+		font-weight: 600;
   		color: #5C5957;
  	 	border: 1px solid #5C5957; 
 		border-radius: 5px;
@@ -40,10 +42,18 @@
 		margin-top: 20px;
 		margin-bottom: 20px;
 	}
+
+	button:hover {
+		background-color: #5C5957; 
+		color: #ffffff; border: 1px solid #5C5957; /* Change border color on hover (if needed) */
+  	}
+
 	.icon{
 		display: inline-block;
   		width: 24px;
 		height: 24px;
 		text-decoration: none;
+		margin-right:5px;
+		margin-bottom:1px;
 	}
 </style>
