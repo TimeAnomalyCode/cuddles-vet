@@ -35,14 +35,15 @@
 	.btn{
 		width:320px;
 		background-color: #736D69;
-    	color: #ffffff;
+    	color: rgba(255, 255, 255, 0.8);
+		font-size: 13.5px;
 		margin-top:10px;
 		margin-left:20px;
     	padding: 15px 20px;
     	border: none;
     	border-radius: 10px;
     	cursor: pointer;
-    	font-size: 13px;
+
 		font-family: inter;
 
 	}
