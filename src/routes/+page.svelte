@@ -22,16 +22,13 @@
         }
 
         .image1 {
-            float: right;
-            margin-right: 8%;
-            margin-top:-1%;
+            margin-left: 45%;
+            margin-top:-38%;
             width:46%; 
         }
 
         .container1{
             margin-left: 10%;
-            
-
         }
 
         .title1 {
@@ -59,51 +56,76 @@
             float: left;
             margin-left: 5%;
             margin-top:-5%;
-            width: 40%;
-            height: 68%;
+            width: 42%;
+            height: 62%;
+        }
+        .section2, .section3{
+            color: #736D6933;
         }
 
         .title2 {
             font-size: 9.5vw;
-            color: #736D6933;
             font-weight: 900;
             margin: 0 auto;
             width: fit-content;
-            margin-top: 6.5%;
+            margin-top: 5.5%;
             letter-spacing:-4px;
 
         }
-        .title3 {
-            font-size: 125px;
-            color: #736D6933;
-            font-weight: 800;
-            white-space: nowrap;
-            width: fit-content;
-            padding: 213px;
-            margin-top: 120px;
-        }
+
         .paragraph {
-            float: right;
-            width: 50%;
-            margin-top: ;
-            font-size: 15px;
+            margin-top:3%;
+            margin-left:55%;
             color: #736D69B3;
-            padding-left: 90px;
-            text-indent: 50px;
+            text-indent: 12%;
+            font-size: 1.15vw;
         }
 
+        .slideshow_text {
+            text-align: center;
+            font-size: 1.15vw;
+            color: #736D69B3;
+        }
 
+        .image3 {
+            float: left;
+            margin-top: -15%;
+            margin-left: -2%;
+            width: 15%;
+            height: 60%;
+        }
 
-        
+        .slideshow img {
+            width: 100%; 
+            margin-top: -1%;
 
+        }
 
+        .controls {
+            margin-top:-33%;
+            display: flex;
+        }
+
+        .arrow {
+            width: 40px;
+            height: 70px;
+        }
+
+        #prevArrow {
+            margin-left:-3%;
+        }
+
+        #nextArrow {
+            margin-left: auto;
+            margin-right:-3%;
+        }
     </style>
 </head>
 <body class="body">
 <div class="section1">
     <div class="row">
         <div class="col">
-            <img src="/homepage1.png" alt="Dog and cat with stethoscope 1" class="image1">
+            
             <div class="container1">
                 <h1 class="title1">
                     Cuddles
@@ -119,10 +141,11 @@
                         <img src="tel.png" alt="Telephone icon" class="icon">
                         012-714 1538
                         <br>
-                        <img src="operatingHours.png" alt="Telephone icon" class="icon">
+                        <img src="operatinghours.png" alt="Operating Hours icon" class="icon">
                         9:00 a.m. - 10:00 p.m.
                     </p>
                 </div>
+                <img src="/homepage1.png" alt="Dog and cat with stethoscope 1" class="image1">
             </div>
         </div>
     </div>
@@ -130,30 +153,105 @@
 <div class="section2">
     <div class="row">
         <div class="col">
-            <h2 class="title2">OUR HISTORY</h2>
-            <img src="homepage2.png" alt="Dog and cat with stethoscope 2" class="image2">
+            <h1 class="title2">OUR HISTORY</h1>
+                <img src="homepage2.png" alt="Dog and cat with stethoscope 2" class="image2" >
             <div class="paragraph">
                 <p>
-                    Cuddles Veterinary Clinic's history is a
-                    <br>heartwarming tale of dedication and compassion.
-                    <br>Founded in [Year] by the visionary Dr. [Founder's
-                    <br>Name], our journey began with a singular mission:
-                    <br>to champion the well-being of pets in [Location].
-                    <br>
-                    <br>
+                    Cuddles Veterinary Clinic's history is a 
+                    <br>heartwarming tale of dedication and compassion. Founded
+                    <br>in [Year] by the visionary,  Dr. [Founder's Name], our 
+                    <br>journey began with a singular mission: to champion the 
+                    <br>well-being of pets in [Location].
                 </p>
                 <p>
-                    Through the years, Cuddles Veterinary
-                    <br>Clinic has earned its place as a trusted institution,
-                    <br>deeply rooted in our love for animals and our
-                    <br>commitment to delivering exceptional veterinary
-                    <br>services. Our story is one of countless tails
-                    <br>wagged, purrs of contentment, and families finding
-                    <br>solace in our care.
+                    Through the years, Cuddles Veterinary Clinic 
+                    <br>has earned its place as a trusted institution, deeply rooted
+                    <br>in our love for animals and our commitment to delivering
+                    <br>exceptional veterinary services. Our story is one of 
+                    <br>countless tails wagged, purrs of contentment, and families 
+                    <br>finding solace in our care.
                 </p>
             </div>
         </div>
     </div>
 </div>
+<div class= "section3">
+    <div class="row">
+        <div class="col">
+            <h1 class="title2">OUR GALLERY</h1>
+            <p class="slideshow_text">
+                Explore heartwarming moments, furry friends, and our dedicated team, showcasing our world of 
+                <br>compassionate care and happy tails.
+            </p>
+            <div class = "container2">
+                <img src="pawprints.png" alt="Paw prints" class="image3">
+            </div>
+            <div class="slideshow">
+                <img src="slideshow1.jpg" alt="Gallery" />
+            </div>
+            <div class="controls">
+                <div id="prevArrow" role="button" tabindex="0">
+                    <img src="previous_arrow.png" alt="Previous" class="arrow" />
+                </div>
+                <div id="nextArrow" role="button" tabindex="0">
+                    <img src="next_arrow.png" alt="Next" class="arrow" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentIndex = 0;
+    const images = ['slideshow1.jpg', 'slideshow2.jpg', 'slideshow3.jpg', 'slideshow4.jpg'];
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateSlideshow();
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateSlideshow();
+    }
+
+    function updateSlideshow() {
+        // Update the image displayed in the slideshow
+        const slideshowImage = document.querySelector('.slideshow img');
+        if (slideshowImage !== null && slideshowImage instanceof HTMLImageElement) {
+            slideshowImage.src = images[currentIndex];
+        } else {
+            console.error('Slideshow image not found or is not an image element.');
+        }
+    }
+
+    document.getElementById('prevArrow').addEventListener('click', function() {
+        prevSlide();
+    });
+
+    document.getElementById('nextArrow').addEventListener('click', function() {
+        nextSlide();
+    });
+
+    document.getElementById('prevArrow').addEventListener('keydown', function(event) {
+        if (event.key === 'Enter' || event.key === 'Space') {
+            prevSlide();
+        }
+    });
+
+    document.getElementById('nextArrow').addEventListener('keydown', function(event) {
+        if (event.key === 'Enter' || event.key === 'Space') {
+            nextSlide();
+        }
+    });
+
+    // Function to automatically advance to the next slide
+    function autoRotate() {
+        nextSlide();
+    }
+
+    // Set an interval to call the autoRotate function every 5000 milliseconds (5 seconds)
+    setInterval(autoRotate, 5000);   
+</script>
 </body>
 </html>
