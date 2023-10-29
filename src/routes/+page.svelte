@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,13 +50,7 @@
             height: 2%;
         }
 
-        .image2 {
-            float: left;
-            margin-left: 5%;
-            margin-top:-5%;
-            width: 42%;
-            height: 62%;
-        }
+        
         .section2, .section3{
             color: #736D6933;
         }
@@ -74,11 +66,17 @@
         }
 
         .paragraph {
-            margin-top:3%;
             margin-left:55%;
             color: #736D69B3;
             text-indent: 12%;
             font-size: 1.15vw;
+            margin-top:3%
+        }
+        .image2 {
+            margin-left: 5%;
+            margin-top:-35%;
+            width: 45%;
+            height: 65%;
         }
 
         .slideshow_text {
@@ -94,6 +92,7 @@
             width: 15%;
             height: 60%;
         }
+
 
         .slideshow img {
             width: 100%; 
@@ -139,7 +138,7 @@
                 <div class="info">
                     <p>
                         <img src="tel.png" alt="Telephone icon" class="icon">
-                        012-714 1538
+                        012 - 714 1538
                         <br>
                         <img src="operatinghours.png" alt="Operating Hours icon" class="icon">
                         9:00 a.m. - 10:00 p.m.
@@ -154,7 +153,6 @@
     <div class="row">
         <div class="col">
             <h1 class="title2">OUR HISTORY</h1>
-                <img src="homepage2.png" alt="Dog and cat with stethoscope 2" class="image2" >
             <div class="paragraph">
                 <p>
                     Cuddles Veterinary Clinic's history is a 
@@ -172,13 +170,14 @@
                     <br>finding solace in our care.
                 </p>
             </div>
+            <img src="homepage2.png" alt="Dog and cat with stethoscope 2" class="image2" >
         </div>
     </div>
 </div>
 <div class= "section3">
     <div class="row">
         <div class="col">
-            <h1 class="title2">OUR GALLERY</h1>
+            <h1 class="title2" id="title3">OUR GALLERY</h1>
             <p class="slideshow_text">
                 Explore heartwarming moments, furry friends, and our dedicated team, showcasing our world of 
                 <br>compassionate care and happy tails.
