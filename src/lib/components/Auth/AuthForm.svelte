@@ -16,15 +16,16 @@
 				class="form-control"
 				id="password"
 				placeholder="*********"
+				required
 			/>
 		</div>
 	{/if}
-	<button type="submit" class="btn btn-success ">{btnName}</button>
+	<button type="submit" class="btn">{btnName}</button>
 </form>
 
 <style>
 	.mb-3{
-		width:89%;
+		width:320px;
 		margin: 0 auto; /* Horizontally center the text boxes */
 		
 	}
@@ -36,9 +37,10 @@
 		width:89%;
 		background-color: #736D69;
     	color: rgba(255, 255, 255, 0.8);
-		font-size: 0.86vw;
-		margin-top:3.5%;
-    	padding: 4.5% 4.5%;
+		font-size: 13.5px;
+		margin-top:10px;
+		margin-left:20px;
+    	padding: 15px 20px;
     	border: none;
     	border-radius: 10px;
     	cursor: pointer;
