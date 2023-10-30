@@ -61,6 +61,7 @@
 
 <style>
 	h5, p{
+		
 		font-family: inter;
 		text-align: center;
 		color:#736D69;
@@ -102,7 +103,7 @@
 	}
 
 	.btn{
-		width: 90%;
+		width:89%;
 		background-color: #736D69;
     	color: rgba(255, 255, 255, 0.8);
 		font-size: 13.5px;
@@ -116,6 +117,10 @@
 
 	}
 
+	.signup{
+		margin-top:9%;
+		
+	}
 
 	
 </style>
