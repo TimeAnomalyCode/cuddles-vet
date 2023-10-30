@@ -75,9 +75,12 @@
 	h5, p, .login{
 		font-size:1.05vw;
 		font-weight: bold;
-		
+		margin-top:6%;
 	}
 	p{
+		font-family: inter;
+		color:#736D69;
+		text-align: center;
 		margin-top: 3.5%;
 	}
 
@@ -106,10 +109,6 @@
 		height: 80%;
 		padding: 3% 3%;
 		background-color: rgba(255, 255, 255, 0.6);
-	}
-
-	.login{
-		margin-top:6%;
 	}
 
 

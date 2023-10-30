@@ -19,7 +19,11 @@
 				required
 			/>
 		</div>
+		<p class="forgotpass">
+			<a href="/forgot-password">Forgot Password?</a>
+		</p>
 	{/if}
+
 	<button type="submit" class="btn">{btnName}</button>
 </form>
 
@@ -31,6 +35,8 @@
 	}
 	.form-control {
 		padding: 4.5% 4.5%;
+		border: 1px solid #5C5957; 
+		font-family: inter;
 	}
 
 	.btn{
@@ -46,9 +52,13 @@
     	cursor: pointer;
 		font-family: inter;
 		margin-left:5.3%;
-
-		
-	
-
 	}
+	
+	.forgotpass{
+		font-family: inter;
+		font-weight: bold;
+		text-align: right;
+		max-width: 90%;
+	}
+
 </style>
