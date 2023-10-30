@@ -72,7 +72,7 @@
 		text-align: center;
 		color:#736D69
 	}
-	h5, p, .login{
+	.login{
 		font-size:16px;
 		font-weight: bold;
 		

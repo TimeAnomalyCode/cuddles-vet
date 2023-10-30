@@ -38,8 +38,8 @@
 		<a href="/login">
 			<img src="cross.png" alt= "cross icon" class="icon1">
 		</a>
-		<h2>Reset Password</h2>
-		<h5>Enter your e-mail address below</h5>
+		<p class="reset">Reset Password</p>
+		<p class="email">Enter your e-mail address below</p>
 
 		{#if !hideForm}
 			<AuthForm on:submit={onForgotPassword} btnName="Forgot Password" forgotPassword={true} />
@@ -51,22 +51,22 @@
 
 
 <style>
-	h5, h2 {
+	.reset{
 		font-family: inter;
 		text-align: center;
-		color:#736D69
-	}
-	h5{
-		font-size:16px;
-		font-weight: bold;
-		margin-bottom:50px;
-		
-	}
-
-	h2{
-		font-size:28px;
+		color:#736D69;
+		font-size: 28px;
 		font-weight:900;
 		text-shadow: 1px 0 #736D69;
+	}
+
+	.email{
+		font-family: inter;
+		text-align: center;
+		color:#736D69;
+		font-size:16px;
+		font-weight: 500;
+		margin-bottom:50px;	
 	}
 	.image1{
   		/* Control the height of the image */

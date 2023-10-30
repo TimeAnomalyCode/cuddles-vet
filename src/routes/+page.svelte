@@ -140,7 +140,7 @@
                         <img src="tel.png" alt="Telephone icon" class="icon">
                         012 - 714 1538
                         <br>
-                        <img src="operatinghours.png" alt="Operating Hours icon" class="icon">
+                        <img src="operatingHours.png" alt="Operating Hours icon" class="icon">
                         9:00 a.m. - 10:00 p.m.
                     </p>
                 </div>

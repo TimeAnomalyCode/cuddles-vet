@@ -42,13 +42,7 @@
 		<LoginWithGoogle />
 		<p>or</p>
 
-		<AuthForm btnName="Login" on:submit={onLogin} />
-
-		<div class="row">
-			<div class="col">
-				<a href="/forgot-password" class="btn">Forgot Password</a>
-			</div>
-		</div>
+		<AuthForm btnName="Log In" on:submit={onLogin} />
 		<div class="signup">
 			<p>
 				Don't have an account? <a href="/signup">Create one now</a>
@@ -71,7 +65,7 @@
 	.signup{
 		font-size: 16px;
 		font-weight: bold;
-		margin-top:20px;
+		margin-top:9%;
 	}
 
 	h2{
@@ -102,25 +96,6 @@
 		background-color: rgba(255, 255, 255, 0.6);
 	}
 
-	.btn{
-		width:89%;
-		background-color: #736D69;
-    	color: rgba(255, 255, 255, 0.8);
-		font-size: 13.5px;
-		margin-top: 15px;
-    	padding: 15px;
-    	border: none;
-    	border-radius: 10px;
-    	cursor: pointer;
-		font-family: inter;
-		margin-left:20px;
-
-	}
-
-	.signup{
-		margin-top:9%;
-		
-	}
 
 	
 </style>
