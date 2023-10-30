@@ -86,7 +86,7 @@
 	}
 	.container {
 		position: absolute;
-		margin-left: 7%;
+		margin-left: 6%;
 		margin-top: 2%;
 		margin-top: 2%;
 		padding: 3% 3%;
