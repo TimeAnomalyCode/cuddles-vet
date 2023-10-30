@@ -24,27 +24,26 @@
 
 <style>
 	.mb-3{
-		width:320px;
+		width:89%;
 		margin: 0 auto; /* Horizontally center the text boxes */
 		
 	}
 	.form-control {
-		height: 50px; /* Adjust the height to your preference */
+		padding: 4.5% 4.5%;
 	}
 
 	.btn{
-		width:320px;
+		width:89%;
 		background-color: #736D69;
     	color: rgba(255, 255, 255, 0.8);
-		font-size: 13.5px;
-		margin-top:10px;
-		margin-left:20px;
-    	padding: 15px 20px;
+		font-size: 0.86vw;
+		margin-top:3.5%;
+    	padding: 4.5% 4.5%;
     	border: none;
     	border-radius: 10px;
     	cursor: pointer;
-
 		font-family: inter;
+		margin-left:5.3%;
 
 	}
 </style>
