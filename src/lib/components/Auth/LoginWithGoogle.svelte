@@ -29,10 +29,10 @@
 
 <style>
 	button{
-		width: 90%;
+		width: 87%;
 		background-color: rgba(255, 255, 255, 0);
     	color: #5C5957;
-		font-size: 1.2vw;
+		font-size: 1vw;
 		font-weight: 600;
 		font-family: inter, sans-serif;
 		margin-top: 4.5%;
@@ -41,7 +41,7 @@
     	border: 1px solid #5C5957;
     	border-radius: 5px;
     	cursor: pointer;
-		margin-left:5.3%;
+		margin-left:5.9%;
 	}
 
 	button:hover {
