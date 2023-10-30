@@ -124,7 +124,6 @@
 <div class="section1">
     <div class="row">
         <div class="col">
-            
             <div class="container1">
                 <h1 class="title1">
                     Cuddles
