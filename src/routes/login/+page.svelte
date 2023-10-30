@@ -35,17 +35,13 @@
 <div class="row">
 	<div class="col">
 		<img src="SignUpBg.png" alt="background" class="image1">
-		
 	</div>
 	<div class="container">
-		<p class="signin">Sign in to</p>
 		<p class="signin">Sign in to</p>
 		<h2>Cuddles Veterinary Clinic</h2>
 		<LoginWithGoogle />
 		<p>or</p>
 
-		<AuthForm btnName="Log In" on:submit={onLogin} showForgotPasswordLink={true}/>
-		<div>
 		<AuthForm btnName="Log In" on:submit={onLogin} showForgotPasswordLink={true}/>
 		<div>
 			<p>
@@ -60,27 +56,17 @@
 <style>
 	p{
 		font-family: inter, sans-serif; 
-	p{
-		font-family: inter, sans-serif; 
 		text-align: center;
-		font-size: 1.3vw;
 		font-size: 1.3vw;
 		color:#736D69;
 		font-weight: 500;
-		font-weight: 500;
 	}
-
-	.signin{
-		margin-bottom: 2%;
 
 	.signin{
 		margin-bottom: 2%;
 	}
 
 	h2{
-		font-family: Inter Black, sans-serif;
-		font-size: 2.2vw;
-		font-weight: bolder;
 		font-family: Inter Black, sans-serif;
 		font-size: 2.2vw;
 		font-weight: bolder;
@@ -106,8 +92,8 @@
 		padding: 3% 3%;
 		max-width: 35%;
 		max-height: 95%;
-		max-height: 95%;
+
 		background-color: rgba(255, 255, 255, 0.6);
 	}	
-	}	
+	
 </style>
