@@ -29,15 +29,15 @@
 
 <style>
 	button{
-		width:89%;
+		width: 90%;
 		background-color: rgba(255, 255, 255, 0);
     	color: #5C5957;
-		font-size: 0.86vw;
+		font-size: 1.2vw;
 		font-weight: 600;
-		font-family: inter;
-		margin-top:5.5%;
-		margin-bottom:4.5%;
-    	padding: 4.5% 4.5%;
+		font-family: inter, sans-serif;
+		margin-top: 4.5%;
+		margin-bottom: 4.5%;
+    	padding: 3% 3%;
     	border: 1px solid #5C5957;
     	border-radius: 5px;
     	cursor: pointer;
@@ -51,8 +51,8 @@
 
 	.icon{
 		display: inline-block;
-  		width: 24px;
-		height: 24px;
+  		width: 8%;
+		height: 8%;
 		text-decoration: none;
 		margin-right:5px;
 		margin-bottom:1px;

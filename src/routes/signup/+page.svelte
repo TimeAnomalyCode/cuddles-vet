@@ -47,12 +47,12 @@
 		<img src="SignUpBg.png" alt="background" class="image1">
 	</div>
 	<div class="container">
-		<h5>Sign up for</h5>
+		<p class="signup">Sign up for</p>
 		<h2>Cuddles Veterinary Clinic</h2>
 		<LoginWithGoogle />
-
 		<p>or</p>
-			<AuthForm on:submit={register} btnName="Create Account" />
+
+			<AuthForm on:submit={register} showForgotPasswordLink={false} btnName="Create Account" />
 
 		<div class="login">
 			<p>
@@ -63,36 +63,30 @@
 </div>
 
 
-
-
-
 <style>
-	h5, h2, p{
-		font-family: inter;
-		text-align: center;
-		color:#736D69
-	}
-	h5, p, .login{
-		font-size:1.05vw;
-		font-weight: bold;
-		margin-top:6%;
-	}
 	p{
-		font-family: inter;
-		color:#736D69;
+		font-family: inter, sans-serif; 
 		text-align: center;
-		margin-top: 3.5%;
+		font-size: 1.3vw;
+		color:#736D69;
+		font-weight: 500;
+	}
+
+	.signup{
+		margin-bottom: 2%;
 	}
 
 	h2{
-		font-size:1.8vw;
-		font-weight:900;
-		text-shadow: 0.8px 0 0 #736D69;
+		font-family: Inter Black, sans-serif;
+		font-size: 2.2vw;
+		font-weight: bolder;
+		text-align: center;
+		text-shadow: 1px 0 0 #736D69;
+		color:#736D69;
 	}
 	.image1{
   		/* Control the height of the image */
   		width: 100%;
-
   		/* Center and scale the image nicely */
   		background-position: center;
  		background-repeat: no-repeat;
@@ -104,13 +98,10 @@
 	.container {
 		position: absolute;
 		margin-left: 7%;
-		margin-top: 3%;
-		width: 29%;
-		height: 80%;
+		margin-top: 2%;
 		padding: 3% 3%;
+		max-width: 35%;
+		max-height: 95%;
 		background-color: rgba(255, 255, 255, 0.6);
 	}
-
-
-	
 </style>

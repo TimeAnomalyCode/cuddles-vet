@@ -42,7 +42,8 @@
 		<p class="email">Enter your e-mail address below</p>
 
 		{#if !hideForm}
-			<AuthForm on:submit={onForgotPassword} btnName="Forgot Password" forgotPassword={true} />
+			<AuthForm on:submit={onForgotPassword} showForgotPasswordLink={false} 
+			btnName="Forgot Password" forgotPassword={true} />
 		{/if}	
 
 		
@@ -52,26 +53,25 @@
 
 <style>
 	.reset{
-		font-family: inter;
+		font-family: Inter Black, sans-serif;
+		font-size: 2.2vw;
+		font-weight: bolder;
 		text-align: center;
+		text-shadow: 1px 0 0 #736D69;
 		color:#736D69;
-		font-size: 28px;
-		font-weight:900;
-		text-shadow: 1px 0 #736D69;
 	}
 
 	.email{
-		font-family: inter;
+		font-family: inter, sans-serif; 
 		text-align: center;
+		font-size: 1.3vw;
 		color:#736D69;
-		font-size:16px;
 		font-weight: 500;
-		margin-bottom:50px;	
+		margin-bottom: 20%;	
 	}
 	.image1{
   		/* Control the height of the image */
   		width: 100%;
-
   		/* Center and scale the image nicely */
   		background-position: center;
  		background-repeat: no-repeat;
@@ -83,25 +83,19 @@
 	.icon1{
   		/* Control the height of the image */
   		width: 20px;
-		float:right;
+		float: right;
 		margin-top:-30px;
-		margin-right:-30px;
-
-  		
+		margin-right:-30px;	
 	}
 
 	.container {
 		position: absolute;
-		left: 120px;
-		margin-left: 50px;
-		margin-top: 50px;
-		max-width: 29%;
-		padding: 40px;
+		margin-left: 7%;
+		margin-top: 2%;
+		padding: 3% 3%;
+		max-width: 35%;
+		max-height: 70%;
 		background-color: rgba(255, 255, 255, 0.6);
 	}
-
-	
-	
-	
 </style>
 
