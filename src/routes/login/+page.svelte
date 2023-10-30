@@ -42,12 +42,11 @@
 		<LoginWithGoogle />
 		<p>or</p>
 
-			<AuthForm btnName="Login" on:submit={onLogin} />
+		<AuthForm btnName="Login" on:submit={onLogin} />
 
-		
 		<div class="row">
 			<div class="col">
-				<a href="/forgot-password" class="btn btn-warning">Forgot Password</a>
+				<a href="/forgot-password" class="btn">Forgot Password</a>
 			</div>
 		</div>
 		<div class="signup">
@@ -61,26 +60,30 @@
 
 
 <style>
-	h5, h2, p{
+	h5, p{
 		font-family: inter;
 		text-align: center;
-		color:#736D69
-	}
-	h5, p, .signup{
-		font-size:16px;
+		color:#736D69;
+		font-size: 16px;
 		font-weight: bold;
-		
+	}
+	.signup{
+		font-size: 16px;
+		font-weight: bold;
+		margin-top:20px;
 	}
 
 	h2{
-		font-size:28px;
-		font-weight:900;
+		font-size: 28px;
+		font-weight: 700;
+		text-align: center;
 		text-shadow: 1px 0 #736D69;
+		color:#736D69;
 	}
 	.image1{
   		/* Control the height of the image */
   		width: 100%;
-
+		height: 100%;
   		/* Center and scale the image nicely */
   		background-position: center;
  		background-repeat: no-repeat;
@@ -92,19 +95,19 @@
 		position: absolute;
 		left: 120px;
 		margin-left: 50px;
-		margin-top: 50px;
-		max-width: 29%;
-		padding: 40px;
+		margin-top: 30px;
+		max-width: 35%;
+		max-height: 90%;
 		background-color: rgba(255, 255, 255, 0.6);
 	}
 
 	.btn{
-		width:320px;
+		width: 90%;
 		background-color: #736D69;
     	color: rgba(255, 255, 255, 0.8);
 		font-size: 13.5px;
-		margin-top:15px;
-    	padding: 15px 20px;
+		margin-top: 15px;
+    	padding: 15px;
     	border: none;
     	border-radius: 10px;
     	cursor: pointer;
@@ -113,9 +116,6 @@
 
 	}
 
-	.signup{
-		margin-top:20px;
-	}
 
 	
 </style>

@@ -29,8 +29,7 @@
 
 <style>
 	button{
-		width: 320px;
-		height:50px;
+		width: 90%;
 		padding: 10px;
 		background-color: rgba(255,255,255,0.0);
 		font-weight: 600;
