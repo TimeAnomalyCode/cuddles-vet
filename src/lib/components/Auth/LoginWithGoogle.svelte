@@ -29,18 +29,19 @@
 
 <style>
 	button{
-		width: 320px;
-		height:50px;
-		padding: 10px;
-		background-color: rgba(255,255,255,0.0);
+		width:89%;
+		background-color: rgba(255, 255, 255, 0);
+    	color: #5C5957;
+		font-size: 0.86vw;
 		font-weight: 600;
-  		color: #5C5957;
- 	 	border: 1px solid #5C5957; 
-		border-radius: 5px;
-        margin: 0 auto;
-        display: block;
-		margin-top: 20px;
-		margin-bottom: 20px;
+		font-family: inter;
+		margin-top:5.5%;
+		margin-bottom:4.5%;
+    	padding: 4.5% 4.5%;
+    	border: 1px solid #5C5957;
+    	border-radius: 5px;
+    	cursor: pointer;
+		margin-left:5.3%;
 	}
 
 	button:hover {
