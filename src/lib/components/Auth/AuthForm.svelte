@@ -29,36 +29,38 @@
 
 <style>
 	.mb-3{
-		width:320px;
+		width: 90%;
 		margin: 0 auto; /* Horizontally center the text boxes */
 		
 	}
 	.form-control {
 		padding: 4.5% 4.5%;
 		border: 1px solid #5C5957; 
-		font-family: inter;
+		font-family: inter, sans-serif;
+		font-size: 1.2vw;
 	}
 
 	.btn{
-		width:89%;
+		width:90%;
 		background-color: #736D69;
     	color: rgba(255, 255, 255, 0.8);
-		font-size: 15px;
-		margin-top:10px;
-		margin-left:20px;
-    	padding: 15px 20px;
+		font-size: 1.2vw;
+		margin-top: 2%;
+		margin-bottom: 5%;
+		margin-left: 5.3%;
+    	padding: 4% 4%;
     	border: none;
     	border-radius: 10px;
     	cursor: pointer;
-		font-family: inter;
-		margin-left:5.3%;
+		font-family: inter, sans-serif;
 	}
-	
+
 	.forgotpass{
-		font-family: inter;
-		font-weight: bold;
+		font-family: inter, sans-serif;
+		font-weight: 500;
 		text-align: right;
 		max-width: 90%;
+		font-size: 1.3vw;
 	}
 
 </style>

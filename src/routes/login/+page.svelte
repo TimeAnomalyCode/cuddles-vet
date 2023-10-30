@@ -38,7 +38,7 @@
 		
 	</div>
 	<div class="container">
-		<h5>Sign in to</h5>
+		<p class="signin">Sign in to</p>
 		<h2>Cuddles Veterinary Clinic</h2>
 		<LoginWithGoogle />
 		<p>or</p>
@@ -55,30 +55,22 @@
 
 
 <style>
-	h5, p{
-		
-		font-family: inter; 
+	p{
+		font-family: inter, sans-serif; 
 		text-align: center;
-		color:#736D69
-	}
-	h5, p, .signup{
-		font-size:1.05vw;
+		font-size: 1.3vw;
 		color:#736D69;
-		font-size: 16px;
-		font-weight: bold;
+		font-weight: 500;
 	}
-	.signup{
-		font-size: 16px;
-		font-weight: bold;
-		margin-top:9%;
+
+	.signin{
+		margin-bottom: 2%;
 	}
 
 	h2{
-		font-size:1.8vw;
-		font-weight:900;
-		text-shadow: 0.8px 0 0 #736D69;
-		font-size: 28px;
-		font-weight: 700;
+		font-family: Inter Black, sans-serif;
+		font-size: 2.2vw;
+		font-weight: bolder;
 		text-align: center;
 		text-shadow: 1px 0 #736D69;
 		color:#736D69;
@@ -94,44 +86,14 @@
   		position: relative;
 		min-height: 85vh;
 	}
-
 	.container {
 		position: absolute;
 		margin-left: 7%;
-		margin-top: 3%;
-		width: 29%;
-		height: 80%;
+		margin-top: 2%;
 		padding: 3% 3%;
-		left: 120px;
-		margin-left: 50px;
-		margin-top: 30px;
 		max-width: 35%;
-		max-height: 90%;
+		max-height: 95%;
 		background-color: rgba(255, 255, 255, 0.6);
 	}
-
-	.btn{
-		width:89%;
-		background-color: #736D69;
-    	color: rgba(255, 255, 255, 0.8);
-		font-size: 0.86vw;
-		margin-top:3.5%;
-    	padding: 4.5% 4.5%;
-		font-size: 13.5px;
-		margin-top: 15px;
-    	padding: 15px;
-    	border: none;
-    	border-radius: 10px;
-    	cursor: pointer;
-		font-family: inter;
-		margin-left:5.3%;
-
-	}
-
-	.signup{
-		margin-top:9%;
-		
-	}
-
 	
 </style>
