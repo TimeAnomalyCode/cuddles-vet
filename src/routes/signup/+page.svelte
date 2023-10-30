@@ -72,19 +72,22 @@
 		text-align: center;
 		color:#736D69
 	}
-	.login{
-		font-size:16px;
+	h5, p, .login{
+		font-size:1.05vw;
 		font-weight: bold;
-		
+		margin-top:6%;
 	}
 	p{
-		margin-top: 20px;
+		font-family: inter;
+		color:#736D69;
+		text-align: center;
+		margin-top: 3.5%;
 	}
 
 	h2{
-		font-size:28px;
+		font-size:1.8vw;
 		font-weight:900;
-		text-shadow: 1px 0 #736D69;
+		text-shadow: 0.8px 0 0 #736D69;
 	}
 	.image1{
   		/* Control the height of the image */
@@ -95,20 +98,17 @@
  		background-repeat: no-repeat;
   		background-size: cover;
   		position: relative;
+		min-height: 85vh;
 	}
 
 	.container {
 		position: absolute;
-		left: 120px;
-		margin-left: 50px;
-		margin-top: 50px;
-		max-width: 29%;
-		padding: 40px;
+		margin-left: 7%;
+		margin-top: 3%;
+		width: 29%;
+		height: 80%;
+		padding: 3% 3%;
 		background-color: rgba(255, 255, 255, 0.6);
-	}
-
-	.login{
-		margin-top:20px;
 	}
 
 

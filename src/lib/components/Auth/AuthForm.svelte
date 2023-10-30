@@ -29,30 +29,31 @@
 
 <style>
 	.mb-3{
-		width: 90%;
+		width:320px;
 		margin: 0 auto; /* Horizontally center the text boxes */
 		
 	}
 	.form-control {
-		height: 50px; /* Adjust the height to your preference */
+		padding: 4.5% 4.5%;
 		border: 1px solid #5C5957; 
 		font-family: inter;
 	}
 
 	.btn{
-		width: 90%;
+		width:89%;
 		background-color: #736D69;
     	color: rgba(255, 255, 255, 0.8);
 		font-size: 15px;
 		margin-top:10px;
 		margin-left:20px;
-    	padding: 15px;
+    	padding: 15px 20px;
     	border: none;
     	border-radius: 10px;
     	cursor: pointer;
 		font-family: inter;
+		margin-left:5.3%;
 	}
-
+	
 	.forgotpass{
 		font-family: inter;
 		font-weight: bold;

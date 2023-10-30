@@ -31,6 +31,7 @@
 	<title>Cuddles Vet - Login</title>
 </svelte:head>
 
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter" />
 <div class="row">
 	<div class="col">
 		<img src="SignUpBg.png" alt="background" class="image1">
@@ -56,8 +57,12 @@
 <style>
 	h5, p{
 		
-		font-family: inter;
+		font-family: inter; 
 		text-align: center;
+		color:#736D69
+	}
+	h5, p, .signup{
+		font-size:1.05vw;
 		color:#736D69;
 		font-size: 16px;
 		font-weight: bold;
@@ -69,6 +74,9 @@
 	}
 
 	h2{
+		font-size:1.8vw;
+		font-weight:900;
+		text-shadow: 0.8px 0 0 #736D69;
 		font-size: 28px;
 		font-weight: 700;
 		text-align: center;
@@ -84,10 +92,16 @@
  		background-repeat: no-repeat;
   		background-size: cover;
   		position: relative;
+		min-height: 85vh;
 	}
 
 	.container {
 		position: absolute;
+		margin-left: 7%;
+		margin-top: 3%;
+		width: 29%;
+		height: 80%;
+		padding: 3% 3%;
 		left: 120px;
 		margin-left: 50px;
 		margin-top: 30px;
@@ -96,6 +110,28 @@
 		background-color: rgba(255, 255, 255, 0.6);
 	}
 
+	.btn{
+		width:89%;
+		background-color: #736D69;
+    	color: rgba(255, 255, 255, 0.8);
+		font-size: 0.86vw;
+		margin-top:3.5%;
+    	padding: 4.5% 4.5%;
+		font-size: 13.5px;
+		margin-top: 15px;
+    	padding: 15px;
+    	border: none;
+    	border-radius: 10px;
+    	cursor: pointer;
+		font-family: inter;
+		margin-left:5.3%;
+
+	}
+
+	.signup{
+		margin-top:9%;
+		
+	}
 
 	
 </style>
