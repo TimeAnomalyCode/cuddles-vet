@@ -66,6 +66,7 @@
 		text-align: right;
 		max-width: 90%;
 		font-size: 1.3vw;
+		margin-left:4%;
 	}
 
 </style>
