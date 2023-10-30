@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter" />
     <style>
 
-        .body{
+        body{
             margin: 0;
             padding: 0;
             font-family: Inter Black, sans-serif; 
@@ -120,7 +120,7 @@
         }
     </style>
 </head>
-<body class="body">
+<body>
 <div class="section1">
     <div class="row">
         <div class="col">

@@ -1,6 +1,8 @@
 <script>
 	export let btnName;
 	export let forgotPassword = false;
+  	export let showForgotPasswordLink = true;
+
 </script>
 
 <form on:submit|preventDefault>
@@ -19,10 +21,13 @@
 				required
 			/>
 		</div>
+	{/if}
+
+	{#if showForgotPasswordLink}
 		<p class="forgotpass">
 			<a href="/forgot-password">Forgot Password?</a>
 		</p>
-	{/if}
+  	{/if}
 
 	<button type="submit" class="btn">{btnName}</button>
 </form>
@@ -45,7 +50,7 @@
 		background-color: #736D69;
     	color: rgba(255, 255, 255, 0.8);
 		font-size: 1.2vw;
-		margin-top: 2%;
+		margin-top: 3%;
 		margin-bottom: 5%;
 		margin-left: 5.3%;
     	padding: 4% 4%;

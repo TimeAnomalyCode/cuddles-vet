@@ -43,8 +43,8 @@
 		<LoginWithGoogle />
 		<p>or</p>
 
-		<AuthForm btnName="Log In" on:submit={onLogin} />
-		<div class="signup">
+		<AuthForm btnName="Log In" on:submit={onLogin} showForgotPasswordLink={true}/>
+		<div>
 			<p>
 				Don't have an account? <a href="/signup">Create one now</a>
 			</p>
@@ -78,7 +78,6 @@
 	.image1{
   		/* Control the height of the image */
   		width: 100%;
-		height: 100%;
   		/* Center and scale the image nicely */
   		background-position: center;
  		background-repeat: no-repeat;
@@ -94,6 +93,5 @@
 		max-width: 35%;
 		max-height: 95%;
 		background-color: rgba(255, 255, 255, 0.6);
-	}
-	
+	}	
 </style>
