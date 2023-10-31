@@ -101,7 +101,7 @@
 		margin-top: 2%;
 		padding: 3% 3%;
 		max-width: 33%;
-		max-height: 82.5%;
+		max-height: 85%;
 		background-color: rgba(255, 255, 255, 0.6);
 	}
 </style>
