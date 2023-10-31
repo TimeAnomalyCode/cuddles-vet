@@ -118,6 +118,14 @@
             margin-left: auto;
             margin-right:-3%;
         }
+
+        @media (max-width: 768px) {
+            .image2 {
+            width: 45%; /* Set the width to 100% to make it responsive */
+            height: auto; /* Allow the height to adjust proportionally */
+            margin-top: -38%; /* Adjust the margin-top as needed */
+            }
+        }
     </style>
 </head>
 <body>
