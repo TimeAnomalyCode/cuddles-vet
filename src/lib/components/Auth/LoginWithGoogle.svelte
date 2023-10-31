@@ -46,7 +46,7 @@
 
 	button:hover {
 		background-color: #5C5957; 
-		color: #ffffff; border: 1px solid #5C5957; /* Change border color on hover (if needed) */
+		color: #ffffff;  
   	}
 
 	.icon{
