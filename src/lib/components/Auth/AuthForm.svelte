@@ -34,25 +34,25 @@
 
 <style>
 	.mb-3{
-		width: 90%;
+		width: 87%;
 		margin: 0 auto; /* Horizontally center the text boxes */
 		
 	}
 	.form-control {
-		padding: 4.5% 4.5%;
+		padding: 4% 4%;
 		border: 1px solid #5C5957; 
 		font-family: inter, sans-serif;
-		font-size: 1.2vw;
+		font-size: 1.1vw;
 	}
 
 	.btn{
-		width:90%;
+		width:87%;
 		background-color: #736D69;
     	color: rgba(255, 255, 255, 0.8);
-		font-size: 1.2vw;
+		font-size: 1.1vw;
 		margin-top: 3%;
 		margin-bottom: 5%;
-		margin-left: 5.3%;
+		margin-left: 5.9%;
     	padding: 4% 4%;
     	border: none;
     	border-radius: 10px;
@@ -65,7 +65,7 @@
 		font-weight: 500;
 		text-align: right;
 		max-width: 90%;
-		font-size: 1.3vw;
+		font-size: 1.1vw;
 		margin-left:4%;
 	}
 

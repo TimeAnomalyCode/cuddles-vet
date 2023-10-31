@@ -57,7 +57,7 @@
 	p{
 		font-family: inter, sans-serif; 
 		text-align: center;
-		font-size: 1.3vw;
+		font-size: 1.1vw;
 		color:#736D69;
 		font-weight: 500;
 	}
@@ -68,7 +68,7 @@
 
 	h2{
 		font-family: Inter Black, sans-serif;
-		font-size: 2.2vw;
+		font-size: 2vw;
 		font-weight: bolder;
 		text-align: center;
 		text-shadow: 1px 0 #736D69;
@@ -86,13 +86,12 @@
 	}
 	.container {
 		position: absolute;
-		margin-left: 7%;
+		margin-left: 6%;
 		margin-top: 2%;
 		margin-top: 2%;
 		padding: 3% 3%;
-		max-width: 35%;
-		max-height: 95%;
-
+		max-width: 33%;
+		max-height: 82.5%;
 		background-color: rgba(255, 255, 255, 0.6);
 	}	
 	
