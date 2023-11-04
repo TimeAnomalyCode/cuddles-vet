@@ -1,62 +1,5 @@
 <svelte:head>
-	<title>Cuddles Vet - Contact</title>
-	<style>
-		.section1 {
-			background-color: rgba(208, 196, 190, 0.3);
-			font-family: Inter;
-			color: #736D69;
-			text-align:center;
-		}
-	
-		.contactbox {
-			background-color: white;
-			display: flex;
-			width: 90%;
-			margin-left: 5%;
-			margin-top: 6%;
-			margin-bottom: 6%;
-		}
-	
-		.image-content {
-			position: relative;
-			display: flex;
-		}
-	
-		.image1 {
-			width: 40%;
-		}
-	
-		.icons {
-			position: absolute;
-			display: flex;
-			margin-top:3%;
-			margin-left:10%;
-		}
-	
-		.icon {
-			margin-right: 10%; /* Add some space between the icons */
-			width:45%;
-	
-		}
-	
-		.content {
-			margin-top:4%;
-			margin-left: 21%; /* Add some space between the image and content */
-		}
-	
-		h1 {
-			font-size: 2.6vw;
-			font-weight: 800;
-			text-shadow: 1.3px 0 0 #736D69;
-		}
-	
-		p {
-			font-size: 1.2vw;
-			font-weight: 500;
-		}
-	
-	</style>
-	
+	<title>Cuddles Vet - Contact</title>	
 </svelte:head>
 
 <div class="section1">
@@ -85,4 +28,61 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	.section1 {
+		background-color: rgba(208, 196, 190, 0.3);
+		font-family: Inter;
+		color: #736D69;
+		text-align:center;
+	}
+
+	.contactbox {
+		background-color: white;
+		display: flex;
+		width: 90%;
+		margin-left: 5%;
+		margin-top: 6%;
+		margin-bottom: 6%;
+	}
+
+	.image-content {
+		position: relative;
+		display: flex;
+	}
+
+	.image1 {
+		width: 40%;
+	}
+
+	.icons {
+		position: absolute;
+		display: flex;
+		margin-top:3%;
+		margin-left:10%;
+	}
+
+	.icon {
+		margin-right: 10%; /* Add some space between the icons */
+		width:45%;
+
+	}
+
+	.content {
+		margin-top:4%;
+		margin-left: 21%; /* Add some space between the image and content */
+	}
+
+	h1 {
+		font-size: 2.6vw;
+		font-weight: 800;
+		text-shadow: 1.3px 0 0 #736D69;
+	}
+
+	p {
+		font-size: 1.2vw;
+		font-weight: 500;
+	}
+
+</style>
 
