@@ -12,7 +12,7 @@
       price: "Product 1 Price",
       image: "product1.jpg",
 	  rating: "Product 1 rating",
-	  productSold: "xxx sold"
+	  sold: "xxx sold"
     },
     {
       name: "Product 2",
@@ -112,18 +112,22 @@
 			{#each products as product, index (product.name)}
 			  <div class="col-md-4 {index >= 3 ? 'second-row-product' : ''}">
 				<div class="product">
-				  <img src={product.image} alt={product.name}>
-				  <p>{product.name}</p>
-				  <p>{product.price}</p>
-				  <p>{product.rating}</p>
-				  <p>{product.sold}</p>
-				  <button class= plus-qty>
-					<img src="plusqty.png" alt="Add product quantity">
-				  </button>
-				  <button class= minus-qty>
-					<img src="minusqty.png" alt="Minus product quantity">
-				  </button>
-				  <button class="add-to-cart">Add to Cart</button>
+					<img src={product.image} alt={product.name}>
+					<p>{product.name}</p>
+					<p>{product.price}</p>
+					<div class="product-details">
+						<p >{product.rating}</p>
+						<p id="sold">{product.sold}</p>
+					</div>
+				  <div class="action-container">
+					<button class= plus-qty>
+						<img src="plusqty.png" alt="Add product quantity">
+					</button>
+					<button class= minus-qty>
+						<img src="minusqty.png" alt="Minus product quantity">
+					</button>
+					<button class="add-to-cart">Add to Cart</button>
+				  </div>
 				</div>
 			  </div>
 			{/each}
@@ -252,20 +256,35 @@
 		margin-top: 2%;
 	}
 
+	.product-details {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	#sold{
+		margin-right:1.6%;
+	}
+	.action-container {
+    	display: flex;
+    	align-items: center;
+	}
 	.add-to-cart{
-		margin-left:57%;
+		margin-left:40%;
 		background-color: #736D69; /* Set the background color for the button */
 		color: rgba(255, 255, 255, 0.7); /* Set the text color */
 		border: none; /* Remove the button border */
-		padding: 1.5% 1.5%; /* Add some padding to the button */
+		padding: 3%; /* Add some padding to the button */
 		border-radius: 10px; /* Add rounded corners */
 		cursor: pointer; /* Change the cursor to a hand pointer on hover */
-		width:45%;
+		width:85%;
 		font-size:0.9vw;
+	}
+	.add-to-cart:hover {
+		background-color: rgba(115, 109, 105, 0.25);;
 	}
 
 	.plus-qty, .minus-qty{
-		width:13%;
+		width:30%;
 		border:none;
 		background-color: rgba(255, 255, 255, 0.7);
 	}
