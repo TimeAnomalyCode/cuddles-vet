@@ -22,7 +22,8 @@
 					<div class="content">
 						<h1>Contact Us</h1>
 						<p>Let's hear from you!</p>
-						<form>
+						<div>
+							<form>
 							<label for="name">Name*</label>
 							<input type="text" id="name" name="name" required>
 
@@ -34,11 +35,8 @@
 
 							<button type="submit">Done</button>
 						</form>
-					</div>
-					<div>
-						<form>
-							
-						</form>
+						</div>
+						
 					</div>
 				</div>
 			</div>
@@ -88,6 +86,7 @@
 	.content {
 		margin-top:4%;
 		margin-left: 20%; /* Add some space between the image and content */
+		width: 50%;
 	}
 
 	h1 {
