@@ -2,20 +2,12 @@
 	<title>Cuddles Vet - Appointment</title>
 </svelte:head>
 
-<script type="text/javascript">
+<script>
 	let date = new Date()
 
 	$: if (date < Date.now()) {
 		console.log("AHHHHHHHHHHHHHHHHHHHHH")
 	}
-
-	function formatInputDate(date) {
-		const day = date.getDate();
-		const month = date.toLocaleString('default', { month: 'long' });
-		const year = date.getFullYear();
-		return `${day} ${month} ${year}`;
-	}
-
 </script>
 
 <div class="row">
@@ -25,26 +17,24 @@
 	<div class="container">
 		<p class="title">Give your pet the best care. Book an appointment now!</p>
 		<div class="content">
-			<form>
-				<table class="table1">
+			<form id="appointmentform">
+				<table>
 					<tr>
 						<td>
-							<input type="date" 
-								value={formatInputDate(date)}
-								placeholder="Select Date"
-							/>
-						</td>
-						<td class="time">
-							<input type="time"/>
+							<input type="date" id="apptdate" required/>
 						</td>
 						<td>
-							<select id="type" name="selectedOption">
-								<option value="option1">Vaccination - 1 hr</option>
-								<option value="option2">Health Check-Up - 2 hrs</option>
+							<input type="time" id="time" name="appttime" min="09:00" max="22:00" required/>
+						</td>
+						<td>
+							<select id="type" name="selectedOption" autocomplete="off" required>
+								<option value="" selected>Select Appointment Type</option>
+								<option value="vaccination">Vaccination - 1 hr</option>
+								<option value="checkup">Health Check-Up - 2 hrs</option>
 							</select>
 						</td>
-						<td>
-							<input type="button" value="Search" class="button"/>
+						<td style="text-align:right; width:150px;">
+							<input type="submit" value="Search" class="button"/>
 						</td>
 					</tr>
 				</table>
@@ -54,13 +44,7 @@
 </div>
 
 <style>
-	.table1{
-		border:1px solid black
-	}
-
-	.table1 td{
-		border:1px solid black
-	}
+	
 	.container{
 		position: absolute;
 		left: 0;
@@ -69,28 +53,6 @@
 		padding: 2% 2%;
 		width: 80%;
     	height: 80%;
-		background-color: rgba(255, 255, 255, 0.6);
-	}
-
-	.container .title {
-		font-family: inter Black, sans-serif;
-		font-weight: bolder;
-		font-size: 1.8vw;
-		color: #5C5957;
-		text-align: center;
-		margin-bottom: 3%;
-	}
-
-	.container tr td{
-		width: 4%;
-	}
-
-	.container .button{
-		width: 60%;
-		background-color: #5C5957; /* Button background color */
-		color: #FFFFFF; /* Button text color */
-		border-radius: 30px; /* Remove button border */
-		cursor: pointer; /* Show a hand cursor on hover */
 	}
 
 	.image1{
@@ -103,40 +65,57 @@
 		position: relative;
 		min-height: 85vh;
 	}
-
+	
+	.container .title {
+		font-family: inter Black, sans-serif;
+		font-weight: bolder;
+		font-size: 1.8vw;
+		color: #5C5957;
+		text-align: center;
+		margin-bottom: 3%;
+	}
+	
 	.container .content {
 		font-family: inter, sans-serif;
 		font-weight: bolder;
 		font-size: 1.5vw;
-		color: #5C5957;
+		color: #FFFFFF;
+		text-align: left;
+	}
+	table{
+		width: 100%;
+	}
+	table tr td{
+		width: 250px;
+		height: 45px;
+	}
+	.content input[type="date"],
+	.content input[type="time"],
+	.content select{
+		border: none;
+		background-color: #5C5957;
+		color: #FFFFFF;
+		cursor: pointer;
+		width: 95%;
+		height: 100%;
 		text-align: center;
 	}
 
-	.content input[type="date"]{
-		padding: 5%; /* Increase padding for a more attractive look */
-		width: 90%; /* Make input fields span the entire width of the container */
-		border: none;
-		background-color: #5C5957; /* Background color for input fields */
-		color: #FFFFFF;
-		font-size: 1.2vw; /* Adjust the font size for better readability */
+	.content input[type="date"]::-webkit-calendar-picker-indicator, 
+
+	.content input[type="time"]::-webkit-calendar-picker-indicator {
+		filter: invert(1);
+		cursor: pointer;
 	}
 
-	.content input[type="time"]{
-		padding: 5%; /* Increase padding for a more attractive look */
-		width: 90%; /* Make input fields span the entire width of the container */
+	.container .button{
+		background-color: #5C5957; /* Button background color */
+		color: #FFFFFF; /* Button text color */
+		border-radius: 30px; /* Remove button border */
+		cursor: pointer; /* Show a hand cursor on hover */
 		border: none;
-		background-color: #5C5957; /* Background color for input fields */
-		color: #FFFFFF;
-		font-size: 1.2vw; /* Adjust the font size for better readability */
-	}
-
-	.content select {
-		padding: 5%; /* Increase padding for a more attractive look */
-		width: 90%; /* Make input fields span the entire width of the container */
-		border: none;
-		background-color: #5C5957; /* Background color for input fields */
-		color: #FFFFFF;
-		font-size: 1.2vw; /* Adjust the font size for better readability */
+		width: 80%;
+		height: 100%;
 	}
 
 </style>
