@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Cuddles Vet - Contact</title>
+	<title>Cuddles Vet - Contact</title>	
 </svelte:head>
 
 <div class="section1">
@@ -90,3 +90,4 @@
 	}
 
 </style>
+

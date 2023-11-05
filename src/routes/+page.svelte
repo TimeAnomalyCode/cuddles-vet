@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<svelte:head>
+	<title>Cuddles Vet - Homepage</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter" />
     <style>
 
@@ -9,7 +8,7 @@
             padding: 0;
             font-family: Inter Black, sans-serif; 
         }
-
+    
         .section1 {
             width: 100%;
             height: 45%;
@@ -18,29 +17,29 @@
             display: flex;
             flex-direction: column;
         }
-
+    
         .image1 {
             margin-left: 45%;
             margin-top:-38%;
             width:46%; 
         }
-
+    
         .container1{
             margin-left: 10%;
         }
-
+    
         .title1 {
             margin-top: 6%;
             font-size: 5vw;
             font-weight: 900;       
             line-height: 1.1;  
         }
-
+    
         .slogan {
             margin-top: -0.5%;
             font-size: 1.15vw;
         }
-
+    
         .info {
             margin-top: 1.8%;
             font-size: 1.0vw;
@@ -49,12 +48,12 @@
             width: 2%;
             height: 2%;
         }
-
+    
         
         .section2, .section3{
             color: #736D6933;
         }
-
+    
         .title2 {
             font-size: 9.5vw;
             font-weight: 900;
@@ -62,9 +61,9 @@
             width: fit-content;
             margin-top: 5.5%;
             letter-spacing:-4px;
-
+    
         }
-
+    
         .paragraph {
             margin-left:55%;
             color: #736D69B3;
@@ -78,13 +77,13 @@
             width: 45%;
             height: 65%;
         }
-
+    
         .slideshow_text {
             text-align: center;
             font-size: 1.15vw;
             color: #736D69B3;
         }
-
+    
         .image3 {
             float: left;
             margin-top: -15%;
@@ -92,33 +91,33 @@
             width: 15%;
             height: 60%;
         }
-
-
+    
+    
         .slideshow img {
             width: 100%; 
             margin-top: -1%;
-
+    
         }
-
+    
         .controls {
             margin-top:-33%;
             display: flex;
         }
-
+    
         .arrow {
             width: 40px;
             height: 70px;
         }
-
+    
         #prevArrow {
             margin-left:-3%;
         }
-
+    
         #nextArrow {
             margin-left: auto;
             margin-right:-3%;
         }
-
+    
         @media (max-width: 768px) {
             .image2 {
             width: 45%; /* Set the width to 100% to make it responsive */
@@ -127,7 +126,8 @@
             }
         }
     </style>
-</head>
+</svelte:head>
+
 <body>
 <div class="section1">
     <div class="row">
@@ -260,4 +260,4 @@
     setInterval(autoRotate, 5000);   
 </script>
 </body>
-</html>
+
