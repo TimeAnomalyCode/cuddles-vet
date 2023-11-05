@@ -22,6 +22,18 @@
 					<div class="content">
 						<h1>Contact Us</h1>
 						<p>Let's hear from you!</p>
+						<form>
+							<label for="name">Name*</label>
+							<input type="text" id="name" name="name" required>
+
+							<label for="email">Email*</label>
+							<input type="email" id="email" name="email" required>
+
+							<label for="message">Message</label>
+							<textarea id="message" name="message" rows="4" required></textarea>
+
+							<button type="submit">Done</button>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -70,7 +82,7 @@
 
 	.content {
 		margin-top:4%;
-		margin-left: 21%; /* Add some space between the image and content */
+		margin-left: 20%; /* Add some space between the image and content */
 	}
 
 	h1 {
@@ -83,6 +95,82 @@
 		font-size: 1.2vw;
 		font-weight: 500;
 	}
+
+	form {
+		margin-left:-55%;
+		text-align: center;
+	}
+
+	/* Style form labels */
+	label {
+		display: block;
+		margin-top: 4.5%;
+		font-weight: bold;
+		text-align: left;
+	}
+
+	/* Style form input fields and textarea */
+	input[type="text"],
+	input[type="email"],
+	textarea {
+		width: 131%;
+		margin-top: 2%;
+		border: 1px solid rgba(92, 89, 87, 0.5);;
+		border-radius: 4px;
+	}
+
+	/* Style the submit button */
+	button[type="submit"] {
+		background-color: #736D69;
+		color: rgba(255,255,255,0.7);
+		padding: 3% 35%;
+		border: none;
+		border-radius: 10px;
+		cursor: pointer;
+		margin-top:5%;
+		margin-left:25%;
+	}
+
+	/* Change button color on hover */
+	button[type="submit"]:hover {
+		background-color: rgba(115, 109, 105, 0.25);;
+	}
+
+	@media screen and (max-width: 1400px) {
+    .content {
+        margin-left: 5%; /* Adjust margin for smaller screens */
+    }
+
+    form {
+        margin-left: 0; /* Reset the left margin */
+        text-align: center;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 100%; /* Make form fields take the full width of the container */
+        padding: 10px;
+        margin-top: 2%;
+    }
+
+    button[type="submit"] {
+        width: 100%; /* Make the button take the full width of the container */
+        margin-left: 0; /* Reset the left margin */
+        padding: 10px;
+    }
+
+	.icons {
+        margin-top: 8%; /* Adjust the margin for smaller screens */
+        margin-left: 5%; /* Reset the left margin */
+        justify-content: center; /* Center the icons horizontally */
+    }
+
+    .icon {
+        width: 25%; /* Reduce the width of the icons for smaller screens */
+        margin-right: 5%; /* Add some space between the icons */
+    }
+}
 
 </style>
 
