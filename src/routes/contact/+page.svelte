@@ -23,6 +23,11 @@
 						<h1>Contact Us</h1>
 						<p>Let's hear from you!</p>
 					</div>
+					<div>
+						<form>
+							
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>
