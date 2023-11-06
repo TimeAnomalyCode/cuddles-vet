@@ -195,6 +195,7 @@ export async function addCart(cart) {
     const cartRef = await cartCollection.add({
         user_id: cart.user_id,
         items: cart.items,
+        is_current_cart: true,
         created_at: firestore.Timestamp.now().seconds,
     })
 
