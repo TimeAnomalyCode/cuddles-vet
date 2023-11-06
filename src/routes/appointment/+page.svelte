@@ -7,6 +7,23 @@
 	let apptData = null;
 	let isSubmitted = false;
 
+	const veterinarians = [
+		{
+			name: "Dr. Vishnu",
+			specialty: "Senior Veterinarian at Cuddles Vet Clinic",
+			image: "vet1.png",
+			description: "Dr. Vishnu, our experienced and compassionate veterinarian, is here at Cuddles Veterinary Clinic to provide the best care for your beloved pets. With a deep love for animals and expertise in pet health, he ensures your furry friends receive top-notch attention and medical care. Trust Dr. Vishnu for all your pet's needs, from routine check-ups to complex medical issues.",
+			type: "Vaccination"
+		},
+		{
+			name: "Dr. Lim Rui Ting",
+			specialty: "Senior Veterinarian at Cuddles Vet Clinic",
+			image: "vet2.png",
+			description: "Dr. Lim, our caring and experienced veterinarian, excels not only in providing top-quality care but also in clear and compassionate communication. Whether it's routine check-ups or specialized treatments, you can place your trust in her for compassionate, professional, and clear communication during every visit"
+		}
+		// Add more veterinarians to the list
+	];
+
 	$: if (date < Date.now()) {
 		console.log("AHHHHHHHHHHHHHHHHHHHHH")
 	}
@@ -22,8 +39,13 @@
 		apptData = {
 			date: selectedDate,
 			time: selectedTime,
-			type: selectedType
+			type: selectedType,
+			vet: findVeterinarian(selectedType)
 		};
+	}
+
+	function findVeterinarian(type) {
+		return veterinarians.find(vet => vet.type === type);
 	}
 
 </script>
@@ -59,17 +81,21 @@
 				</table>
 			</form>
 			</div>
-			<div>
+			<div class="content1">
 				{#if apptData !== null}
 					<div class="vet-info">
 						<table>
-							<tr>
-								<td>
-									<img src="vet1.png" alt="vet1" class="vetimage">
+							<tr rowspan="2">
+								<td style="width: 70px">
+									<img src={apptData.vet.image} alt="vet1" class="vetimage">
 								</td>
-								<td>
-									<h2>Appointment Details</h2>
+								<td style="width: 100px">
+									<p class="name">{apptData.vet.name}</p>
+									<p class="specialty">{apptData.vet.specialty}</p>
+									<p class="desc">{apptData.vet.description}</p>
 								</td>
+								<td class="vl"></td>
+								<td style="width: 100px">Top Liked Reviews</td>
 							</tr>
 						</table>
 						
@@ -169,19 +195,50 @@
 		height: 100%;
 	}
 
+	/* Vet */
 	.vet-info {
-		padding: 2% 2%;
+		padding: 1% 2%;
 		background-color: #ffffff;
 		height: 30%;
 	}
 
 	.vetimage {
-		width: 40%;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
-		position: relative;
-		min-height: 85vh;
+		width: 90%;
+		height: 270px;
+		position: center;
+	}
+	.container .content1 {
+		font-family: inter, sans-serif;
+		font-weight: bolder;
+		color: #5C5957;
+		text-align: left;
+	}
+
+	.vl {
+		border-left: 1px solid #5C5957;
+		width: 5px;
+		height: 150px;
+	}
+
+	.content1 p{
+		width: 95%;
+	}
+
+	.content1 .name{
+		font-size: 2vw;
+		margin-top: 3%;
+		margin-bottom: 0%;
+	}
+
+	.content1 .specialty{
+		font-size: 1.2vw;
+		margin-top: 0%;
+		margin-bottom: 7%;
+	}
+
+	.content1 .desc{
+		font-size: 1.2vw;
+		font-weight: 400;
 	}
 
 
