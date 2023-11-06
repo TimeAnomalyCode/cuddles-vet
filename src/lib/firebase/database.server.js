@@ -226,6 +226,19 @@ export async function deleteCart(id) {
 
 // Orders + Approve/Deny
 
+export async function changeOrderStatus(order_id, status) {
+    const orderRef = db.collection('orders').doc(order_id)
+
+    let approve_string = "denied"
+    if (status) {
+        approve_string = "approve"
+    }
+
+    await orderRef.update({
+        is_approved: approve_string
+    })
+}
+
 export async function addOrder(order) {
     const orderCollection = db.collection('orders')
 
@@ -233,7 +246,7 @@ export async function addOrder(order) {
         user_id: order.user_id,
         cart_id: order.cart_id,
         total_price: order.total_price,
-        isApproved: "pending",
+        is_approved: "pending",
         created_at: firestore.Timestamp.now().seconds,
     })
 
