@@ -86,7 +86,7 @@
 	.content {
 		margin-top:4%;
 		margin-left: 20%; /* Add some space between the image and content */
-		width: 50%;
+		width: 23%;
 	}
 
 	h1 {
