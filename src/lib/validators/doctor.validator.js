@@ -45,7 +45,6 @@ export default async function validate(formData, edit = false) {
         }, {});
 
         delete data.main_picture;
-        delete data.small_picture;
 
         return { ...errors, ...data, success: false }
     }
