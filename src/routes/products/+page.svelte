@@ -10,14 +10,14 @@
     {
       name: "Product 1",
       price: "Product 1 Price",
-      image: "product1.jpg",
+      image: "product1.png",
 	  rating: "Product 1 rating",
 	  sold: "xxx sold"
     },
     {
       name: "Product 2",
       price: "Product 2 Price",
-      image: "product2.jpg",
+      image: "product2.png",
 	  rating: "Product 2 rating",
 	  sold: "xxx sold"
     },

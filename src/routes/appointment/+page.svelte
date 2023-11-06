@@ -85,7 +85,7 @@
 				{#if apptData !== null}
 					<div class="vet-info">
 						<table>
-							<tr rowspan="2">
+							<tr>
 								<td style="width: 70px">
 									<img src={apptData.vet.image} alt="vet1" class="vetimage">
 								</td>
