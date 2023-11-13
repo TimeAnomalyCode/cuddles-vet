@@ -38,8 +38,15 @@
     {
       name: "Product 5",
       price: "Product 5 Price",
-      image: "product3.jpg",
+      image: "product5.jpg",
 	  rating: "Product 5 rating",
+	  sold: "xxx sold"
+    },
+	{
+      name: "Product 6",
+      price: "Product 6 Price",
+      image: "product6.jpg",
+	  rating: "Product 6 rating",
 	  sold: "xxx sold"
     },
     // Add more products as needed
@@ -89,24 +96,6 @@
 			</div>
 		</div>
 	</div>
-	<div class = "section2">
-		<div class="row">
-			<div class="row">
-				<div class="divider"></div>
-				<div class="category-bar">
-					<div class="category">Food</div>
-					<div class="category">Supplements</div>
-					<div class="category">Grooming</div>
-				</div>
-				<div class="divider" id="div2"></div>
-				<button class="filter-button">
-					<img src="sortby.png" alt="Sort By Icon">
-					Filter By
-					<img src="downarrow.png" alt="Down Arrow">
-				</button>
-			</div>
-		</div>
-	</div>
 	<div class="section3">
 		<div class="row">
 			{#each products as product, index (product.name)}
@@ -153,7 +142,7 @@
   
 	.search-input {
 		background-color: #ffffffb3;
-		width: 80%;
+		width: 81%;
 		height:5vh;
 		margin-top:3%;
 		margin-left:9.5%;
@@ -175,52 +164,6 @@
 	.search-button:hover {
 	background-color: rgba(92, 89, 87, 0.5);
 	}
-	
-	.section2{
-		color: #736D69;
-	}
-	.divider{
-		width: 90%; /* Set the same width as the search bar */
-		height: 0.3px; /* Set the height of the divider line */
-		background-color: rgba(92, 89, 87, 0.5); /* Set the color of the divider line */
-		margin-left: 5.5%; /* Match the margin-left of the search bar */
-		margin-top:3%;
-	}
-
-	#div2{
-		margin-top:1%;
-	}
-
-	.category-bar {
-		width: 40%;
-		margin: 0 auto;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		margin-top:1%;
-  	}
-
-  	.filter-button {
-		background-color: rgba(115, 109, 105, 0.5); /* Set the background color for the button */
-		color: rgba(255, 255, 255, 0.7); /* Set the text color */
-		border: none; /* Remove the button border */
-		padding: 0.7% 0.7%; /* Add some padding to the button */
-		border-radius: 10px; /* Add rounded corners */
-		cursor: pointer; /* Change the cursor to a hand pointer on hover */
-		margin-top: 1.5%; /* Adjust the top margin as needed */
-		width:11%;
-		margin-left:10.5%;
-	}
-
-	.filter-button:hover {
-		background-color: #5C5957; 
-		color: #ffffff; 
-	}
-
-	.filter-button img{
-		width:15%;
-	}
-
 	.section3 {
 		margin: 1.5% 9.6%;
 
@@ -237,6 +180,7 @@
 	}
 
 	.product {
+		margin-top: 3%;
 		border: 1px solid rgba(92, 89, 87, 0.5);
 		text-align: left;
 		padding: 3%;
