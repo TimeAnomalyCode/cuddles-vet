@@ -139,42 +139,5 @@
 	button[type="submit"]:hover {
 		background-color: rgba(115, 109, 105, 0.25);;
 	}
-
-	@media screen and (max-width: 1400px) {
-    .content {
-        margin-left: 5%; /* Adjust margin for smaller screens */
-    }
-
-    form {
-        margin-left: 0; /* Reset the left margin */
-        text-align: center;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    textarea {
-        width: 100%; /* Make form fields take the full width of the container */
-        padding: 10px;
-        margin-top: 2%;
-    }
-
-    button[type="submit"] {
-        width: 100%; /* Make the button take the full width of the container */
-        margin-left: 0; /* Reset the left margin */
-        padding: 10px;
-    }
-
-	.icons {
-        margin-top: 8%; /* Adjust the margin for smaller screens */
-        margin-left: 5%; /* Reset the left margin */
-        justify-content: center; /* Center the icons horizontally */
-    }
-
-    .icon {
-        width: 25%; /* Reduce the width of the icons for smaller screens */
-        margin-right: 5%; /* Add some space between the icons */
-    }
-}
-
 </style>
 
