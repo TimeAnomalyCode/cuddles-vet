@@ -74,6 +74,7 @@
 				<Carousel bind:this={carousel} autoplay autoplayDuration={3000}>
 					{#each images as path}
 						<div class="slideshow">
+							<!-- svelte-ignore a11y-img-redundant-alt -->
 							<img src={path} alt="gallery-image" />
 						</div>
 					{/each}
@@ -88,11 +89,11 @@
 </svelte:head>
 
 <style>
-	body {
+	/* body {
 		margin: 0;
 		padding: 0;
 		font-family: Inter Black, sans-serif;
-	}
+	} */
 
 	.section1 {
 		width: 100%;
@@ -168,20 +169,20 @@
 		color: #736d69b3;
 	}
 
-	.image3 {
+	/* .image3 {
 		float: left;
 		margin-top: -15%;
 		margin-left: -2%;
 		width: 15%;
 		height: 60%;
-	}
+	} */
 
 	.slideshow img {
 		width: 100%;
 		margin-top: -1%;
 	}
 
-	.controls {
+	/* .controls {
 		margin-top: -33%;
 		display: flex;
 	}
@@ -189,16 +190,16 @@
 	.arrow {
 		width: 40px;
 		height: 70px;
-	}
+	} */
 
-	#prevArrow {
+	/* #prevArrow {
 		margin-left: -3%;
 	}
 
 	#nextArrow {
 		margin-left: auto;
 		margin-right: -3%;
-	}
+	} */
 
 	@media (max-width: 768px) {
 		.image2 {
