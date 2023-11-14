@@ -1,4 +1,4 @@
-<footer class="">
+<footer>
 	<div class="footer__color text-center p-3">2023 Cuddles Vet Clinic</div>
 </footer>
 
