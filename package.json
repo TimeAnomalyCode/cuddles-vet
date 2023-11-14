@@ -34,6 +34,7 @@
 	"type": "module",
 	"dependencies": {
 		"date-picker-svelte": "^2.8.0",
-		"dayjs": "^1.11.10"
+		"dayjs": "^1.11.10",
+		"svelte-carousel": "^1.0.25"
 	}
 }
