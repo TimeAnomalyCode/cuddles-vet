@@ -36,36 +36,41 @@
 			<div class="hamburger">
 				<i class='bx bx-menu'></i>
 			</div>
-			<div class:show={isOpen} id="navbarNav" class=profile_wrap>
-				<ul>
-					{#if isLoggedIn}
-						<li>
-							<a class:active={$page.url.pathname === '/profile'} class="nav-link" href="/profile"
-								>Profile</a
-							>
-						</li>
-						<li>
-							<!-- svelte-ignore a11y-click-events-have-key-events -->
-							<!-- svelte-ignore a11y-no-static-element-interactions -->
-							<span on:click={onLogout} class="nav-link">Logout</span>
-						</li>
-					{:else}
-						<!-- Not Logged In -->
-						<div class="profile_wrap">
-							<div class="profile">
-								<a class:active={$page.url.pathname === '/login'} class="nav-link" href="/login">
-									<span class="name">Hi, Jack</span>
-									<img src="Profile.png" alt="Login"/>
-								</a>
-							</div>
-							<div class="cart">
-								<a class:active={$page.url.pathname === '/cart'} class="nav-link" href="/cart">
-									<img src="Cart.png" alt="Cart"/>
-								</a>
-							</div>
+			<div class:show={isOpen} id="navbarNav" class="profile_wrap">
+				{#if isLoggedIn}
+					<div class="profile">
+						<a class:active={$page.url.pathname === '/profile'} href="/profile">
+						<span class="name">Hi, Jack</span>
+						<img src="Profile.png" alt="Login"/>
+					</a>
+					</div>
+					<div class="cart">
+						<a class:active={$page.url.pathname === '/cart'} href="/cart">
+							<img src="Cart.png" alt="Cart"/>
+						</a>
+					</div>
+					<div class="logout">
+						<!-- svelte-ignore a11y-click-events-have-key-events -->
+						<!-- svelte-ignore a11y-no-static-element-interactions -->
+						<span on:click={onLogout} >
+							<img src="logout.png" alt="Logout">
+						</span>
+					</div>
+				{:else}
+					<!-- Not Logged In -->
+					<div class="profile_wrap">
+						<div class="profile">
+							<a class:active={$page.url.pathname === '/login'} href="/login">
+								<img src="Profile.png" alt="Login"/>
+							</a>
 						</div>
-					{/if}
-				</ul>
+						<div class="cart">
+							<a class:active={$page.url.pathname === '/cart'} href="/cart">
+								<img src="Cart.png" alt="Cart"/>
+							</a>
+						</div>
+					</div>
+				{/if}
 			</div>
 		</div>
 	</div>
@@ -180,6 +185,9 @@
 	font-weight: 500;
 }
 
+.top_navbar .logout span{
+	cursor: pointer;
+}
 .sidebar{
 	position: absolute;
 	top: 81px;
@@ -212,7 +220,7 @@
 }
 
 .hover_collapse .sidebar{
-	width: 80px;
+	width: 74px;
 }
 
 .hover_collapse .sidebar ul li a .text{
@@ -221,8 +229,8 @@
 
 .main_container{
 	margin-top: 80px;
-	margin-left: 80px;
-	width: calc(100% - 80px);
+	margin-left: 75px;
+	width: calc(100% - 75px);
 }
 
 </style>

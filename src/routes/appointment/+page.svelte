@@ -86,17 +86,19 @@
 					<div class="vet-info">
 						<table>
 							<tr>
-								<td style="width: 70px">
+								<td style="width: 80px">
 									<img src={apptData.vet.image} alt="vet1" class="vetimage">
 								</td>
 								<td style="width: 100px">
 									<p class="name">{apptData.vet.name}</p>
 									<p class="specialty">{apptData.vet.specialty}</p>
 									<p class="desc">{apptData.vet.description}</p>
+									<div style="text-align:right;">
+										<input class="button" type="button" value="Book Appointment">
+									</div>
 								</td>
-								<td class="vl"></td>
-								<td style="width: 100px">Top Liked Reviews</td>
 							</tr>
+							
 						</table>
 						
 						<!--<p>Date: {apptData.date}</p>
@@ -128,8 +130,7 @@
 	.image1 {
 		width: 100%;
 		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
+		background-repeat: repeat;
 		position: relative;
 		min-height: 85vh;
 	}
@@ -204,7 +205,7 @@
 
 	.vetimage {
 		width: 90%;
-		height: 270px;
+		height: 280px;
 		position: center;
 	}
 	.container .content1 {
@@ -226,20 +227,26 @@
 
 	.content1 .name{
 		font-size: 2vw;
-		margin-top: 3%;
-		margin-bottom: 0%;
+		margin-top: 0px;
+		margin-bottom: 0px;
 	}
 
 	.content1 .specialty{
 		font-size: 1.2vw;
-		margin-top: 0%;
-		margin-bottom: 7%;
+		margin-top: 0px;
+		margin-bottom: 4%;
 	}
 
 	.content1 .desc{
 		font-size: 1.2vw;
 		font-weight: 400;
+		width: 100%;
 	}
 
+	.content1 .button{
+		width: 220px;
+		height: 45px;
+		border-radius: 5px;
+	}
 
 </style>
