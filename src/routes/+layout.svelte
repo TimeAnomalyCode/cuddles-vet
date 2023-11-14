@@ -6,6 +6,7 @@
 	import { onMount } from 'svelte';
 	import { sendJWTToken } from '$lib/firebase/auth.client';
 	import authStore from '$lib/stores/auth.store.js';
+	import Footer from '$lib/components/Footer.svelte';
 
 	export let data;
 
@@ -66,3 +67,4 @@
 	{/if}
 	<slot />
 </main>
+<Footer />
