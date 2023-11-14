@@ -3,18 +3,59 @@ import { firestore } from "firebase-admin";
 import { deleteFolderFromBucket, saveFileToBucket } from "$lib/firebase/firestorage.server";
 
 // User
-export async function updateUserProfile(id, form) {
-    const userRef = db.collection('users').doc(id)
+export async function addProfile(profile) {
+    const profileCollection = db.collection('profiles')
+
+    const profileRef = await profileCollection.add({
+        has_set_profile: false,
+        name: profile.name,
+        birthday: profile.birthday,
+        address: profile.address,
+        phone_number: profile.phone_number,
+        role: "customer",
+        created_at: firestore.Timestamp.now().seconds,
+    })
+
+    const mainPictureUrl = await saveFileToBucket(profile.main_picture, `profile_images/${profileRef.id}/main_picture_${firestore.Timestamp.now().seconds}`)
+
+    await profileRef.update({
+        main_picture: mainPictureUrl
+    })
+
+    return profileRef.id
+}
+
+export async function editProfile(id, form) {
+    const profileRef = db.collection('profiles').doc(id)
     let mainPicture = form.main_picture || null
 
     delete form.main_picture
 
-    await userRef.update(form)
+    await profileRef.update(form)
 
     if (mainPicture) {
-        const mainPictureUrl = await saveFileToBucket(mainPicture, `doctor_images/${userRef.id}/main_picture_${firestore.Timestamp.now().seconds}`)
-        userRef.update({ main_picture: mainPictureUrl })
+        const mainPictureUrl = await saveFileToBucket(mainPicture, `profile_images/${profileRef.id}/main_picture_${firestore.Timestamp.now().seconds}`)
+        profileRef.update({ main_picture: mainPictureUrl })
     }
+}
+
+export async function getProfile(id) {
+    const profileRef = await db.collection('profiles').doc(id).get()
+
+    if (profileRef.exists) {
+        return { id: profileRef.id, ...profileRef.data() }
+    }
+}
+
+export async function deleteProfile(id) {
+    const profileRef = db.collection('profiles').doc(id)
+
+    // delete from cloud storage (img)
+    if ((await profileRef.get()).exists) {
+        await deleteFolderFromBucket(`profile_images/${profileRef.id}`)
+        await profileRef.delete()
+    }
+
 }
 
 // Doctors
