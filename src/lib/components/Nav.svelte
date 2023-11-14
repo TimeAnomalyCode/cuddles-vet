@@ -1,9 +1,9 @@
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <script>
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { logout } from '$lib/firebase/auth.client';
 	import messagesStore from '$lib/stores/messages.store';
-
 	export let isLoggedIn;
 
 	let isOpen = false;
@@ -23,90 +23,207 @@
 	}
 </script>
 
-<nav class="navbar navbar-expand-sm bg-white">
-	<div class="container-fluid">
-		<span style="font-size: 22.5px; font-weight: bolder;">
-			<img
-				src="Logo.png"
-				alt="Logo"
-				width="64"
-				height="70"
-				class="d-inline-block align-text-center"
-			/>
-			Cuddles Vet Clinic
-		</span>
-		<div class:show={isOpen} class="nav justify-content-center" id="navbarNav">
-			<ul class="navbar-nav">
-				<li class="nav-item">
-					<a class:active={$page.url.pathname === '/'} class="nav-link" aria-current="page" href="/"
-						>Home</a
-					>
-				</li>
-				<li class="nav-item">
-					<a
-						class:active={$page.url.pathname === '/appointment'}
-						class="nav-link"
-						href="/appointment">Appointment</a
-					>
-				</li>
-				<li class="nav-item">
-					<a class:active={$page.url.pathname === '/products'} class="nav-link" href="/products"
-						>Products</a
-					>
-				</li>
-				<li class="nav-item">
-					<a class:active={$page.url.pathname === '/contact'} class="nav-link" href="/contact"
-						>Contact</a
-					>
-				</li>
-			</ul>
+<body>
+<div class="wrapper hover_collapse click_collapse">
+	<div class="top_navbar">
+		<div class="logo">
+			<a class:active={$page.url.pathname === '/'} aria-current="page" href="/"
+				><img src="Logo.png" alt="logo" style="width:64px; height:70px">
+				Cuddles Vet Clinic
+			</a>
 		</div>
-		<div class:show={isOpen} id="navbarNav">
-			<ul class="navbar-nav">
-				{#if isLoggedIn}
-					<li class="nav-item">
-						<a class:active={$page.url.pathname === '/profile'} class="nav-link" href="/profile"
-							>Profile</a
-						>
-					</li>
-					<li class="nav-item">
-						<!-- svelte-ignore a11y-click-events-have-key-events -->
-						<!-- svelte-ignore a11y-no-static-element-interactions -->
-						<span on:click={onLogout} class="nav-link">Logout</span>
-					</li>
-				{:else}
-					<!-- Not Logged In -->
-					<li class="nav-item">
-						<a class:active={$page.url.pathname === '/login'} class="nav-link" href="/login">
-							<img src="Profile.png" alt="Login" width="36" height="36" />
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class:active={$page.url.pathname === '/cart'} class="nav-link" href="/cart">
-							<img src="Cart.png" alt="Cart" width="36" height="36" />
-						</a>
-					</li>
-				{/if}
+		<div class="menu">
+			<div class="hamburger">
+				<i class='bx bx-menu'></i>
+			</div>
+			<div class:show={isOpen} id="navbarNav" class=profile_wrap>
+				<ul>
+					{#if isLoggedIn}
+						<li>
+							<a class:active={$page.url.pathname === '/profile'} class="nav-link" href="/profile"
+								>Profile</a
+							>
+						</li>
+						<li>
+							<!-- svelte-ignore a11y-click-events-have-key-events -->
+							<!-- svelte-ignore a11y-no-static-element-interactions -->
+							<span on:click={onLogout} class="nav-link">Logout</span>
+						</li>
+					{:else}
+						<!-- Not Logged In -->
+						<div class="profile_wrap">
+							<div class="profile">
+								<a class:active={$page.url.pathname === '/login'} class="nav-link" href="/login">
+									<span class="name">Hi, Jack</span>
+									<img src="Profile.png" alt="Login"/>
+								</a>
+							</div>
+							<div class="cart">
+								<a class:active={$page.url.pathname === '/cart'} class="nav-link" href="/cart">
+									<img src="Cart.png" alt="Cart"/>
+								</a>
+							</div>
+						</div>
+					{/if}
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="sidebar">
+		<div class="sidebar_inner" class:show={isOpen} id="navbarNav">
+			<ul>
+				<li>
+					<a class:active={$page.url.pathname === '/appointment'} href="/appointment">
+						<span class="icon">
+							<i class='bx bx-book-content'></i>
+						</span>
+						<span class="text">Appointment</span>
+					</a>
+				</li>
+				<li>
+					<a class:active={$page.url.pathname === '/products'} href="/products">
+						<span class="icon">
+							<i class='bx bx-shopping-bag'></i>
+						</span>
+						<span class="text">Products</span>
+					</a>
+				</li>
+				<li>
+					<a class:active={$page.url.pathname === '/contact'} href="/contact">
+						<span class="icon">
+							<i class='bx bx-envelope'></i>
+						</span>
+						<span class="text">Contact</span>
+					</a>
+				</li>
 			</ul>
 		</div>
 	</div>
-</nav>
+	<div class="main_container"></div>
+</div>
+
+<script>
+	var hamburger = document.querySelector(".hamburger");
+
+	hamburger.addEventListener("click", ()=>{
+		hamburger.closest(".wrapper").classList.toggle("click_collapse");
+		hamburger.closest(".wrapper").classList.toggle("hover_collapse");
+	})
+</script>
+</body>
+
+	
+
 
 <style>
-	.nav-item > span {
-		cursor: pointer;
-	}
-	div {
-		font-family: inter;
-		color: #5c5957;
-		font-weight: 500;
-	}
-	div div ul li {
-		float: left;
-		padding: 10px;
-		color: #5c5957;
-		text-decoration: none;
-		font-size: 17px;
+*{
+	font-family: 'Inter', sans-serif;
+	color: #736D69;
+	list-style: none;
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 
-	}
+}
+
+.wrapper{
+	margin: 0 10px;
+}
+
+.top_navbar{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 80px;
+	background: #ffffff;
+	display: flex;
+	align-items: center;
+	box-shadow: 1px 0 2px #736D69;
+}
+
+.top_navbar .logo{
+	width: 300px;
+	font-size: 22.5px;
+	font-weight: bolder;
+	padding: 0 10px;
+}
+
+.top_navbar .menu{
+	width: calc(100% - 310px);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 10px;
+}
+
+.top_navbar .menu .hamburger{
+	font-size: 35px;
+	cursor: pointer;
+}
+
+.top_navbar .profile_wrap{
+	padding-left: 25px;
+	align-items: center;
+	display: flex;
+}
+
+.top_navbar .profile_wrap img{
+	width: 36px;
+	height: 36px;
+	margin-right: 10px; 
+}
+
+.top_navbar .profile .name{
+	margin: 0 15px;
+	font-weight: 500;
+}
+
+.sidebar{
+	position: fixed;
+	top: 81px;
+	left: 0;
+	width: 280px;
+	height: 100%;
+	background: #ffffff;
+	border-right: 1px solid #736D69;
+}
+
+.sidebar ul li a{
+	display: block;
+	padding: 15px 25px;
+	border-bottom: 1px solid #736D69;
+	transition: all 0.3s ease;
+}
+
+.sidebar ul li a .icon{
+	font-size: 25px;
+	vertical-align: middle;
+}
+
+.sidebar ul li a .text{
+	margin-left: 10px;
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.sidebar ul li a:hover{
+	background-color: rgba(115, 109, 105, 0.4);
+}
+
+.hover_collapse .sidebar{
+	width: 80px;
+}
+
+.hover_collapse .sidebar ul li a .text{
+	display: none;
+}
+
+.main_container{
+	margin-top: 80px;
+	margin-left: 80px;
+	width: calc(100% - 80px);
+}
+
 </style>
