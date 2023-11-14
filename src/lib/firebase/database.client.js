@@ -5,6 +5,13 @@ export async function setUser(userId) {
     const users = collection(db, 'users');
     await setDoc(doc(users, userId), {
         user_id: userId,
-        role: "customer"
+        role: "customer",
+        has_set_profile: false,
+        has_confirmed_email: false,
+        name: "",
+        main_picture: "",
+        birthday: "",
+        address: "",
+        phone_number: ""
     })
 }

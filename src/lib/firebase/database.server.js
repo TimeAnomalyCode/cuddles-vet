@@ -2,6 +2,21 @@ import { db } from "$lib/firebase/firebase.server";
 import { firestore } from "firebase-admin";
 import { deleteFolderFromBucket, saveFileToBucket } from "$lib/firebase/firestorage.server";
 
+// User
+export async function updateUserProfile(id, form) {
+    const userRef = db.collection('users').doc(id)
+    let mainPicture = form.main_picture || null
+
+    delete form.main_picture
+
+    await userRef.update(form)
+
+    if (mainPicture) {
+        const mainPictureUrl = await saveFileToBucket(mainPicture, `doctor_images/${userRef.id}/main_picture_${firestore.Timestamp.now().seconds}`)
+        userRef.update({ main_picture: mainPictureUrl })
+    }
+}
+
 // Doctors
 export async function addDoctor(doctor) {
     const doctorCollection = db.collection('doctors')
