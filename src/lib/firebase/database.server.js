@@ -4,25 +4,26 @@ import { deleteFolderFromBucket, saveFileToBucket } from "$lib/firebase/firestor
 
 // User
 export async function addProfile(profile) {
-    const profileCollection = db.collection('profiles')
+    const profileCollection = db.collection('profiles').doc(profile.user_id)
 
-    const profileRef = await profileCollection.add({
+    const profileRef = await profileCollection.set({
         has_set_profile: false,
-        name: profile.name,
-        birthday: profile.birthday,
-        address: profile.address,
-        phone_number: profile.phone_number,
+        user_id: profile.user_id,
+        name: profile.name || "",
+        birthday: profile.birthday || "",
+        address: profile.address || "",
+        phone_number: profile.phone_number || "",
         role: "customer",
         created_at: firestore.Timestamp.now().seconds,
     })
 
     const mainPictureUrl = await saveFileToBucket(profile.main_picture, `profile_images/${profileRef.id}/main_picture_${firestore.Timestamp.now().seconds}`)
 
-    await profileRef.update({
+    await profileCollection.update({
         main_picture: mainPictureUrl
     })
 
-    return profileRef.id
+    return profileCollection.id
 }
 
 export async function editProfile(id, form) {
