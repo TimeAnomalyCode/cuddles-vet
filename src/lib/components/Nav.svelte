@@ -132,7 +132,7 @@
 }
 
 .top_navbar{
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -181,13 +181,12 @@
 }
 
 .sidebar{
-	position: fixed;
+	position: absolute;
 	top: 81px;
 	left: 0;
 	width: 280px;
 	height: 100%;
 	background: #ffffff;
-	border-right: 1px solid #736D69;
 }
 
 .sidebar ul li a{
