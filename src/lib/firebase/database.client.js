@@ -7,7 +7,6 @@ export async function setUser(userId) {
         user_id: userId,
         role: "customer",
         has_set_profile: false,
-        has_confirmed_email: false,
         name: "",
         main_picture: "",
         birthday: "",
