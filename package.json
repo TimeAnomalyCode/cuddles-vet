@@ -9,7 +9,8 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"format": "prettier --plugin-search-dir . --write ."
+		"format": "prettier --plugin-search-dir . --write .",
+		"test": "vitest"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
@@ -27,6 +28,7 @@
 		"typescript": "^5.0.0",
 		"uuid": "^9.0.1",
 		"vite": "^4.4.2",
+		"vitest": "^0.34.6",
 		"yup": "^1.2.0"
 	},
 	"type": "module",
