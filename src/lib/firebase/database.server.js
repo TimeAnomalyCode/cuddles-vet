@@ -184,6 +184,21 @@ export async function deleteProduct(id) {
 
 // Appointments
 
+export async function checkAppointmentAvailable(doctor_id, date, start_time, end_time) {
+    const appointmentRef = await db.collection('appointments')
+        .where('appointment_date', '==', date)
+        .where('doctor_id', '==', doctor_id)
+        .where('appointment_start_time', '>=', start_time)
+        .where('appointment_end_time', '<=', end_time)
+        .get()
+
+    if (appointmentRef.empty) {
+        return true
+    }
+
+    return false
+}
+
 export async function addAppointment(appointment) {
     const appointmentCollection = db.collection('appointments')
 
@@ -191,6 +206,8 @@ export async function addAppointment(appointment) {
         doctor_id: appointment.doctor_id,
         user_id: appointment.user_id,
         appointment_date: appointment.appointment_date,
+        appointment_start_time: appointment.appointment_start_time,
+        appointment_end_time: appointment.appointment_end_time,
         type_of_operation: appointment.type_of_operation,
         created_at: firestore.Timestamp.now().seconds,
     })
