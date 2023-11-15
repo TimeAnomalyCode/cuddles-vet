@@ -1,5 +1,7 @@
 <script>
 	import { browser } from '$app/environment';
+	import { goto, invalidateAll } from '$app/navigation';
+	import { onMount } from 'svelte';
 	import Carousel from 'svelte-carousel';
 	const images = ['slideshow1.jpg', 'slideshow2.jpg', 'slideshow3.jpg', 'slideshow4.jpg'];
 
@@ -7,6 +9,10 @@
 	const handleNextClick = () => {
 		carousel.goToNext();
 	};
+
+	onMount(() => {
+		invalidateAll();
+	});
 </script>
 
 <div class="section1">
