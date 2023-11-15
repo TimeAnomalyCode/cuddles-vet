@@ -1,4 +1,4 @@
-import yup from 'yup';
+import * as yup from 'yup';
 
 export default async function validate(formData, edit = false) {
     const schema = yup.object({
