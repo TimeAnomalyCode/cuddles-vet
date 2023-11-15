@@ -2,8 +2,8 @@ import { describe, it, expect } from 'vitest'
 import path from 'path';
 import validateDoctor from '$lib/validators/doctor.validator'
 
-describe("#Validators Test", () => {
-    it("Test the doctor validator and success", async () => {
+describe("#Doctor Validators Test", () => {
+    it("Success test", async () => {
         const formData = new FormData()
 
         const main_picture = path.dirname("src/tests/favicon.png")
@@ -22,7 +22,7 @@ describe("#Validators Test", () => {
         expect(output.success).toBe(true)
     })
 
-    it("Doctor Validator Name Missing", async () => {
+    it("Missing name", async () => {
         const formData = new FormData()
 
         const main_picture = path.dirname("src/tests/favicon.png")
@@ -36,7 +36,13 @@ describe("#Validators Test", () => {
             formData.append(key, doctor[key])
         }
 
-        const output = await validate(formData)
+        const output = await validateDoctor(formData)
+        expect(output.success).toBe(false)
+    })
+
+    it("Empty formData", async () => {
+        const formData = new FormData()
+        const output = await validateDoctor(formData)
         expect(output.success).toBe(false)
     })
 })

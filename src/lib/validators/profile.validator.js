@@ -54,7 +54,7 @@ export default async function validate(formData, edit = false) {
 }
 
 function emptyFileIsNull(file) {
-    if (file.size === 0) {
+    if (file && file.size === 0) {
         return null;
     }
 
