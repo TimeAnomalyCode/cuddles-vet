@@ -104,4 +104,12 @@
 		max-height: 85%;
 		background-color: rgba(255, 255, 255, 0.6);
 	}
+
+	.container a{
+		text-decoration: none;
+	}
+
+	.container a:hover{
+		text-decoration: underline;
+	}
 </style>

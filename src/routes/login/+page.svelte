@@ -45,7 +45,7 @@
 		<AuthForm btnName="Log In" on:submit={onLogin} showForgotPasswordLink={true}/>
 		<div>
 			<p>
-				Don't have an account? <a href="/signup">Create one now</a>
+				Don't have an account? <a href="/signup">Sign Up</a>
 			</p>
 		</div>
 	</div>
@@ -94,5 +94,13 @@
 		max-height: 90%;
 		background-color: rgba(255, 255, 255, 0.6);
 	}	
+
+	.container a{
+		text-decoration: none;
+	}
+
+	.container a:hover{
+		text-decoration: underline;
+	}
 	
 </style>

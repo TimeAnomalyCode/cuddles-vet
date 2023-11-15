@@ -50,70 +50,73 @@
 
 </script>
 
-<div class="row">
-	<div class="col">
-		<img src="Background.png" alt="background" class="image1 {isSubmitted ? 'bg-color' : ''}">
-	</div>
-	<div class="container">
-		<p class="title">Give your pet the best care. Book an appointment now!</p>
-		<div>
-			<div class="content">
-				<form id="appointmentform" on:submit={handleSubmit}>
-				<table>
-					<tr>
-						<td>
-							<input type="date" id="apptdate" required/>
-						</td>
-						<td>
-							<input type="time" id="appttime" min="09:00" max="22:00" required/>
-						</td>
-						<td>
-							<select id="type" name="selectedOption" autocomplete="off" required>
-								<option value="" selected>Select Appointment Type</option>
-								<option value="Vaccination">Vaccination - 1 hr</option>
-								<option value="Health Check-Up">Health Check-Up - 2 hrs</option>
-							</select>
-						</td>
-						<td style="text-align:right; width:150px;">
-							<input type="submit" value="Search" class="button"/>
-						</td>
-					</tr>
-				</table>
-			</form>
-			</div>
-			<div class="content1">
-				{#if apptData !== null}
-					<div class="vet-info">
-						<table>
-							<tr>
-								<td style="width: 80px">
-									<img src={apptData.vet.image} alt="vet1" class="vetimage">
-								</td>
-								<td style="width: 100px">
-									<p class="name">{apptData.vet.name}</p>
-									<p class="specialty">{apptData.vet.specialty}</p>
-									<p class="desc">{apptData.vet.description}</p>
-									<div style="text-align:right;">
-										<input class="button" type="button" value="Book Appointment">
-									</div>
-								</td>
-							</tr>
+<section>
+	<div class="row">
+		<div class="col">
+			<img src="Background.png" alt="background" class="image1 {isSubmitted ? 'bg-color' : ''}">
+		</div>
+		<div class="container">
+			<p class="title">Give your pet the best care. Book an appointment now!</p>
+			<div>
+				<div class="content">
+					<form id="appointmentform" on:submit={handleSubmit}>
+					<table>
+						<tr>
+							<td>
+								<input type="date" id="apptdate" required/>
+							</td>
+							<td>
+								<input type="time" id="appttime" min="09:00" max="22:00" required/>
+							</td>
+							<td>
+								<select id="type" name="selectedOption" autocomplete="off" required>
+									<option value="" selected>Select Appointment Type</option>
+									<option value="Vaccination">Vaccination - 1 hr</option>
+									<option value="Health Check-Up">Health Check-Up - 2 hrs</option>
+								</select>
+							</td>
+							<td style="text-align:right; width:150px;">
+								<input type="submit" value="Search" class="button"/>
+							</td>
+						</tr>
+					</table>
+				</form>
+				</div>
+				<div class="content1">
+					{#if apptData !== null}
+						<div class="vet-info">
+							<table>
+								<tr>
+									<td style="width: 80px">
+										<img src={apptData.vet.image} alt="vet1" class="vetimage">
+									</td>
+									<td style="width: 100px">
+										<p class="name">{apptData.vet.name}</p>
+										<p class="specialty">{apptData.vet.specialty}</p>
+										<p class="desc">{apptData.vet.description}</p>
+										<div style="text-align:right;">
+											<input class="button" type="button" value="Book Appointment">
+										</div>
+									</td>
+								</tr>
+								
+							</table>
 							
-						</table>
-						
-						<!--<p>Date: {apptData.date}</p>
-						<p>Time: {apptData.time}</p>
-						<p>Type: {apptData.type}</p>
-						<h2>Veterinarian</h2>
-						<p>Name: {apptData.vetName}</p>
-						<p>Specialty: {apptData.vetSpecialty}</p>-->
-						<!-- Add more vet details here -->
-					</div>
-				{/if}
+							<!--<p>Date: {apptData.date}</p>
+							<p>Time: {apptData.time}</p>
+							<p>Type: {apptData.type}</p>
+							<h2>Veterinarian</h2>
+							<p>Name: {apptData.vetName}</p>
+							<p>Specialty: {apptData.vetSpecialty}</p>-->
+							<!-- Add more vet details here -->
+						</div>
+					{/if}
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
+</section>
+
 
 <style>
 	
