@@ -60,6 +60,20 @@ export async function deleteProfile(id) {
 }
 
 // Doctors
+export async function getAllDoctors() {
+    const doctorCollection = await db.collection('doctors').get()
+
+    /**
+     * @type {{ id: string; }[]}
+     */
+    const doctors = []
+    doctorCollection.docs.forEach((doc) => {
+        doctors.push({ id: doc.id, ...doc.data() })
+    })
+
+    return doctors
+}
+
 export async function addDoctor(doctor) {
     const doctorCollection = db.collection('doctors')
 
