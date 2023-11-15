@@ -3,8 +3,9 @@ import yup from 'yup';
 export default async function validate(formData, edit = false) {
     const schema = yup.object({
         name: yup.string().required('Name is required.').min(4).max(40),
-        position: yup.string().required().min(5).max(200),
-        description: yup.string().required().min(5).max(4500),
+        birthday: yup.date().required('Birthday Required'),
+        phone_number: yup.number().required(`Number required. Remove '-' from phone number`).max(9),
+        address: yup.string().required().min(5).max(4500),
         main_picture: yup
             .mixed()
             .nullable()
@@ -27,7 +28,9 @@ export default async function validate(formData, edit = false) {
 
     const data = {
         name: formData.get('name'),
-        position: formData.get('position'),
+        birthday: formData.get('birthday'),
+        address: formData.get('address'),
+        phone_number: formData.get('phone_number'),
         description: formData.get('description'),
         main_picture: emptyFileIsNull(formData.get('main_picture')),
     }
@@ -35,7 +38,7 @@ export default async function validate(formData, edit = false) {
     try {
         await schema.validate(data, { abortEarly: false });
 
-        return { success: true, doctor: data };
+        return { success: true, profile: data };
     } catch (error) {
         const errors = error.inner.reduce((agg, e) => {
             if (!agg['error_' + e.path]) {

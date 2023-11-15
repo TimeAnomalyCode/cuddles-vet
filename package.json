@@ -29,7 +29,8 @@
 		"uuid": "^9.0.1",
 		"vite": "^4.4.2",
 		"vitest": "^0.34.6",
-		"yup": "^1.2.0"
+		"yup": "^1.2.0",
+		"yup-password": "^0.2.2"
 	},
 	"type": "module",
 	"dependencies": {

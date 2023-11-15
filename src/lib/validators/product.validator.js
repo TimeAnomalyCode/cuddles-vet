@@ -35,7 +35,7 @@ export default async function validate(formData, edit = false) {
     try {
         await schema.validate(data, { abortEarly: false });
 
-        return { success: true, book: data };
+        return { success: true, product: data };
     } catch (error) {
         const errors = error.inner.reduce((agg, e) => {
             if (!agg['error_' + e.path]) {
