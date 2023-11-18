@@ -41,12 +41,12 @@ export async function handle({ event, resolve }) {
         // console.log(has_set_profile)
         // console.log(profileRef.data())
 
-        if (!has_set_profile && url.pathname !== '/profile-setup') {
-            throw redirect(302, `/profile-setup`)
-        }
-
         if (!user.emailVerified) {
             throw redirect(302, `/email-appprove`)
+        }
+
+        if (!has_set_profile && url.pathname !== '/profile-setup') {
+            throw redirect(302, `/profile-setup`)
         }
     }
 
