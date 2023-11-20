@@ -3,4 +3,6 @@
 	export let data;
 </script>
 
-<h1>Please check inbox to approve email</h1>
+<div class="p-5">
+	<h1>Please check inbox to approve email</h1>
+</div>
