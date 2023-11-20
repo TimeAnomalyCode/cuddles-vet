@@ -8,25 +8,29 @@
 			name: 'John1',
 			num_of_sold: 100,
 			description: 'Please go buy',
-			id: 'asdadadsadasdadsadsadsd4'
+			id: 'asdadadsadasdadsadsadsd4',
+			main_picture: '/product1.png'
 		},
 		{
 			name: 'John2',
 			num_of_sold: 100,
 			description: 'Please go buy',
-			id: 'asdadadsadasdadsadsadsd3'
+			id: 'asdadadsadasdadsadsadsd3',
+			main_picture: '/product1.png'
 		},
 		{
 			name: 'John3',
 			num_of_sold: 100,
 			description: 'Please go buy',
-			id: 'asdadadsadasdadsadsadsd2'
+			id: 'asdadadsadasdadsadsadsd2',
+			main_picture: '/product1.png'
 		},
 		{
 			name: 'John4',
 			num_of_sold: 100,
 			description: 'Please go buy',
-			id: 'asdadadsadasdadsadsadsd1'
+			id: 'asdadadsadasdadsadsadsd1',
+			main_picture: '/product1.png'
 		}
 	];
 

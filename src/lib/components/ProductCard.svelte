@@ -6,6 +6,7 @@
 	export let counter = 1;
 	export let product_id;
 	export let user_id;
+	export let image_path = '/product1.png';
 	export let description = '';
 
 	async function addToCart() {
@@ -27,7 +28,9 @@
 </script>
 
 <div class="card">
-	<img src="/product1.png" alt="" class="card-img-top" style="width: 100px;" />
+	<div class="d-flex justify-content-center">
+		<img src={image_path} alt="" class="card-img-top" style="width: 100px;" />
+	</div>
 	<div class="card-body">
 		<div class="d-flex justify-content-between">
 			<h5>{product_name}</h5>
