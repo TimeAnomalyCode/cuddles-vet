@@ -19,9 +19,22 @@ export async function POST({ params }) {
     }
 
     // check if id exists
-    // await removeItemFromCart(cart.cart?.id, item.id)
     // console.log(cart.cart?.data())
-    // await appendNewItemToCart(cart.cart?.id, item)
+    if (checkIdExists(cart.cart?.data().items, item.id)) {
+        await removeItemFromCart(cart.cart?.id, item.id)
+    }
+    // console.log(cart.cart?.data())
+    await appendNewItemToCart(cart.cart?.id, item)
 
     return json({ status: 200, message: "success" })
 };
+
+function checkIdExists(data, id) {
+    let is_exist = false
+    data.forEach((val) => {
+        if (val.id === id) {
+            is_exist = true
+        }
+    });
+    return is_exist
+}
