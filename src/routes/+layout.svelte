@@ -6,6 +6,7 @@
 	import { onMount } from 'svelte';
 	import { sendJWTToken } from '$lib/firebase/auth.client';
 	import authStore from '$lib/stores/auth.store.js';
+	import Footer from '$lib/components/Footer.svelte';
 
 	export let data;
 
@@ -46,7 +47,7 @@
 	}
 </script>
 
-<Nav {isLoggedIn} />
+<Nav {isLoggedIn} name={data.user?.name} />
 <main class="container">
 	{#if $messagesStore.show}
 		<div class="row mt-3">
@@ -66,3 +67,4 @@
 	{/if}
 	<slot />
 </main>
+<Footer />

@@ -2,7 +2,80 @@ import { db } from "$lib/firebase/firebase.server";
 import { firestore } from "firebase-admin";
 import { deleteFolderFromBucket, saveFileToBucket } from "$lib/firebase/firestorage.server";
 
+// User
+export async function addProfile(profile) {
+    const profileCollection = db.collection('profiles').doc(profile.user_id)
+
+    await profileCollection.set({
+        has_set_profile: true,
+        user_id: profile.user_id,
+        name: profile.name || "",
+        birthday: profile.birthday || "",
+        address: profile.address || "",
+        phone_number: profile.phone_number || "",
+        role: "customer",
+        created_at: firestore.Timestamp.now().seconds,
+    })
+
+    // const mainPictureUrl = await saveFileToBucket(profile.main_picture, `profile_images/${profileRef.id}/main_picture_${firestore.Timestamp.now().seconds}`)
+
+    const mainPictureUrl = `https://placehold.co/500?text=${profile.name[0]}`
+
+    await profileCollection.update({
+        main_picture: mainPictureUrl
+    })
+
+    return profileCollection.id
+}
+
+export async function editProfile(id, form) {
+    const profileRef = db.collection('profiles').doc(id)
+    let mainPicture = form.main_picture || null
+
+    delete form.main_picture
+
+    await profileRef.update(form)
+
+    if (mainPicture) {
+        const mainPictureUrl = await saveFileToBucket(mainPicture, `profile_images/${profileRef.id}/main_picture_${firestore.Timestamp.now().seconds}`)
+        profileRef.update({ main_picture: mainPictureUrl })
+    }
+}
+
+export async function getProfile(id) {
+    const profileRef = await db.collection('profiles').doc(id).get()
+
+    if (profileRef.exists) {
+        return { id: profileRef.id, ...profileRef.data() }
+    }
+}
+
+export async function deleteProfile(id) {
+    const profileRef = db.collection('profiles').doc(id)
+
+    // delete from cloud storage (img)
+    if ((await profileRef.get()).exists) {
+        await deleteFolderFromBucket(`profile_images/${profileRef.id}`)
+        await profileRef.delete()
+    }
+
+}
+
 // Doctors
+export async function getAllDoctors() {
+    const doctorCollection = await db.collection('doctors').get()
+
+    /**
+     * @type {{ id: string; }[]}
+     */
+    const doctors = []
+    doctorCollection.docs.forEach((doc) => {
+        doctors.push({ id: doc.id, ...doc.data() })
+    })
+
+    return doctors
+}
+
 export async function addDoctor(doctor) {
     const doctorCollection = db.collection('doctors')
 
@@ -113,6 +186,21 @@ export async function deleteProduct(id) {
 
 // Appointments
 
+export async function checkAppointmentAvailable(doctor_id, date, start_time, end_time) {
+    const appointmentRef = await db.collection('appointments')
+        .where('appointment_date', '==', date)
+        .where('doctor_id', '==', doctor_id)
+        .where('appointment_start_time', '>=', start_time)
+        .where('appointment_end_time', '<=', end_time)
+        .get()
+
+    if (appointmentRef.empty) {
+        return true
+    }
+
+    return false
+}
+
 export async function addAppointment(appointment) {
     const appointmentCollection = db.collection('appointments')
 
@@ -120,6 +208,8 @@ export async function addAppointment(appointment) {
         doctor_id: appointment.doctor_id,
         user_id: appointment.user_id,
         appointment_date: appointment.appointment_date,
+        appointment_start_time: appointment.appointment_start_time,
+        appointment_end_time: appointment.appointment_end_time,
         type_of_operation: appointment.type_of_operation,
         created_at: firestore.Timestamp.now().seconds,
     })

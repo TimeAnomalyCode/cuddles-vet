@@ -50,68 +50,73 @@
 
 </script>
 
-<div class="row">
-	<div class="col">
-		<img src="Background.png" alt="background" class="image1 {isSubmitted ? 'bg-color' : ''}">
-	</div>
-	<div class="container">
-		<p class="title">Give your pet the best care. Book an appointment now!</p>
-		<div>
-			<div class="content">
-				<form id="appointmentform" on:submit={handleSubmit}>
-				<table>
-					<tr>
-						<td>
-							<input type="date" id="apptdate" required/>
-						</td>
-						<td>
-							<input type="time" id="appttime" min="09:00" max="22:00" required/>
-						</td>
-						<td>
-							<select id="type" name="selectedOption" autocomplete="off" required>
-								<option value="" selected>Select Appointment Type</option>
-								<option value="Vaccination">Vaccination - 1 hr</option>
-								<option value="Health Check-Up">Health Check-Up - 2 hrs</option>
-							</select>
-						</td>
-						<td style="text-align:right; width:150px;">
-							<input type="submit" value="Search" class="button"/>
-						</td>
-					</tr>
-				</table>
-			</form>
-			</div>
-			<div class="content1">
-				{#if apptData !== null}
-					<div class="vet-info">
-						<table>
-							<tr rowspan="2">
-								<td style="width: 70px">
-									<img src={apptData.vet.image} alt="vet1" class="vetimage">
-								</td>
-								<td style="width: 100px">
-									<p class="name">{apptData.vet.name}</p>
-									<p class="specialty">{apptData.vet.specialty}</p>
-									<p class="desc">{apptData.vet.description}</p>
-								</td>
-								<td class="vl"></td>
-								<td style="width: 100px">Top Liked Reviews</td>
-							</tr>
-						</table>
-						
-						<!--<p>Date: {apptData.date}</p>
-						<p>Time: {apptData.time}</p>
-						<p>Type: {apptData.type}</p>
-						<h2>Veterinarian</h2>
-						<p>Name: {apptData.vetName}</p>
-						<p>Specialty: {apptData.vetSpecialty}</p>-->
-						<!-- Add more vet details here -->
-					</div>
-				{/if}
+<section>
+	<div class="row">
+		<div class="col">
+			<img src="Background.png" alt="background" class="image1 {isSubmitted ? 'bg-color' : ''}">
+		</div>
+		<div class="container">
+			<p class="title">Give your pet the best care. Book an appointment now!</p>
+			<div>
+				<div class="content">
+					<form id="appointmentform" on:submit={handleSubmit}>
+					<table>
+						<tr>
+							<td>
+								<input type="date" id="apptdate" required/>
+							</td>
+							<td>
+								<input type="time" id="appttime" min="09:00" max="22:00" required/>
+							</td>
+							<td>
+								<select id="type" name="selectedOption" autocomplete="off" required>
+									<option value="" selected>Select Appointment Type</option>
+									<option value="Vaccination">Vaccination - 1 hr</option>
+									<option value="Health Check-Up">Health Check-Up - 2 hrs</option>
+								</select>
+							</td>
+							<td style="text-align:right; width:150px;">
+								<input type="submit" value="Search" class="button"/>
+							</td>
+						</tr>
+					</table>
+				</form>
+				</div>
+				<div class="content1">
+					{#if apptData !== null}
+						<div class="vet-info">
+							<table>
+								<tr>
+									<td style="width: 80px">
+										<img src={apptData.vet.image} alt="vet1" class="vetimage">
+									</td>
+									<td style="width: 100px">
+										<p class="name">{apptData.vet.name}</p>
+										<p class="specialty">{apptData.vet.specialty}</p>
+										<p class="desc">{apptData.vet.description}</p>
+										<div style="text-align:right;">
+											<input class="button" type="button" value="Book Appointment">
+										</div>
+									</td>
+								</tr>
+								
+							</table>
+							
+							<!--<p>Date: {apptData.date}</p>
+							<p>Time: {apptData.time}</p>
+							<p>Type: {apptData.type}</p>
+							<h2>Veterinarian</h2>
+							<p>Name: {apptData.vetName}</p>
+							<p>Specialty: {apptData.vetSpecialty}</p>-->
+							<!-- Add more vet details here -->
+						</div>
+					{/if}
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
+</section>
+
 
 <style>
 	
@@ -128,8 +133,7 @@
 	.image1 {
 		width: 100%;
 		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
+		background-repeat: repeat;
 		position: relative;
 		min-height: 85vh;
 	}
@@ -204,7 +208,7 @@
 
 	.vetimage {
 		width: 90%;
-		height: 270px;
+		height: 280px;
 		position: center;
 	}
 	.container .content1 {
@@ -226,20 +230,26 @@
 
 	.content1 .name{
 		font-size: 2vw;
-		margin-top: 3%;
-		margin-bottom: 0%;
+		margin-top: 0px;
+		margin-bottom: 0px;
 	}
 
 	.content1 .specialty{
 		font-size: 1.2vw;
-		margin-top: 0%;
-		margin-bottom: 7%;
+		margin-top: 0px;
+		margin-bottom: 4%;
 	}
 
 	.content1 .desc{
 		font-size: 1.2vw;
 		font-weight: 400;
+		width: 100%;
 	}
 
+	.content1 .button{
+		width: 220px;
+		height: 45px;
+		border-radius: 5px;
+	}
 
 </style>

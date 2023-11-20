@@ -1,4 +1,4 @@
-import yup from 'yup';
+import * as yup from 'yup';
 
 export default async function validate(formData, edit = false) {
     const schema = yup.object({
@@ -35,7 +35,7 @@ export default async function validate(formData, edit = false) {
     try {
         await schema.validate(data, { abortEarly: false });
 
-        return { success: true, book: data };
+        return { success: true, doctor: data };
     } catch (error) {
         const errors = error.inner.reduce((agg, e) => {
             if (!agg['error_' + e.path]) {
@@ -51,7 +51,7 @@ export default async function validate(formData, edit = false) {
 }
 
 function emptyFileIsNull(file) {
-    if (file.size === 0) {
+    if (file && file.size === 0) {
         return null;
     }
 
