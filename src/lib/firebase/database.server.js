@@ -1,6 +1,7 @@
 import { db } from "$lib/firebase/firebase.server";
 import { firestore } from "firebase-admin";
 import { deleteFolderFromBucket, saveFileToBucket } from "$lib/firebase/firestorage.server";
+import { arrayUnion } from "firebase/firestore";
 
 // User
 export async function addProfile(profile) {
@@ -278,6 +279,27 @@ export async function deleteReview(id) {
 }
 
 // Cart
+
+export async function getLatestCart(user_id) {
+    const cartRef = await db.collection('carts')
+        .where("user_id", '==', user_id)
+        .where("is_current_cart", '==', true)
+        .orderBy("created_at", 'desc')
+        .limit(1)
+        .get()
+
+    if (!cartRef.empty) {
+        return { has_cart: true, cart: cartRef.docs[0] }
+    }
+    return { has_cart: false, cart: null }
+}
+
+export async function appendNewItemToCart(id, item) {
+    const cartRef = db.collection('carts').doc(id)
+    await cartRef.update({
+        items: arrayUnion(item)
+    })
+}
 
 export async function addCart(cart) {
     const cartCollection = db.collection('carts')
