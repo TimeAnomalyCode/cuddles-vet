@@ -140,7 +140,6 @@ export async function addProduct(product) {
         price: product.price,
         description: product.description,
         num_of_sold: 0,
-        rating: 0,
         created_at: firestore.Timestamp.now().seconds,
     })
 
