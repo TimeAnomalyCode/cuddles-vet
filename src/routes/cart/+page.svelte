@@ -8,7 +8,6 @@
 </script>
 
 <div class="p-3">
-	<h1>Cart</h1>
 	{#if isEmpty}
 		<p>Cart is Empty</p>
 	{/if}
@@ -21,7 +20,7 @@
 	<hr />
 
 	<div class="d-flex flex-column gap-3">
-		<div style="background-color: #D0C4BE;" class="rounded">
+		<div class="rounded">
 			<div class="d-flex flex-row justify-content-between">
 				<img src="/favicon.png" alt="Product" />
 				<h2>Product Name</h2>
@@ -35,7 +34,7 @@
 			</span>
 		</div>
 
-		<div style="background-color: #D0C4BE;" class="rounded">
+		<div class="rounded">
 			<div class="d-flex flex-row justify-content-between">
 				<img src="/favicon.png" alt="Product" />
 				<h2>Product Name</h2>
@@ -71,3 +70,26 @@
 <svelte:head>
 	<title>Cuddles Vet - Cart</title>
 </svelte:head>
+
+<style>
+	.p-3{
+		background-color: rgba(208, 196, 190, 0.3);
+		font-family: Inter;
+		color: #736D69;
+	}
+
+	.rounded{
+		background-color: rgba(255,255,255,0.7);
+	}
+
+	.btn{
+		background-color:#736D69;
+		color: rgba(255, 255, 255, 0.7);
+		border:none;
+		
+	}
+
+	button[type="submit"]:hover {
+		background-color: rgba(115, 109, 105, 0.25);;
+	}
+</style>
