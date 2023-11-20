@@ -1,7 +1,6 @@
 import { db } from "$lib/firebase/firebase.server";
 import { firestore } from "firebase-admin";
 import { deleteFolderFromBucket, saveFileToBucket } from "$lib/firebase/firestorage.server";
-import { arrayUnion } from "firebase/firestore";
 
 // User
 export async function addProfile(profile) {
@@ -131,6 +130,19 @@ export async function deleteDoctor(id) {
 }
 
 // Products
+export async function getAllProducts() {
+    const productCollection = await db.collection('products').get()
+
+    /**
+     * @type {{ id: string; }[]}
+     */
+    const products = []
+    productCollection.docs.forEach((doc) => {
+        products.push({ id: doc.id, ...doc.data() })
+    })
+
+    return products
+}
 
 export async function addProduct(product) {
     const productCollection = db.collection('products')
@@ -293,10 +305,30 @@ export async function getLatestCart(user_id) {
     return { has_cart: false, cart: null }
 }
 
+export async function removeItemFromCart(cart_id, item_id) {
+    const cart = await db.collection('carts').doc(cart_id).get()
+    const cartRef = db.collection('carts').doc(cart_id)
+
+    const data = { ...cart.data() }
+
+    let itemToBeRemoved = data.items[0]
+    data.items.forEach((val) => {
+        if (val.id == item_id && itemToBeRemoved.qty > val.qty) {
+            itemToBeRemoved = val
+        }
+    })
+
+    // console.log(itemToBeRemoved)
+
+    await cartRef.update({
+        items: firestore.FieldValue.arrayRemove(itemToBeRemoved)
+    })
+}
+
 export async function appendNewItemToCart(id, item) {
     const cartRef = db.collection('carts').doc(id)
     await cartRef.update({
-        items: arrayUnion(item)
+        items: firestore.FieldValue.arrayUnion(item)
     })
 }
 

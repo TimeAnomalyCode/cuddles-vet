@@ -3,36 +3,7 @@
 	export let data;
 
 	const user_id = data.user.id;
-	const allProducts = [
-		{
-			name: 'John1',
-			num_of_sold: 100,
-			description: 'Please go buy',
-			id: 'asdadadsadasdadsadsadsd4',
-			main_picture: '/product1.png'
-		},
-		{
-			name: 'John2',
-			num_of_sold: 100,
-			description: 'Please go buy',
-			id: 'asdadadsadasdadsadsadsd3',
-			main_picture: '/product1.png'
-		},
-		{
-			name: 'John3',
-			num_of_sold: 100,
-			description: 'Please go buy',
-			id: 'asdadadsadasdadsadsadsd2',
-			main_picture: '/product1.png'
-		},
-		{
-			name: 'John4',
-			num_of_sold: 100,
-			description: 'Please go buy',
-			id: 'asdadadsadasdadsadsadsd1',
-			main_picture: '/product1.png'
-		}
-	];
+	const allProducts = data.products;
 
 	let searchValue = '';
 	let products = allProducts;
