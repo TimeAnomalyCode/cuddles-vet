@@ -20,21 +20,29 @@ export async function POST({ params }) {
 
     // check if id exists
     // console.log(cart.cart?.data())
-    if (checkIdExists(cart.cart?.data().items, item.id)) {
-        await removeItemFromCart(cart.cart?.id, item.id)
+    const { is_exist, itemToBeRemoved } = checkIdExists(cart.cart?.data().items, item.id)
+    if (is_exist) {
+        await removeItemFromCart(cart.cart?.id, itemToBeRemoved)
     }
     // console.log(cart.cart?.data())
-    await appendNewItemToCart(cart.cart?.id, item)
+    if (item.qty != 0) {
+        await appendNewItemToCart(cart.cart?.id, item)
+    }
 
     return json({ status: 200, message: "success" })
 };
 
 function checkIdExists(data, id) {
     let is_exist = false
+    let item
     data.forEach((val) => {
         if (val.id === id) {
             is_exist = true
+            item = val
         }
     });
-    return is_exist
+    return {
+        is_exist: is_exist,
+        itemToBeRemoved: item
+    }
 }

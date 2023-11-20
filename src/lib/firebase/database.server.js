@@ -305,23 +305,13 @@ export async function getLatestCart(user_id) {
     return { has_cart: false, cart: null }
 }
 
-export async function removeItemFromCart(cart_id, item_id) {
-    const cart = await db.collection('carts').doc(cart_id).get()
+export async function removeItemFromCart(cart_id, item) {
     const cartRef = db.collection('carts').doc(cart_id)
-
-    const data = { ...cart.data() }
-
-    let itemToBeRemoved = data.items[0]
-    data.items.forEach((val) => {
-        if (val.id == item_id && itemToBeRemoved.qty > val.qty) {
-            itemToBeRemoved = val
-        }
-    })
 
     // console.log(itemToBeRemoved)
 
     await cartRef.update({
-        items: firestore.FieldValue.arrayRemove(itemToBeRemoved)
+        items: firestore.FieldValue.arrayRemove(item)
     })
 }
 

@@ -2,7 +2,7 @@
 	import ProductCard from '$lib/components/ProductCard.svelte';
 	export let data;
 
-	const user_id = data.user.id;
+	const user_id = data.user?.id;
 	const allProducts = data.products;
 
 	let searchValue = '';

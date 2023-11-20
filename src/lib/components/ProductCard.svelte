@@ -1,4 +1,5 @@
 <script>
+	import { goto } from '$app/navigation';
 	import messagesStore from '$lib/stores/messages.store';
 
 	export let product_name;
@@ -10,20 +11,31 @@
 	export let description = '';
 
 	async function addToCart() {
+		if (!user_id) {
+			goto('/login');
+			return;
+		}
 		try {
 			const res = await fetch(`/api/addToCart/${user_id}/${product_id}/${counter}`, {
 				method: 'POST'
 			});
 
-			if (res.status == 200) {
+			if (res.status == 200 && counter > 0) {
 				messagesStore.showSuccess(`${counter} x ${product_name} has been added to cart!`);
 				counter = 1;
-			} else {
-				messagesStore.showError('Failed to add to cart!');
 			}
+
+			if (res.status == 200 && counter == 0) {
+				messagesStore.showSuccess(`${product_name} has been removed from cart!`);
+				counter = 1;
+			}
+
+			return;
 		} catch {
 			messagesStore.showError('Failed to add to cart!');
 		}
+
+		messagesStore.showError('Failed to add to cart!');
 	}
 </script>
 
@@ -45,7 +57,7 @@
 					src="/dash-circle.svg"
 					alt=""
 					on:click={() => {
-						if (counter > 1) {
+						if (counter > 0) {
 							counter -= 1;
 						}
 					}}
@@ -61,7 +73,13 @@
 					}}
 				/>
 			</div>
-			<button type="submit" class="btn btn-primary" on:click={addToCart}>Add to Cart</button>
+			<button
+				type="submit"
+				class:btn-primary={counter != 0}
+				class:btn-danger={counter == 0}
+				class="btn"
+				on:click={addToCart}>{counter == 0 ? 'Remove Item' : 'Add to Cart'}</button
+			>
 		</div>
 	</div>
 </div>
