@@ -16,6 +16,7 @@
 
 			if (res.status == 200) {
 				messagesStore.showSuccess(`${counter} x ${product_name} has been added to cart!`);
+				counter = 1;
 			} else {
 				messagesStore.showError('Failed to add to cart!');
 			}
