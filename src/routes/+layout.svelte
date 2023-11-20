@@ -47,7 +47,7 @@
 	}
 </script>
 
-<Nav {isLoggedIn} />
+<Nav {isLoggedIn} name={data.user?.name} />
 <main class="container">
 	{#if $messagesStore.show}
 		<div class="row mt-3">

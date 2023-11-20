@@ -1,10 +1,10 @@
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <script>
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { logout } from '$lib/firebase/auth.client';
 	import messagesStore from '$lib/stores/messages.store';
 	export let isLoggedIn;
+	export let name;
 
 	let isOpen = false;
 
@@ -23,214 +23,211 @@
 	}
 </script>
 
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
 <body>
-<div class="wrapper hover_collapse click_collapse">
-	<div class="top_navbar">
-		<div class="logo">
-			<a class:active={$page.url.pathname === '/'} aria-current="page" href="/"
-				><img src="Logo.png" alt="logo" style="width:64px; height:70px">
-				Cuddles Vet Clinic
-			</a>
-		</div>
-		<div class="menu">
-			<div class="hamburger">
-				<i class='bx bx-menu'></i>
+	<div class="wrapper hover_collapse click_collapse">
+		<div class="top_navbar">
+			<div class="logo">
+				<a class:active={$page.url.pathname === '/'} aria-current="page" href="/"
+					><img src="Logo.png" alt="logo" style="width:64px; height:70px" />
+					Cuddles Vet Clinic
+				</a>
 			</div>
-			<div class:show={isOpen} id="navbarNav" class="profile_wrap">
-				{#if isLoggedIn}
-					<div class="profile">
-						<a class:active={$page.url.pathname === '/profile'} href="/profile">
-						<span class="name">Hi, Jack</span>
-						<img src="Profile.png" alt="Login"/>
-					</a>
-					</div>
-					<div class="cart">
-						<a class:active={$page.url.pathname === '/cart'} href="/cart">
-							<img src="Cart.png" alt="Cart"/>
-						</a>
-					</div>
-					<div class="logout">
-						<!-- svelte-ignore a11y-click-events-have-key-events -->
-						<!-- svelte-ignore a11y-no-static-element-interactions -->
-						<span on:click={onLogout} >
-							<img src="logout.png" alt="Logout">
-						</span>
-					</div>
-				{:else}
-					<!-- Not Logged In -->
-					<div class="profile_wrap">
+			<div class="menu">
+				<div class="hamburger">
+					<i class="bx bx-menu" />
+				</div>
+				<div class:show={isOpen} id="navbarNav" class="profile_wrap">
+					{#if isLoggedIn}
 						<div class="profile">
-							<a class:active={$page.url.pathname === '/login'} href="/login">
-								<img src="Profile.png" alt="Login"/>
+							<a class:active={$page.url.pathname === '/profile'} href="/profile">
+								<span class="name">Hi, {name ? name : '...'}</span>
+								<img src="Profile.png" alt="Login" />
 							</a>
 						</div>
 						<div class="cart">
 							<a class:active={$page.url.pathname === '/cart'} href="/cart">
-								<img src="Cart.png" alt="Cart"/>
+								<img src="Cart.png" alt="Cart" />
 							</a>
 						</div>
-					</div>
-				{/if}
+						<div class="logout">
+							<!-- svelte-ignore a11y-click-events-have-key-events -->
+							<!-- svelte-ignore a11y-no-static-element-interactions -->
+							<span on:click={onLogout}>
+								<img src="logout.png" alt="Logout" />
+							</span>
+						</div>
+					{:else}
+						<!-- Not Logged In -->
+						<div class="profile_wrap">
+							<div class="profile">
+								<a class:active={$page.url.pathname === '/login'} href="/login">
+									<img src="Profile.png" alt="Login" />
+								</a>
+							</div>
+							<div class="cart">
+								<a class:active={$page.url.pathname === '/cart'} href="/cart">
+									<img src="Cart.png" alt="Cart" />
+								</a>
+							</div>
+						</div>
+					{/if}
+				</div>
 			</div>
 		</div>
-	</div>
-	<div class="sidebar">
-		<div class="sidebar_inner" class:show={isOpen} id="navbarNav">
-			<ul>
-				<li>
-					<a class:active={$page.url.pathname === '/appointment'} href="/appointment">
-						<span class="icon">
-							<i class='bx bx-book-content'></i>
-						</span>
-						<span class="text">Appointment</span>
-					</a>
-				</li>
-				<li>
-					<a class:active={$page.url.pathname === '/products'} href="/products">
-						<span class="icon">
-							<i class='bx bx-shopping-bag'></i>
-						</span>
-						<span class="text">Products</span>
-					</a>
-				</li>
-				<li>
-					<a class:active={$page.url.pathname === '/contact'} href="/contact">
-						<span class="icon">
-							<i class='bx bx-envelope'></i>
-						</span>
-						<span class="text">Contact</span>
-					</a>
-				</li>
-			</ul>
+		<div class="sidebar">
+			<div class="sidebar_inner" class:show={isOpen} id="navbarNav">
+				<ul>
+					<li>
+						<a class:active={$page.url.pathname === '/appointment'} href="/appointment">
+							<span class="icon">
+								<i class="bx bx-book-content" />
+							</span>
+							<span class="text">Appointment</span>
+						</a>
+					</li>
+					<li>
+						<a class:active={$page.url.pathname === '/products'} href="/products">
+							<span class="icon">
+								<i class="bx bx-shopping-bag" />
+							</span>
+							<span class="text">Products</span>
+						</a>
+					</li>
+					<li>
+						<a class:active={$page.url.pathname === '/contact'} href="/contact">
+							<span class="icon">
+								<i class="bx bx-envelope" />
+							</span>
+							<span class="text">Contact</span>
+						</a>
+					</li>
+				</ul>
+			</div>
 		</div>
+		<div class="main_container" />
 	</div>
-	<div class="main_container"></div>
-</div>
 
-<script>
-	var hamburger = document.querySelector(".hamburger");
+	<script>
+		var hamburger = document.querySelector('.hamburger');
 
-	hamburger.addEventListener("click", ()=>{
-		hamburger.closest(".wrapper").classList.toggle("click_collapse");
-		hamburger.closest(".wrapper").classList.toggle("hover_collapse");
-	})
-</script>
+		hamburger.addEventListener('click', () => {
+			hamburger.closest('.wrapper').classList.toggle('click_collapse');
+			hamburger.closest('.wrapper').classList.toggle('hover_collapse');
+		});
+	</script>
 </body>
 
-	
-
-
 <style>
-*{
-	font-family: 'Inter', sans-serif;
-	color: #736D69;
-	list-style: none;
-	text-decoration: none;
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+	* {
+		font-family: 'Inter', sans-serif;
+		color: #736d69;
+		list-style: none;
+		text-decoration: none;
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
 
-}
+	.wrapper {
+		margin: 0 10px;
+	}
 
-.wrapper{
-	margin: 0 10px;
-}
+	.top_navbar {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 80px;
+		background: #ffffff;
+		display: flex;
+		align-items: center;
+		box-shadow: 1px 0 2px #736d69;
+	}
 
-.top_navbar{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 80px;
-	background: #ffffff;
-	display: flex;
-	align-items: center;
-	box-shadow: 1px 0 2px #736D69;
-}
+	.top_navbar .logo {
+		width: 300px;
+		font-size: 22.5px;
+		font-weight: bolder;
+		padding: 0 10px;
+	}
 
-.top_navbar .logo{
-	width: 300px;
-	font-size: 22.5px;
-	font-weight: bolder;
-	padding: 0 10px;
-}
+	.top_navbar .menu {
+		width: calc(100% - 310px);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 10px;
+	}
 
-.top_navbar .menu{
-	width: calc(100% - 310px);
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0 10px;
-}
+	.top_navbar .menu .hamburger {
+		font-size: 35px;
+		cursor: pointer;
+	}
 
-.top_navbar .menu .hamburger{
-	font-size: 35px;
-	cursor: pointer;
-}
+	.top_navbar .profile_wrap {
+		padding-left: 25px;
+		align-items: center;
+		display: flex;
+	}
 
-.top_navbar .profile_wrap{
-	padding-left: 25px;
-	align-items: center;
-	display: flex;
-}
+	.top_navbar .profile_wrap img {
+		width: 36px;
+		height: 36px;
+		margin-right: 10px;
+	}
 
-.top_navbar .profile_wrap img{
-	width: 36px;
-	height: 36px;
-	margin-right: 10px; 
-}
+	.top_navbar .profile .name {
+		margin: 0 15px;
+		font-weight: 500;
+	}
 
-.top_navbar .profile .name{
-	margin: 0 15px;
-	font-weight: 500;
-}
+	.top_navbar .logout span {
+		cursor: pointer;
+	}
+	.sidebar {
+		position: absolute;
+		top: 81px;
+		left: 0;
+		width: 280px;
+		height: 100%;
+		background: #ffffff;
+	}
 
-.top_navbar .logout span{
-	cursor: pointer;
-}
-.sidebar{
-	position: absolute;
-	top: 81px;
-	left: 0;
-	width: 280px;
-	height: 100%;
-	background: #ffffff;
-}
+	.sidebar ul li a {
+		display: block;
+		padding: 15px 25px;
+		border-bottom: 1px solid #736d69;
+		transition: all 0.3s ease;
+	}
 
-.sidebar ul li a{
-	display: block;
-	padding: 15px 25px;
-	border-bottom: 1px solid #736D69;
-	transition: all 0.3s ease;
-}
+	.sidebar ul li a .icon {
+		font-size: 25px;
+		vertical-align: middle;
+	}
 
-.sidebar ul li a .icon{
-	font-size: 25px;
-	vertical-align: middle;
-}
+	.sidebar ul li a .text {
+		margin-left: 10px;
+		font-size: 18px;
+		font-weight: 500;
+	}
 
-.sidebar ul li a .text{
-	margin-left: 10px;
-	font-size: 18px;
-	font-weight: 500;
-}
+	.sidebar ul li a:hover {
+		background-color: rgba(115, 109, 105, 0.4);
+	}
 
-.sidebar ul li a:hover{
-	background-color: rgba(115, 109, 105, 0.4);
-}
+	.hover_collapse .sidebar {
+		width: 74px;
+	}
 
-.hover_collapse .sidebar{
-	width: 74px;
-}
+	.hover_collapse .sidebar ul li a .text {
+		display: none;
+	}
 
-.hover_collapse .sidebar ul li a .text{
-	display: none;
-}
-
-.main_container{
-	margin-top: 80px;
-	margin-left: 75px;
-	width: calc(100% - 75px);
-}
-
+	.main_container {
+		margin-top: 80px;
+		margin-left: 75px;
+		width: calc(100% - 75px);
+	}
 </style>

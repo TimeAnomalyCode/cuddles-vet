@@ -85,6 +85,7 @@ async function getFirebaseUser(token) {
 
     return {
         id: user.uid,
+        name: user.displayName,
         email: user.email,
         emailVerified: user.emailVerified
     }
