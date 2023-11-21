@@ -446,3 +446,18 @@ export async function deleteOrder(id) {
         await orderRef.delete()
     }
 }
+
+// Contact
+export async function addContact(contact) {
+    const contactCollection = db.collection('contacts')
+
+    const contactRef = await contactCollection.add({
+        name: contact.name,
+        email: contact.email,
+        message: contact.message,
+        has_responded: false,
+        created_at: firestore.Timestamp.now().seconds,
+    })
+
+    return contactRef.id
+}
