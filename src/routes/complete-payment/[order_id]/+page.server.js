@@ -10,7 +10,6 @@ export async function load({ locals, params }) {
         isLoggedIn: locals.user !== null,
         user: locals.user,
         order: order,
-        nett_total: order.total_price,
         profile: profile,
     }
 }

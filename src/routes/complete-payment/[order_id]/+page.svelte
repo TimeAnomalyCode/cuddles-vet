@@ -1,4 +1,6 @@
 <script>
+	// @ts-nocheck
+
 	/** @type {import('./$types').PageData} */
 	export let data;
 	export let form;
@@ -6,7 +8,7 @@
 	import { enhance } from '$app/forms';
 
 	let submitting = false;
-	const nett_total = data.nett_total;
+	const nett_total = data.order.total_price;
 
 	$: if (form && form.success === false) {
 		submitting = false;
