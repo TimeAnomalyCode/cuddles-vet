@@ -21,12 +21,10 @@
 
 			if (res.status == 200 && counter > 0) {
 				messagesStore.showSuccess(`${counter} x ${product_name} has been added to cart!`);
-				counter = 1;
 			}
 
 			if (res.status == 200 && counter == 0) {
 				messagesStore.showSuccess(`${product_name} has been removed from cart!`);
-				counter = 1;
 			}
 
 			return;
