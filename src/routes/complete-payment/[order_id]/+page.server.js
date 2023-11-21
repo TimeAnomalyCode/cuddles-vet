@@ -11,3 +11,21 @@ export async function load({ locals, params }) {
         profile: profile,
     }
 }
+
+export const actions = {
+    default: async ({ request, locals, params }) => {
+
+        const formData = await request.formData()
+        const data = await validateOrderPhoto(formData)
+
+        if (!data.success) {
+            return fail(422, data)
+        }
+
+        const cart = await getLatestCart(locals.user.id)
+
+
+        // await editOrder()
+        // throw redirect(300, `/`)
+    }
+}

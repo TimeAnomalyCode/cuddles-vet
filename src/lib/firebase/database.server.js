@@ -385,11 +385,11 @@ export async function addOrder(order) {
         created_at: firestore.Timestamp.now().seconds,
     })
 
-    const mainPictureUrl = await saveFileToBucket(order.main_picture, `order_images/${orderRef.id}/main_picture_${firestore.Timestamp.now().seconds}`)
+    // const mainPictureUrl = await saveFileToBucket(order.main_picture, `order_images/${orderRef.id}/main_picture_${firestore.Timestamp.now().seconds}`)
 
-    await orderRef.update({
-        main_picture: mainPictureUrl
-    })
+    // await orderRef.update({
+    //     main_picture: mainPictureUrl
+    // })
 
     return orderRef.id
 }
