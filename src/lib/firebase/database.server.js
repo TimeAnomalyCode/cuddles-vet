@@ -76,6 +76,12 @@ export async function getAllDoctors() {
     return doctors
 }
 
+// export async function getAvailableDoctor() {
+//     const doctorCollection = await db.collection('doctors').get()
+
+
+// }
+
 export async function addDoctor(doctor) {
     const doctorCollection = db.collection('doctors')
 
@@ -83,7 +89,6 @@ export async function addDoctor(doctor) {
         name: doctor.name,
         position: doctor.position,
         description: doctor.description,
-        rating: 0,
         created_at: firestore.Timestamp.now().seconds,
     })
 
