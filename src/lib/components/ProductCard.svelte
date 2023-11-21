@@ -90,6 +90,7 @@
 
 <style>
 	.card-img-top{
+		margin-top:10%;
 		width:40%;
 	}
 	.btn{
@@ -113,6 +114,8 @@
 		font-family: Inter;
 		color: #5C5957;
 		font-size:1vw;
+		padding: 0.5rem; 
+
 	}
 
 	#name, #price {
