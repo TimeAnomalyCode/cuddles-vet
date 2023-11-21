@@ -6,6 +6,7 @@
 	import { enhance } from '$app/forms';
 
 	let submitting = false;
+	const nett_total = 100;
 
 	$: if (form && form.success === false) {
 		submitting = false;
@@ -19,9 +20,9 @@
 <div class="p-3">
 	<div class="d-flex justify-content-center">
 		<div class="d-flex flex-column justify-content-center gap-3">
-			<strong>Scan To Pay</strong>
-			<img src="/cuddles-qr.png" alt="" style="width: 200px;" />
-			<p>RM 100</p>
+			<h2 class="align-self-center">Scan To Pay</h2>
+			<img class="align-self-center" src="/cuddles-qr.png" alt="" style="width: 200px;" />
+			<h3 class="align-self-center">RM {nett_total}</h3>
 			<form on:submit={submitForm} use:enhance enctype="multipart/form-data" method="POST">
 				<label for="main_picture" class="form-label">Upload Proof of Payment</label>
 				<input

@@ -378,6 +378,8 @@ export async function addOrder(order) {
     const orderRef = await orderCollection.add({
         user_id: order.user_id,
         cart_id: order.cart_id,
+        cart_items: order.cart_items,
+        address: order.address,
         total_price: order.total_price,
         is_approved: "pending",
         created_at: firestore.Timestamp.now().seconds,

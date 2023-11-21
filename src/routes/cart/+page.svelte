@@ -1,5 +1,7 @@
 <script>
+	import { goto } from '$app/navigation';
 	import CartCard from '$lib/components/CartCard.svelte';
+	import { redirect } from '@sveltejs/kit';
 	export let data;
 
 	const user_id = data.user?.id;
@@ -36,6 +38,20 @@
 			}, 0);
 		}
 		return 0;
+	}
+
+	async function placeOrder() {
+		const res = await fetch(
+			`/api/addToOrder/${user_id}/${data.cart_id}/${current_address}/${nett_total}`,
+			{
+				method: 'POST'
+			}
+		);
+
+		if (res.status === 200) {
+			const { order_id } = await res.json();
+			goto(`/complete-payment/${order_id}`);
+		}
 	}
 </script>
 
@@ -90,7 +106,7 @@
 		</div>
 		<hr />
 		<div class="d-flex flex-row-reverse">
-			<button type="submit" class="btn btn-primary"> Place Order </button>
+			<button type="submit" class="btn btn-primary" on:click={placeOrder}> Place Order </button>
 		</div>
 	</div>
 {/if}
