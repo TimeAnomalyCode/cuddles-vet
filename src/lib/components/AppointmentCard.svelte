@@ -1,4 +1,6 @@
 <script>
+	import { goto } from '$app/navigation';
+
 	export let doctor_id;
 	export let name;
 	export let position;
@@ -10,6 +12,12 @@
 	export let date;
 	export let start_time;
 	export let end_time;
+
+	function confirmAppointment() {
+		goto(
+			`/complete-appointment/${user_id}/${doctor_id}/${date}/${start_time}/${end_time}/${type_of_operation}`
+		);
+	}
 </script>
 
 <div class="card">
@@ -23,7 +31,9 @@
 			</p>
 		</div>
 		<div class="d-flex flex-column-reverse" style="padding-bottom: 10px;">
-			<button type="submit" class="btn btn-primary"> Make Appointment </button>
+			<button on:click={confirmAppointment} type="submit" class="btn btn-primary">
+				Make Appointment
+			</button>
 		</div>
 	</div>
 </div>

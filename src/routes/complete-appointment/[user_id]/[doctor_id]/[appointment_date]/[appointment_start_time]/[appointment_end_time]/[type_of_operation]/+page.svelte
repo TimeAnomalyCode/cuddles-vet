@@ -6,7 +6,7 @@
 	export let data;
 
 	function cancelAppointment() {
-		goto('/appointment');
+		goto('/appointment2');
 	}
 </script>
 

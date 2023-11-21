@@ -26,7 +26,7 @@ export const actions = {
             type_of_operation: formData.get("type_of_operation")
         }
 
-        console.log(data)
+        // console.log(data)
 
         throw redirect(300, `/appointment2/${data.book_date}/${data.start_time}/${data.type_of_operation}`)
     }

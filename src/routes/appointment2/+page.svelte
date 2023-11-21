@@ -10,7 +10,6 @@
 
 	function submitForm(e) {
 		submitting = true;
-		console.log(e);
 	}
 </script>
 
