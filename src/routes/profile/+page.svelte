@@ -35,7 +35,6 @@
 		background-color: rgba(208, 196, 190, 0.3);
 		font-family: Inter;
 		color: #736D69;
-		font-size:1vw;
 	}
 	.title{
 		margin-top:2%;
@@ -46,8 +45,8 @@
 	}
 
 	.rounded{
-		background-color: rgba(255, 255, 255);
-		width:90%;
+		background-color: rgba(255, 255, 255, 0.7);
+		width:85%;
 		margin: auto; 
 	}
 
@@ -56,7 +55,6 @@
 		color: rgba(255, 255, 255, 0.7);
 		width:100%;
 		border:none;
-		font-size:1vw;
 		
 	}
 
@@ -72,7 +70,6 @@
 
 	#col2{
 		width:48%;
-		
 	}
 
 
