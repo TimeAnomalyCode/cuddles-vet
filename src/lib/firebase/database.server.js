@@ -382,6 +382,7 @@ export async function addOrder(order) {
         address: order.address,
         total_price: order.total_price,
         is_approved: "pending",
+        main_picture: "",
         created_at: firestore.Timestamp.now().seconds,
     })
 
@@ -392,6 +393,18 @@ export async function addOrder(order) {
     // })
 
     return orderRef.id
+}
+
+export async function editImageOrder(id, form) {
+    const orderRef = db.collection('orders').doc(id)
+    let mainPicture = form.main_picture || null
+
+    delete form.main_picture
+
+    if (mainPicture) {
+        const mainPictureUrl = await saveFileToBucket(mainPicture, `order_images/${orderRef.id}/main_picture_${firestore.Timestamp.now().seconds}`)
+        orderRef.update({ main_picture: mainPictureUrl })
+    }
 }
 
 export async function editOrder(id, form) {

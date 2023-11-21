@@ -1,6 +1,6 @@
-import { getLatestCart, getOrder, getProfile } from '$lib/firebase/database.server.js'
+import { editImageOrder, getOrder, getProfile } from '$lib/firebase/database.server.js'
 import validateOrderPhoto from '$lib/validators/orderphoto.validator.js'
-import { fail } from '@sveltejs/kit'
+import { fail, redirect } from '@sveltejs/kit'
 
 export async function load({ locals, params }) {
     const order = await getOrder(params.order_id)
@@ -24,10 +24,10 @@ export const actions = {
             return fail(422, data)
         }
 
-        const cart = await getLatestCart(locals.user.id)
+        // console.log(data.order)
 
+        await editImageOrder(params.order_id, data.order)
 
-        // await editOrder()
-        // throw redirect(300, `/`)
+        throw redirect(300, `/`)
     }
 }
