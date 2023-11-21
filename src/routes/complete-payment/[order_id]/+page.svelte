@@ -1,4 +1,6 @@
 <script>
+	import { browser } from '$app/environment';
+
 	// @ts-nocheck
 
 	/** @type {import('./$types').PageData} */
@@ -6,9 +8,26 @@
 	export let form;
 
 	import { enhance } from '$app/forms';
+	import { getAnalytics, logEvent } from 'firebase/analytics';
 
 	let submitting = false;
 	const nett_total = data.order.total_price;
+
+	/**
+	 * @type {{ item_id: any; item_name: any; price: any; quantity: any; }[]}
+	 */
+	const itemToLog = [];
+	data.order.cart_items.forEach((val) => {
+		let item = {
+			item_id: val.id,
+			item_name: val.name,
+			price: val.price,
+			quantity: val.qty
+		};
+		itemToLog.push(item);
+	});
+
+	console.log(itemToLog);
 
 	$: if (form && form.success === false) {
 		submitting = false;
@@ -16,6 +35,13 @@
 
 	function submitForm(e) {
 		submitting = true;
+		if (browser) {
+			logEvent(getAnalytics(), 'add_to_cart', {
+				currency: 'MYR',
+				value: nett_total,
+				items: itemToLog
+			});
+		}
 	}
 </script>
 
