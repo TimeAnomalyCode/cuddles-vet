@@ -15,7 +15,7 @@
 
 	function confirmAppointment() {
 		goto(
-			`/complete-appointment/${user_id}/${doctor_id}/${date}/${start_time}/${end_time}/${type_of_operation}`
+			`/complete-appointment/${user_id}/${doctor_id}/${name}/${date}/${start_time}/${end_time}/${type_of_operation}`
 		);
 	}
 </script>
