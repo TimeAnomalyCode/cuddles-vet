@@ -33,6 +33,9 @@
 			</form>
 		</div>
 		<hr />
+		<div class="d-flex justify-content-center flex-column text-center">
+			<h4>No Doctors available. Please search a different date/time</h4>
+		</div>
 	</div>
 </div>
 

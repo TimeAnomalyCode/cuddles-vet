@@ -39,6 +39,11 @@
 		</div>
 		<hr />
 		<div class="d-flex flex-column gap-3">
+			{#if doctors.length === 0}
+				<div class="d-flex justify-content-center flex-column text-center">
+					<h4>No Doctors available. Please search a different date/time</h4>
+				</div>
+			{/if}
 			{#each doctors as doctor (doctor.id)}
 				<AppointmentCard
 					doctor_id={doctor.id}
