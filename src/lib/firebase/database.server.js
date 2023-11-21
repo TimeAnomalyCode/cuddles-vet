@@ -76,11 +76,11 @@ export async function getAllDoctors() {
     return doctors
 }
 
-// export async function getAvailableDoctor() {
-//     const doctorCollection = await db.collection('doctors').get()
+export async function getAvailableDoctor() {
+    const doctorCollection = await db.collection('doctors').get()
 
 
-// }
+}
 
 export async function addDoctor(doctor) {
     const doctorCollection = db.collection('doctors')
@@ -211,19 +211,50 @@ export async function deleteProduct(id) {
 
 // Appointments
 
-export async function checkAppointmentAvailable(doctor_id, date, start_time, end_time) {
-    const appointmentRef = await db.collection('appointments')
-        .where('appointment_date', '==', date)
+export async function checkAppointmentAvailable(doctor_id, start_time, end_time) {
+    const start_date = new Date()
+    start_date.setHours(0, 0, 0, 0)
+
+    const end_date = new Date()
+    end_date.setHours(0, 0, 0, 0)
+    end_date.setDate(end_date.getDate() + 1)
+
+    const todayAppointmentRef = await db.collection('appointments')
+        .where('appointment_date', '>=', start_date)
+        .where('appointment_date', '<=', end_date)
         .where('doctor_id', '==', doctor_id)
-        .where('appointment_start_time', '>=', start_time)
-        .where('appointment_end_time', '<=', end_time)
         .get()
 
-    if (appointmentRef.empty) {
+    // console.log(appointmentRef.docs)
+    // console.log(firestore.Timestamp.fromDate(date))
+    if (todayAppointmentRef.empty) {
         return true
     }
 
-    return false
+    for (const apt of todayAppointmentRef.docs) {
+        const data = { ...apt.data() }
+        // console.log(data)
+        // console.log("StartTime", start_time <= data.appointment_start_time.toDate())
+        // console.log("User Start", start_time.toString())
+        // console.log("Apt Start ", data.appointment_start_time.toDate().toString())
+
+        // console.log("EndTime", end_time >= data.appointment_end_time.toDate())
+        // console.log("User End", end_time.toString())
+        // console.log("Apt End ", data.appointment_end_time.toDate().toString())
+
+        const appointment_start_time = data.appointment_start_time.toDate()
+        const appointment_end_time = data.appointment_end_time.toDate()
+
+        if (
+            (start_time <= appointment_end_time && end_time >= appointment_end_time) ||
+            (start_time >= appointment_start_time && start_time < appointment_end_time) ||
+            (end_time > appointment_start_time && end_time <= appointment_end_time)
+        ) {
+            return false
+        }
+    }
+
+    return true
 }
 
 export async function addAppointment(appointment) {
@@ -232,9 +263,9 @@ export async function addAppointment(appointment) {
     const appointmentRef = await appointmentCollection.add({
         doctor_id: appointment.doctor_id,
         user_id: appointment.user_id,
-        appointment_date: appointment.appointment_date,
-        appointment_start_time: appointment.appointment_start_time,
-        appointment_end_time: appointment.appointment_end_time,
+        appointment_date: firestore.Timestamp.fromDate(appointment.appointment_date),
+        appointment_start_time: firestore.Timestamp.fromDate(appointment.appointment_start_time),
+        appointment_end_time: firestore.Timestamp.fromDate(appointment.appointment_end_time),
         type_of_operation: appointment.type_of_operation,
         created_at: firestore.Timestamp.now().seconds,
     })
