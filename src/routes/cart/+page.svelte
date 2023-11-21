@@ -13,9 +13,10 @@
 	const isEmpty = cart.items.length === 0;
 	const deliveryFee = 4.9;
 	const total = cart.items.reduce((accumulator, object) => {
-		return accumulator + object.price;
+		return accumulator + object.price * object.qty;
 	}, 0);
 	const nett_total = total + deliveryFee;
+	// console.log(total);
 
 	let is_edit_address = false;
 	function editAddress() {
