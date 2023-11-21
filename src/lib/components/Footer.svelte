@@ -4,6 +4,6 @@
 
 <style>
 	.footer__color {
-		background-color: #d0c4be;
+		background-color: rgba(208, 196, 190, 0.6);
 	}
 </style>
