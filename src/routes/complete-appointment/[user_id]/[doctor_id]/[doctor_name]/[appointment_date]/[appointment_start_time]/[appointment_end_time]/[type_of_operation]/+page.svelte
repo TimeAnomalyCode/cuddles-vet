@@ -5,7 +5,7 @@
 	/** @type {import('./$types').PageData} */
 	export let data;
 	const param_info = data.params;
-	console.log(param_info);
+	// console.log(param_info);
 
 	function cancelAppointment() {
 		goto('/appointment2');
