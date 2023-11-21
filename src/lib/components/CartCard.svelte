@@ -20,11 +20,15 @@
 			});
 
 			if (res.status == 200 && counter > 0) {
-				messagesStore.showSuccess(`${counter} x ${product_name} has been added to cart!`);
+				messagesStore.showSuccess(
+					`${counter} x ${product_name} has been added to cart! Please refresh to see changes.`
+				);
 			}
 
 			if (res.status == 200 && counter == 0) {
-				messagesStore.showSuccess(`${product_name} has been removed from cart!`);
+				messagesStore.showSuccess(
+					`${product_name} has been removed from cart! Please refresh to see changes.`
+				);
 			}
 
 			return;
