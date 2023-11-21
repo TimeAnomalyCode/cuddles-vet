@@ -5,7 +5,7 @@ import { json } from '@sveltejs/kit';
 export async function POST({ params }) {
     // console.log(params)
     const product = await getProduct(params.product_id)
-    const item = { id: product?.id, qty: parseInt(params.quantity) }
+    const item = { id: product?.id, qty: parseInt(params.quantity), price: parseFloat(product.price) }
 
     let cart = await getLatestCart(params.user_id)
     if (!cart.has_cart) {

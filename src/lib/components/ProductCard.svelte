@@ -7,6 +7,7 @@
 	export let counter = 1;
 	export let product_id;
 	export let user_id;
+	export let price = 0;
 	export let image_path = '/product1.png';
 	export let description = '';
 
@@ -49,6 +50,7 @@
 			<h6 class="align-self-center">{num_of_sold} sold</h6>
 		</div>
 		<p>{description}</p>
+		<h5>RM {price}</h5>
 		<div class="d-flex gap-3 justify-content-between">
 			<div class="d-flex gap-3">
 				<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->

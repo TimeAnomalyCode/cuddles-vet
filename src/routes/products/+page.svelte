@@ -39,6 +39,7 @@
 					num_of_sold={product.num_of_sold}
 					product_id={product.id}
 					description={product.description}
+					price={product.price.toFixed(2)}
 					{user_id}
 				/>
 			</div>
