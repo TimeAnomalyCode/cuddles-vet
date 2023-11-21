@@ -130,6 +130,14 @@ export async function deleteDoctor(id) {
 }
 
 // Products
+export async function addNumOfSold(id, num) {
+    const productCollection = db.collection('products').doc(id)
+
+    await productCollection.update({
+        num_of_sold: firestore.FieldValue.increment(num)
+    })
+}
+
 export async function getAllProducts() {
     const productCollection = await db.collection('products').get()
 
