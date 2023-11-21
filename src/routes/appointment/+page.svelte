@@ -1,44 +1,15 @@
 <script>
-	let apptData = null;
-	let isSubmitted = false;
+	import { enhance } from '$app/forms';
 
-	const veterinarians = [
-		{
-			name: 'Dr. Vishnu',
-			specialty: 'Senior Veterinarian at Cuddles Vet Clinic',
-			image: 'vet1.png',
-			description:
-				"Dr. Vishnu, our experienced and compassionate veterinarian, is here at Cuddles Veterinary Clinic to provide the best care for your beloved pets. With a deep love for animals and expertise in pet health, he ensures your furry friends receive top-notch attention and medical care. Trust Dr. Vishnu for all your pet's needs, from routine check-ups to complex medical issues.",
-			type: 'Vaccination'
-		},
-		{
-			name: 'Dr. Lim Rui Ting',
-			specialty: 'Senior Veterinarian at Cuddles Vet Clinic',
-			image: 'vet2.png',
-			description:
-				"Dr. Lim, our caring and experienced veterinarian, excels not only in providing top-quality care but also in clear and compassionate communication. Whether it's routine check-ups or specialized treatments, you can place your trust in her for compassionate, professional, and clear communication during every visit"
-		}
-		// Add more veterinarians to the list
-	];
+	export let form;
+	let submitting = false;
 
-	function handleSubmit(event) {
-		event.preventDefault();
-		isSubmitted = true;
-		// Get selected date, time, and type
-		const selectedDate = event.target.apptdate.value;
-		const selectedTime = event.target.appttime.value;
-		const selectedType = event.target.selectedOption.value;
-
-		apptData = {
-			date: selectedDate,
-			time: selectedTime,
-			type: selectedType,
-			vet: findVeterinarian(selectedType)
-		};
+	$: if (form && form.success === false) {
+		submitting = false;
 	}
 
-	function findVeterinarian(type) {
-		return veterinarians.find((vet) => vet.type === type);
+	function submitForm(e) {
+		submitting = true;
 	}
 </script>
 
@@ -49,20 +20,33 @@
 <section>
 	<div class="row">
 		<div class="col">
-			<img src="Background.png" alt="background" class="image1 {isSubmitted ? 'bg-color' : ''}" />
+			<img src="Background.png" alt="background" class="image1 {submitting ? 'bg-color' : ''}" />
 		</div>
 		<div class="container">
 			<p class="title">Give your pet the best care. Book an appointment now!</p>
 			<div>
 				<div class="content">
-					<form id="appointmentform" on:submit={handleSubmit}>
+					<form
+						id="appointmentform"
+						on:submit={handleSubmit}
+						use:enhance
+						enctype="multipart/form-data"
+						method="POST"
+					>
 						<table>
 							<tr>
 								<td>
-									<input type="date" id="apptdate" required />
+									<input type="date" id="apptdate" name="book_date" required />
 								</td>
 								<td>
-									<input type="time" id="appttime" min="09:00" max="22:00" required />
+									<input
+										type="time"
+										id="appttime"
+										name="start_time"
+										min="09:00"
+										max="22:00"
+										required
+									/>
 								</td>
 								<td>
 									<select id="type" name="selectedOption" autocomplete="off" required>
@@ -78,34 +62,58 @@
 						</table>
 					</form>
 				</div>
-				<div class="content1">
-					{#if apptData !== null}
-						<div class="vet-info">
-							<table>
-								<tr>
-									<td style="width: 80px">
-										<img src={apptData.vet.image} alt="vet1" class="vetimage" />
-									</td>
-									<td style="width: 100px">
-										<p class="name">{apptData.vet.name}</p>
-										<p class="specialty">{apptData.vet.specialty}</p>
-										<p class="desc">{apptData.vet.description}</p>
-										<div style="text-align:right;">
-											<input class="button" type="button" value="Book Appointment" />
-										</div>
-									</td>
-								</tr>
-							</table>
 
-							<!--<p>Date: {apptData.date}</p>
-							<p>Time: {apptData.time}</p>
-							<p>Type: {apptData.type}</p>
-							<h2>Veterinarian</h2>
-							<p>Name: {apptData.vetName}</p>
-							<p>Specialty: {apptData.vetSpecialty}</p>-->
-							<!-- Add more vet details here -->
-						</div>
-					{/if}
+				<div class="d-flex flex-column">
+					<div class="vet-info">
+						<table>
+							<tr>
+								<td style="width: 80px">
+									<img src="/favicon.png" alt="vet1" class="vetimage" />
+								</td>
+								<td style="width: 100px">
+									<p class="name">John</p>
+									<p class="specialty">Help</p>
+									<p class="desc">Dood desc</p>
+									<div style="text-align:right;">
+										<input class="button" type="button" value="Book Appointment" />
+									</div>
+								</td>
+							</tr>
+						</table>
+
+						<!--<p>Date: {apptData.date}</p>
+								<p>Time: {apptData.time}</p>
+								<p>Type: {apptData.type}</p>
+								<h2>Veterinarian</h2>
+								<p>Name: {apptData.vetName}</p>
+								<p>Specialty: {apptData.vetSpecialty}</p>-->
+						<!-- Add more vet details here -->
+					</div>
+					<div class="vet-info">
+						<table>
+							<tr>
+								<td style="width: 80px">
+									<img src="/favicon.png" alt="vet1" class="vetimage" />
+								</td>
+								<td style="width: 100px">
+									<p class="name">John</p>
+									<p class="specialty">Help</p>
+									<p class="desc">Dood desc</p>
+									<div style="text-align:right;">
+										<input class="button" type="button" value="Book Appointment" />
+									</div>
+								</td>
+							</tr>
+						</table>
+
+						<!--<p>Date: {apptData.date}</p>
+								<p>Time: {apptData.time}</p>
+								<p>Type: {apptData.type}</p>
+								<h2>Veterinarian</h2>
+								<p>Name: {apptData.vetName}</p>
+								<p>Specialty: {apptData.vetSpecialty}</p>-->
+						<!-- Add more vet details here -->
+					</div>
 				</div>
 			</div>
 		</div>
