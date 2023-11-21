@@ -1,5 +1,10 @@
-// Forces route to go through hooks
-/** @type {import('./$types').PageServerLoad} */
+import { getAllProducts } from '$lib/firebase/database.server.js'
+
 export async function load({ locals }) {
-    // console.log(locals)
-};
+    const products = await getAllProducts()
+    return {
+        isLoggedIn: locals.user !== null,
+        user: locals.user,
+        products: products
+    }
+}
