@@ -4,11 +4,15 @@
 </svelte:head>
 
 <script>
+	
+
 	/**
 	 * @typedef {Object} Product
 	 * @property {string} name - The name of the product.
 	 * @property {string} price - The price of the product.
 	 * @property {string} image - The image URL of the product.
+	 * @property {string} desc - The description of the product.
+	 * @property {string} specs - The specifications of the product.
 	 */
 	
    	/** @type {Product | null} */
@@ -20,31 +24,43 @@
       name: "Product 1",
       price: "Product 1 Price",
       image: "product1.png",
+	  desc: "Dry food for medium breed puppies (adult weight from 11 to 25 kg) - Up to 12 months old.",
+	  specs: " ROYAL CANIN® Medium Puppy food contains an increased protein content to help support healthy, muscular, and skeletal growth during the relatively short growth period. Antioxidants are included to support your puppy's natural defences which can be a particular challenge during this life stage. The combination of nutrients containing high quality prebiotics and protein in ROYAL CANIN® Medium Puppy food helps to support and maintain your puppy's general digestive health.",
     },
     {
       name: "Product 2",
       price: "Product 2 Price",
       image: "product2.jpg",
+	  desc: "product 2 description",
+	  specs: "product 2 specifications ",
     },
     {
       name: "Product 3",
       price: "Product 3 Price",
       image: "product3.jpg",
+	  desc: "product 3 description ",
+	  specs: "product 3 specifications ",
     },
     {
       name: "Product 4",
       price: "Product 4 Price",
       image: "product4.jpg",
+	  desc: "product 4 description ",
+	  specs: "product 4 specifications ",
     },
     {
       name: "Product 5",
       price: "Product 5 Price",
       image: "product5.jpg",
+	  desc: "product 5 description ",
+	  specs: "product 5 specifications ",
     },
 	{
       name: "Product 6",
       price: "Product 6 Price",
       image: "product6.jpg",
+	  desc: "product 6 description ",
+	  specs: "product 6 specifications ",
     },
     // Add more products as needed
   	];
@@ -62,7 +78,8 @@
     const filteredProducts = products.filter((product) => {
       return (
         product.name.toLowerCase().includes(query) ||
-        product.price.toLowerCase().includes(query)
+        product.price.toLowerCase().includes(query)||
+		product.desc.toLowerCase().includes(query)
       );
     });
 
@@ -131,15 +148,20 @@
 			<div class="text-info">
 				<p id="popup-product-name">{selectedProduct.name}</p>
 				<p id="popup-product-price">{selectedProduct.price}</p>
+				<p id="popup-product-desc">{selectedProduct.desc}</p>
+				<p id="popup-product-specs1">Product Specifications</p>
+				<p id="popup-product-specs2">{selectedProduct.specs}</p>
 			</div>
 		</div>
 		<div class="popup-action-container">
-			<button class="plus-qty" on:click={() => { /* Implement quantity increase logic */ }}>
-			<img src="plusqty.png" alt="Add product quantity">
-			</button>
-			<button class="minus-qty" on:click={() => { /* Implement quantity decrease logic */ }}>
-			<img src="minusqty.png" alt="Minus product quantity">
-			</button>
+			<div class="plus-and-minus-qty">
+				<button class="plus-qty" on:click={() => { /* Implement quantity increase logic */ }}>
+				<img src="plusqty.png" alt="Add product quantity">
+				</button>
+				<button class="minus-qty" on:click={() => { /* Implement quantity decrease logic */ }}>
+				<img src="minusqty.png" alt="Minus product quantity">
+				</button>
+			</div>
 			<button class="add-to-cart" on:click={() => { /* Implement add to cart logic */ }}>
 			Add to Cart
 			</button>
@@ -254,7 +276,7 @@
 		padding: 2%;
 		border-radius: 8px;
 		max-width: 56rem;
-		height: auto;
+		height: 75%;
 		width: 100%;
 		text-align: left;
 		display: flex; /* Add flexbox to align items horizontally */
@@ -290,8 +312,7 @@
 	.popup-action-container {
     	position: absolute;
   		bottom: 5%;
-  		right: -45%;
-
+  		right: -10%;
   		display: flex;
   		align-items: center;
 	}
@@ -325,6 +346,53 @@
 	.popup-content img{
 		margin-top:10%;
 		margin-left: -15%;
+	}
+	#popup-product-name{
+		font-size:3.5vh;
+		font-weight:900;
+		color:#5C5957;
+	}
+
+	#popup-product-price{
+		color:#5C5957;
+	}
+
+	.text-info{
+		margin-left:5%;
+		margin-top:-10%;
+
+	}
+
+	#popup-product-price{
+		color:black;
+		font-size: 3vh;
+		font-weight: 900;
+	}
+
+	#popup-product-desc{
+		color:#5C5957;
+	}
+
+	#popup-product-specs1{
+		font-size:3vh;
+		color:#5C5957;
+		font-weight:900;
+	}
+
+	
+	#popup-product-specs2{
+		color:#5C5957;
+	}
+
+	#popup-image{
+		height:50vh;
+		width:40vh;
+		margin-left:-1%;
+		margin-top:-5%;
+	}
+
+	.plus-and-minus-qty{
+		margin-right:-10%;
 	}
 
 </style>
