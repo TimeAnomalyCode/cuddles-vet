@@ -45,7 +45,7 @@
 		<img src={image_path} alt="" style="width: 100px;" />
 		<div class="d-flex flex-column justify-content-between">
 			<h2>{product_name}</h2>
-			<div class="d-flex gap-3">
+			<div class="d-flex gap-3" id="plus-minus">
 				<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
 				<img
@@ -57,6 +57,7 @@
 							await addToCart();
 						}
 					}}
+					style="width: 3vh; height: 3vh;"
 				/>
 				<p class="pt-3">{counter}</p>
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -68,6 +69,7 @@
 						counter += 1;
 						await addToCart();
 					}}
+					style="width: 3vh; height: 3vh;"
 				/>
 			</div>
 		</div>
@@ -75,16 +77,43 @@
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 			<img
+				id="trash"
 				src="/trash.svg"
 				alt=""
 				class="align-self-center"
-				style="width: 30px;"
+				style="width: 3vh; height: 3vh;"
 				on:click={async () => {
 					counter = 0;
 					await addToCart();
 				}}
+				
 			/>
 			<strong>RM {product_price}</strong>
 		</div>
 	</div>
 </div>
+
+<style>
+	.card{
+		font-family: Inter;
+		color: #5C5957;
+		font-weight:900;
+		padding:1.5rem;
+		font-size:1.2vw;
+	}
+
+	#plus-minus {
+        align-items: center; /* Align items vertically in the center */
+    }
+
+	h2{
+		font-size:1.5vw;
+		
+	}
+
+	#trash{
+		margin-right:-80%;
+		margin-top:-20%;
+	}
+
+</style>
