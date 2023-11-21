@@ -1,13 +1,16 @@
-import { getLatestCart, getProfile } from '$lib/firebase/database.server.js'
+import { getLatestCart, getOrder, getProfile } from '$lib/firebase/database.server.js'
+import validateOrderPhoto from '$lib/validators/orderphoto.validator.js'
+import { fail } from '@sveltejs/kit'
 
 export async function load({ locals, params }) {
-    const cart = await getLatestCart(locals.user.id)
+    const order = await getOrder(params.order_id)
     const profile = await getProfile(locals.user.id)
 
     return {
         isLoggedIn: locals.user !== null,
         user: locals.user,
-        cart: cart.cart?.data(),
+        order: order,
+        nett_total: order.total_price,
         profile: profile,
     }
 }

@@ -11,7 +11,7 @@ export async function POST({ params }) {
         cart_id: params.cart_id,
         cart_items: cart.items,
         address: params.current_address,
-        total_price: params.nett_total,
+        total_price: parseFloat(params.nett_total),
     }
     // console.log(order)
     const id = await addOrder(order)

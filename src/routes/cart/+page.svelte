@@ -12,7 +12,7 @@
 	let cart = data.cart;
 	// console.log(data);
 
-	const isEmpty = cart.items.length === 0;
+	const isEmpty = !data.has_cart;
 	const deliveryFee = 4.9;
 	const total = getTotal();
 	const nett_total = total + deliveryFee;
@@ -32,7 +32,7 @@
 	}
 
 	function getTotal() {
-		if (cart.items) {
+		if (data.has_cart) {
 			return cart.items.reduce((accumulator, object) => {
 				return accumulator + object.price * object.qty;
 			}, 0);

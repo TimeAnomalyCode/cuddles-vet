@@ -11,6 +11,7 @@ export async function load({ locals }) {
         user: locals.user,
         cart_id: cart.cart?.id,
         cart: cart.cart?.data(),
+        has_cart: cart.has_cart,
         profile: profile,
     }
 }
