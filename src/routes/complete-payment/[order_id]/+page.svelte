@@ -27,7 +27,7 @@
 		itemToLog.push(item);
 	});
 
-	console.log(itemToLog);
+	// console.log(itemToLog);
 
 	$: if (form && form.success === false) {
 		submitting = false;
