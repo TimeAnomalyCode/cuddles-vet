@@ -42,7 +42,7 @@
 
 <div class="card">
 	<div class="d-flex justify-content-center">
-		<img src={image_path} alt="" class="card-img-top" style="width: 100px;" />
+		<img src={image_path} alt="" class="card-img-top"  />
 	</div>
 	<div class="card-body">
 		<div class="d-flex justify-content-between">
@@ -89,6 +89,9 @@
 </div>
 
 <style>
+	.card-img-top{
+		width:40%;
+	}
 	.btn{
 		background-color: #736D69; 
 		color: rgba(255, 255, 255, 0.7); 
