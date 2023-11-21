@@ -11,10 +11,20 @@
 		goto('/appointment2');
 	}
 
-	function addAppointment() {
-		goto(
-			`/makeAppointment/${param_info.user_id}/${param_info.doctor_id}/${param_info.appointment_date}/${param_info.appointment_start_time}/${param_info.appointment_end_time}/${param_info.type_of_operation}`
+	async function addAppointment() {
+		const res = await fetch(
+			`/api/makeAppointment/${param_info.user_id}/${param_info.doctor_id}/${param_info.appointment_date}/${param_info.appointment_start_time}/${param_info.appointment_end_time}/${param_info.type_of_operation}`,
+			{ method: 'POST' }
 		);
+
+		if (res.status === 200) {
+			messagesStore.showSuccess(`Booking with ${param_info.doctor_name} is set. See you soon!`);
+		} else {
+			messagesStore.showError(
+				`Booking Failed. Please try to rebook again. Sorry for any inconvienience`
+			);
+		}
+		goto('/');
 	}
 </script>
 
