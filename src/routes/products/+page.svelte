@@ -50,3 +50,19 @@
 <svelte:head>
 	<title>Cuddles Vet - Products</title>
 </svelte:head>
+
+<style>
+
+	.btn{
+		background-color: #736D69; 
+		color: rgba(255, 255, 255, 0.7); 
+		border: none; 
+		padding: 1%; 
+		border-radius: 10px; 
+		cursor: pointer; 
+		font-size:1vw;
+	}
+	.btn:hover {
+		background-color: rgba(115, 109, 105, 0.25);;
+	}
+</style>
