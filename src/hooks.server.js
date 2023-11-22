@@ -42,8 +42,8 @@ export async function handle({ event, resolve }) {
         // console.log(has_set_profile)
         // console.log(profileRef.data())
 
-        if (!user.emailVerified) {
-            throw redirect(302, `/email-appprove`)
+        if (!user.emailVerified && url.pathname !== '/email-approve') {
+            throw redirect(302, `/email-approve`)
         }
 
         if (!has_set_profile && url.pathname !== '/profile-setup') {

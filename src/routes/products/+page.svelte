@@ -10,7 +10,7 @@
 
 	function filterProducts() {
 		products = allProducts.filter((product) => {
-			return product.name.includes(searchValue);
+			return product.name.toLowerCase().includes(searchValue.toLowerCase());
 		});
 	}
 </script>
@@ -40,6 +40,7 @@
 					product_id={product.id}
 					description={product.description}
 					price={product.price.toFixed(2)}
+					image_path={product.main_picture}
 					{user_id}
 				/>
 			</div>
@@ -52,20 +53,20 @@
 </svelte:head>
 
 <style>
-	.btn{
-		background-color: #736D69; 
-		color: rgba(255, 255, 255, 0.7); 
-		border: none; 
-		padding: 1%; 
-		border-radius: 10px; 
-		cursor: pointer; 
-		font-size:1vw;
+	.btn {
+		background-color: #736d69;
+		color: rgba(255, 255, 255, 0.7);
+		border: none;
+		padding: 1%;
+		border-radius: 10px;
+		cursor: pointer;
+		font-size: 1vw;
 	}
 	.btn:hover {
-		background-color: rgba(115, 109, 105, 0.25);;
+		background-color: rgba(115, 109, 105, 0.25);
 	}
 
-	.form-control{
-		height:6vh;
+	.form-control {
+		height: 6vh;
 	}
 </style>

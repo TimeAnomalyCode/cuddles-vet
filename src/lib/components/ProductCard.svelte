@@ -42,7 +42,7 @@
 
 <div class="card">
 	<div class="d-flex justify-content-center">
-		<img src={image_path} alt="" class="card-img-top" style="width: 100px;" />
+		<img src={image_path} alt="" class="card-img-top" style="width: 40%;" />
 	</div>
 	<div class="card-body">
 		<div class="d-flex justify-content-between">
@@ -103,7 +103,7 @@
 	}
 
 	.btn:hover {
-		background-color: rgba(115, 109, 105, 0.25);;
+		background-color: rgba(115, 109, 105, 0.25);
 	}
 
 	.card{
