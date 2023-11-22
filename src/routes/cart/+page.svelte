@@ -163,8 +163,8 @@
 
 	.image1 {
 		height: 50%;
-		width: 10%;
-		margin-bottom: -5%;
+		width: 9%;
+		margin-bottom: -3%;
 	}
 	input[type='text']{
 		font-weight: regular;
