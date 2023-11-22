@@ -77,13 +77,13 @@
 	.pass-icon{
 		width: 35px;
 		position: absolute;
-		top: 55%;
+		top: 50%;
 		right: 5px;
-		transform: translateY(-55%);
+		transform: translateY(-50%);
 		padding: 5px;
 	}
 	.form-control {
-		padding: 4% 4%;
+		padding: 22px 15px;
 		border: 1px solid #5C5957; 
 		font-family: inter, sans-serif;
 		font-size: 1.1vw;
