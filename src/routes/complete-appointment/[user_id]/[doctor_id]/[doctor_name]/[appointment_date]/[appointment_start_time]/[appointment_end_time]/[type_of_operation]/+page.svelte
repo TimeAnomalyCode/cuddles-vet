@@ -32,19 +32,13 @@
 	<h1>Confirm Appointment</h1>
 	<p><strong>Doctor Name</strong>: {param_info.doctor_name}</p>
 	<p>
-		<strong>Date</strong>: {new Date(param_info.appointment_date).getDate()}/{new Date(
-			param_info.appointment_date
-		).getMonth()}/{new Date(param_info.appointment_date).getFullYear()}
+		<strong>Date</strong>: {new Date(param_info.appointment_date).toDateString()}
 	</p>
 	<p>
-		<strong>Start Time</strong>: {new Date(param_info.appointment_start_time).getHours()}:{new Date(
-			param_info.appointment_start_time
-		).getMinutes()}
+		<strong>Start Time</strong>: {new Date(param_info.appointment_start_time).toTimeString()}
 	</p>
 	<p>
-		<strong>End Time</strong>: {new Date(param_info.appointment_end_time).getHours()}:{new Date(
-			param_info.appointment_end_time
-		).getMinutes()}
+		<strong>End Time</strong>: {new Date(param_info.appointment_end_time).toTimeString()}
 	</p>
 	<p><strong>Type of Operation</strong>: {param_info.type_of_operation}</p>
 	<button on:click={cancelAppointment} type="submit" class="btn btn-danger">Cancel</button>

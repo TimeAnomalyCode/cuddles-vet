@@ -1,6 +1,11 @@
 <script>
+	import { goto } from '$app/navigation';
+
 	export let data;
 	// console.log(data);
+	function editProfile() {
+		goto('/profile-edit');
+	}
 </script>
 
 <div class="p-3">
@@ -9,7 +14,7 @@
 		<div class="d-flex flex-row gap-500 justify-content-evenly">
 			<div class="d-flex flex-column gap-3" id="col1">
 				<img src={data.profile.main_picture} alt="" class="rounded-circle" style="width: 100px;" />
-				<button type="submit" class="btn btn-primary"> Edit Details </button>
+				<button on:click={editProfile} type="submit" class="btn btn-primary"> Edit Details </button>
 			</div>
 			<div class="d-flex flex-column" id="col2">
 				<p><strong>Name: </strong> {data.profile.name}</p>
@@ -69,5 +74,4 @@
 	#col2 {
 		width: 48%;
 	}
-
 </style>
