@@ -17,17 +17,7 @@
 			<div class="contactbox">
 				<div class="image-content">
 					<img src="contact1.png" alt="Dog and cat" class="image1" />
-					<div class="icons">
-						<a href="https://www.facebook.com/Cuddlesvet/" target="_blank">
-							<img src="facebook.png" alt="Facebook icon" class="icon" />
-						</a>
-						<a href="https://instagram.com/cuddlesvet?igshid=OGQ5ZDc2ODk2ZA==" target="_blank">
-							<img src="insta.png" alt="Instagram icon" class="icon" />
-						</a>
-						<a href="https://www.twitter.com" target="_blank">
-							<img src="twt.png" alt="Twitter icon" class="icon" />
-						</a>
-					</div>
+					
 					<div class="content">
 						<h1>Contact Us</h1>
 						<p>Let's hear from you!</p>
