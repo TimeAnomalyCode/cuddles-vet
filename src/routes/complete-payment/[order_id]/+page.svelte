@@ -76,3 +76,36 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	.p-3{
+		background-color: rgba(208, 196, 190, 0.3);
+		font-family: Inter;
+		color: #736d69;
+	}
+
+	h2,h3{
+		font-weight:800;
+		font-size:1.8vw;
+	}
+
+	.form-label{
+		font-weight:800;
+		font-size:1.2vw;
+	}
+
+	button[type='submit'] {
+		background-color: #736d69;
+		color: rgba(255, 255, 255, 0.7);
+		padding: 3% 35%;
+		border: none;
+		border-radius: 10px;
+		cursor: pointer;
+	}
+
+	/* Change button color on hover */
+	button[type='submit']:hover {
+		background-color: rgba(115, 109, 105, 0.25);
+	}
+
+</style>
