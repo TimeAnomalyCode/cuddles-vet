@@ -38,7 +38,7 @@
 
 <style>
 	.p-3 {
-		font-size: 1vw;
+		font-size: 1.1vw;
 		background-color: rgba(208, 196, 190, 0.3);
 		font-family: Inter;
 		color: #736d69;
@@ -62,6 +62,7 @@
 		color: rgba(255, 255, 255, 0.7);
 		width: 100%;
 		border: none;
+		font-size: 1.1vw;
 	}
 
 	button[type='submit']:hover {
