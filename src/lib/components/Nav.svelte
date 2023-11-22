@@ -175,6 +175,7 @@
 		width: 280px;
 		height: 100%;
 		background: #ffffff;
+		box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 	}
 
 	.sidebar ul li a {
