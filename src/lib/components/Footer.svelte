@@ -12,7 +12,7 @@
 <style>
 
 	.footer {
-		background: rgba(208, 196, 190, 0.4);
+		background: rgba(208, 196, 190, 0.6);
 		padding: 10px 0;
 	}
 	.footer a {
