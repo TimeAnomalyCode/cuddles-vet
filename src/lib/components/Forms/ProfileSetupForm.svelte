@@ -91,7 +91,7 @@
 			{/if}
 		</div>
 	{/if}
-	<button disabled={submitting} type="submit" class="btn btn-primary w-100">
+	<button disabled={submitting} type="submit" class="btn">
 		{#if submitting}
 			Submitting...
 		{:else}
@@ -99,3 +99,20 @@
 		{/if}
 	</button>
 </form>
+
+<style>
+	.btn{
+		width:87%;
+		background-color: #736D69;
+    	color: rgba(255, 255, 255, 0.8);
+		font-size: 1.1vw;
+		margin-top: 3%;
+		margin-bottom: 5%;
+		margin-left: 5.9%;
+    	padding: 4% 4%;
+    	border: none;
+    	border-radius: 10px;
+    	cursor: pointer;
+		font-family: inter, sans-serif;
+	}
+</style>

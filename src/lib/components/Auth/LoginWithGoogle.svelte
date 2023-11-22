@@ -34,7 +34,7 @@
 		align-items: center;
 		background-color: rgba(255, 255, 255, 0);
 		color: #5C5957;
-		font-size: 1vw;
+		font-size: 1.1vw;
 		font-weight: 600;
 		font-family: inter, sans-serif;
 		padding: 3% 3%;
