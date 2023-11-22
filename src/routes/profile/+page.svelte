@@ -12,11 +12,11 @@
 				<button type="submit" class="btn btn-primary"> Edit Details </button>
 			</div>
 			<div class="d-flex flex-column" id="col2">
-				<p>Name: {data.profile.name}</p>
-				<p>E-mail: {data.user.email}</p>
-				<p>Birthday: {data.profile.birthday}</p>
-				<p>Address: {data.profile.address}</p>
-				<p>Tel No: {data.profile.phone_number}</p>
+				<p><strong>Name: </strong> {data.profile.name}</p>
+				<p><strong>E-mail: </strong> {data.user.email}</p>
+				<p><strong>Birthday: </strong> {data.profile.birthday}</p>
+				<p><strong>Address: </strong>{data.profile.address}</p>
+				<p><strong>Tel No: </strong> {data.profile.phone_number}</p>
 			</div>
 			<div class="d-flex flex-column gap-3" id="col3">
 				<a href="/order-history">Order History</a>
@@ -64,10 +64,10 @@
 	.d-flex {
 		margin-top: 2%;
 		margin-bottom: 2%;
-		font-weight: 900;
 	}
 
 	#col2 {
 		width: 48%;
 	}
+
 </style>
