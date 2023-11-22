@@ -1,11 +1,19 @@
 <script>
 	import { enhance } from '$app/forms';
+	import { goto } from '$app/navigation';
 	import AppointmentCard from '$lib/components/AppointmentCard.svelte';
+	import { onMount } from 'svelte';
 
 	export let form;
 	export let data;
 	const doctors = data.doctors;
 	let submitting = false;
+
+	onMount(() => {
+		if (!data.isLoggedIn) {
+			goto('/login');
+		}
+	});
 
 	// console.log(data);
 
@@ -44,20 +52,22 @@
 					<h4>No Doctors available. Please search a different date/time</h4>
 				</div>
 			{/if}
-			{#each doctors as doctor (doctor.id)}
-				<AppointmentCard
-					doctor_id={doctor.id}
-					name={doctor.name}
-					position={doctor.position}
-					description={doctor.description}
-					main_picture={doctor.main_picture}
-					type_of_operation={data.params_info.type_of_operation}
-					user_id={data.user.id}
-					date={data.params_info.book_date}
-					start_time={data.params_info.start_time}
-					end_time={data.params_info.end_time}
-				/>
-			{/each}
+			{#if data.isLoggedIn}
+				{#each doctors as doctor (doctor.id)}
+					<AppointmentCard
+						doctor_id={doctor.id}
+						name={doctor.name}
+						position={doctor.position}
+						description={doctor.description}
+						main_picture={doctor.main_picture}
+						type_of_operation={data.params_info.type_of_operation}
+						user_id={data.user.id}
+						date={data.params_info.book_date}
+						start_time={data.params_info.start_time}
+						end_time={data.params_info.end_time}
+					/>
+				{/each}
+			{/if}
 		</div>
 	</div>
 </div>

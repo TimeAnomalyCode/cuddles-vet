@@ -8,7 +8,8 @@ export async function handle({ event, resolve }) {
 
     const protectedRoutes = [
         '/profile',
-        '/cart'
+        '/cart',
+        '/complete-appointment'
     ]
 
     const guestRoutes = [
