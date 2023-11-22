@@ -35,9 +35,6 @@
 				</a>
 			</div>
 			<div class="menu">
-				<div class="hamburger">
-					<i class="bx bx-menu" />
-				</div>
 				<div class:show={isOpen} id="navbarNav" class="profile_wrap">
 					{#if isLoggedIn}
 						<div class="profile">
@@ -66,8 +63,8 @@
 									<img src="/Profile.png" alt="Login" />
 								</a>
 							</div>
-							<div class="cart">
-								<a class:active={$page.url.pathname === '/cart'} href="/cart">
+							<div class="cart"> 
+								<a class="nav-link disabled" aria-disabled="true" href="/cart">
 									<img src="/Cart.png" alt="Cart" />
 								</a>
 							</div>
@@ -84,7 +81,6 @@
 							<span class="icon">
 								<i class="bx bx-book-content" />
 							</span>
-							<span class="text">Appointment</span>
 						</a>
 					</li>
 					<li>
@@ -92,7 +88,6 @@
 							<span class="icon">
 								<i class="bx bx-shopping-bag" />
 							</span>
-							<span class="text">Products</span>
 						</a>
 					</li>
 					<li>
@@ -100,7 +95,6 @@
 							<span class="icon">
 								<i class="bx bx-envelope" />
 							</span>
-							<span class="text">Contact</span>
 						</a>
 					</li>
 				</ul>
@@ -109,14 +103,6 @@
 		<div class="main_container" />
 	</div>
 
-	<script>
-		var hamburger = document.querySelector('.hamburger');
-
-		hamburger.addEventListener('click', () => {
-			hamburger.closest('.wrapper').classList.toggle('click_collapse');
-			hamburger.closest('.wrapper').classList.toggle('hover_collapse');
-		});
-	</script>
 </body>
 
 <style>
@@ -158,16 +144,10 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: 0 10px;
-	}
-
-	.top_navbar .menu .hamburger {
-		font-size: 35px;
-		cursor: pointer;
 	}
 
 	.top_navbar .profile_wrap {
-		padding-left: 25px;
+		margin-left: auto;
 		align-items: center;
 		display: flex;
 	}
@@ -207,22 +187,12 @@
 		vertical-align: middle;
 	}
 
-	.sidebar ul li a .text {
-		margin-left: 10px;
-		font-size: 18px;
-		font-weight: 500;
-	}
-
 	.sidebar ul li a:hover {
 		background-color: rgba(115, 109, 105, 0.4);
 	}
-
+	
 	.hover_collapse .sidebar {
 		width: 74px;
-	}
-
-	.hover_collapse .sidebar ul li a .text {
-		display: none;
 	}
 
 	.main_container {

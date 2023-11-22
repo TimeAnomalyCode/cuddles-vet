@@ -1,4 +1,5 @@
 <script>
+	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import AuthForm from '$lib/components/Auth/AuthForm.svelte';
 	import LoginWithGoogle from '$lib/components/Auth/LoginWithGoogle.svelte';
@@ -14,10 +15,11 @@
 
 			const user = await loginWithEmailandPassword(email, password);
 			await afterLogin($page.url, user.uid);
+
 		} catch (err) {
 			console.log(err);
 			if (['auth/invalid-email', 'auth/user-not-found', 'auth/wrong-password'].includes(err.code)) {
-				messagesStore.showError('Invalid email and password');
+				messagesStore.showError('Invalid email or password');
 				return;
 			}
 

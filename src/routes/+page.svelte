@@ -123,14 +123,14 @@
 	}
 
 	.title1 {
-		margin-top: 6%;
+		margin-top: 5%;
 		font-size: 5vw;
 		font-weight: 900;
 		line-height: 1.1;
 	}
 
 	.slogan {
-		margin-top: -0.5%;
+		margin-top: 2%;
 		font-size: 1.15vw;
 	}
 
