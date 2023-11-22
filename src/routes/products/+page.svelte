@@ -40,6 +40,7 @@
 					product_id={product.id}
 					description={product.description}
 					price={product.price.toFixed(2)}
+					image_path={product.main_picture}
 					{user_id}
 				/>
 			</div>
