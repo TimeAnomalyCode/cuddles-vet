@@ -52,7 +52,6 @@
 </svelte:head>
 
 <style>
-
 	.btn{
 		background-color: #736D69; 
 		color: rgba(255, 255, 255, 0.7); 
@@ -64,5 +63,9 @@
 	}
 	.btn:hover {
 		background-color: rgba(115, 109, 105, 0.25);;
+	}
+
+	.form-control{
+		height:6vh;
 	}
 </style>
