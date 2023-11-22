@@ -63,7 +63,12 @@
 {/if}
 {#if !isEmpty}
 	<div class="p-3">
-		<h2>Delivery Address</h2>
+		<div class="d-flex justify-content-between ">
+			<div class="d-flex gap-3">
+				<img src="addressicon.png" alt="address" class="image1" />
+				<h2 id="address">Delivery Address</h2>
+			</div>
+		</div>
 		<span>
 			{#if is_edit_address}
 				<strong>Name</strong>: {name} | <strong>Address</strong>:
@@ -122,10 +127,6 @@
 		color: #736d69;
 	}
 
-	.rounded {
-		background-color: rgba(255, 255, 255, 0.7);
-	}
-
 	.btn {
 		background-color: #736d69;
 		color: rgba(255, 255, 255, 0.7);
@@ -135,4 +136,16 @@
 	button[type='submit']:hover {
 		background-color: rgba(115, 109, 105, 0.25);
 	}
+
+	#address{
+		font-size:1.2vw;
+		font-weight:900;
+	}
+
+	.image1{
+		width:9%;
+		height:80%;
+	}
+
+
 </style>
