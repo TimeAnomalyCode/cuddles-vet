@@ -3,7 +3,9 @@
 
 	/** @type {import('./$types').PageData} */
 	export let data;
-	const orders = data.orders;
+	const orders = data.orders.sort((a, b) => {
+		return new Date(b.order_date) - new Date(a.order_date);
+	});
 	console.log(data);
 
 	function backToProfile() {
@@ -22,7 +24,7 @@
 				</div>
 				<div class="col">
 					<strong>Order Date</strong>
-					<p>{order.order_date.toString()}</p>
+					<p>{new Date(order.order_date).toDateString()}</p>
 				</div>
 				<div class="col">
 					<strong>Items</strong>
