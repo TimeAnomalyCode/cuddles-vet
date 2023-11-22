@@ -72,22 +72,11 @@
 		width: 40%;
 	}
 
-	.icons {
-		position: absolute;
-		display: flex;
-		margin-top: 3%;
-		margin-left: 10%;
-	}
-
-	.icon {
-		margin-right: 10%; /* Add some space between the icons */
-		width: 45%;
-	}
-
 	.content {
 		margin-top: 4%;
 		margin-left: 20%; /* Add some space between the image and content */
 		width: 23%;
+		margin-bottom: 4%;
 	}
 
 	h1 {
