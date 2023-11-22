@@ -12,7 +12,7 @@
 	let cart = data.cart;
 	// console.log(data);
 
-	const isEmpty = !data.has_cart;
+	const isEmpty = !data.has_cart || cart.items !== 0;
 	const deliveryFee = 4.9;
 	const total = getTotal();
 	const nett_total = total + deliveryFee;
@@ -81,7 +81,7 @@
 				<button type="submit" on:click={editAddress} class="btn btn-primary"> Edit Address </button>
 			{/if}
 		</span>
-		
+
 		<hr />
 		<div class="d-flex flex-column gap-3">
 			{#each cart.items as item (item.id)}
@@ -126,35 +126,33 @@
 		background-color: rgba(208, 196, 190, 0.3);
 		font-family: Inter;
 		color: #736d69;
-		font-size:1vw;
+		font-size: 1vw;
 	}
 
 	.btn {
 		background-color: #736d69;
 		color: rgba(255, 255, 255, 0.7);
 		border: none;
-		font-size:1vw;
+		font-size: 1vw;
 	}
 
 	button[type='submit']:hover {
 		background-color: rgba(115, 109, 105, 0.25);
 	}
 
-	#address{
-		font-size:1.2vw;
-		font-weight:900;
+	#address {
+		font-size: 1.2vw;
+		font-weight: 900;
 	}
 
-	.image1{
-		height:50%;
-		width:10%;
-		margin-bottom:-5%;
-
+	.image1 {
+		height: 50%;
+		width: 10%;
+		margin-bottom: -5%;
 	}
 
 	hr {
-	    border-color: rgb(42, 40, 39);
-		border-width: 1.5px; 
+		border-color: rgb(42, 40, 39);
+		border-width: 1.5px;
 	}
-
 </style>
