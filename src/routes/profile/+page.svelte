@@ -13,14 +13,14 @@
 	<div class="rounded">
 		<div class="d-flex flex-row gap-500 justify-content-evenly">
 			<div class="d-flex flex-column gap-3" id="col1">
-				<img src={data.profile.main_picture} alt="" class="rounded-circle" style="width: 100px;" />
+				<img src={data.profile.main_picture} alt="" class="profilepic" />
 				<button on:click={editProfile} type="submit" class="btn btn-primary"> Edit Details </button>
 			</div>
-			<div class="d-flex flex-column" id="col2">
+			<div class="d-flex flex-column col-width" id="col2">
 				<p><strong>Name: </strong> {data.profile.name}</p>
 				<p><strong>E-mail: </strong> {data.user.email}</p>
 				<p><strong>Birthday: </strong> {data.profile.birthday}</p>
-				<p><strong>Address: </strong>{data.profile.address}</p>
+				<p class="address"><strong>Address: </strong> {data.profile.address}</p>
 				<p><strong>Tel No: </strong> {data.profile.phone_number}</p>
 			</div>
 			<div class="d-flex flex-column gap-3" id="col3">
@@ -44,7 +44,7 @@
 	.title {
 		margin-top: 2%;
 		color: #5c5957;
-		font-size: 1.5vw;
+		font-size: 23px;
 		margin-left: 7.5%;
 		font-weight: 900;
 	}
@@ -63,7 +63,7 @@
 	}
 
 	button[type='submit']:hover {
-		background-color: rgba(115, 109, 105, 0.25);
+		background-color: rgba(115, 109, 105, 0.3);
 	}
 
 	.d-flex {
@@ -71,7 +71,19 @@
 		margin-bottom: 2%;
 	}
 
-	#col2 {
-		width: 48%;
+	.col-width {
+		width: 45%;
 	}
+
+	.address {
+		word-wrap: break-word;;
+	}
+
+	.profilepic{
+		height: 90px;
+		width: 90px;
+		border-radius: 50%;
+		margin-bottom: 5%;
+	}
+
 </style>

@@ -41,7 +41,7 @@
 						<div class="profile">
 							<a class:active={$page.url.pathname === '/profile'} href="/profile">
 								<span class="name">Hi, {name ? name : '...'}</span>
-								<img src={main_picture ? main_picture : '/Profile.png'} alt="Login" />
+								<img src={main_picture ? main_picture : '/Profile.png'} alt="Login" class="profilepic"/>
 							</a>
 						</div>
 						<div class="cart">
@@ -157,6 +157,7 @@
 		width: 36px;
 		height: 36px;
 		margin-right: 10px;
+		border-radius: 50%;
 	}
 
 	.top_navbar .profile .name {
@@ -202,10 +203,6 @@
 		width: calc(100% - 75px);
 	}
 
-	.top_navbar .profile_wrap img {
-    width: 36px;
-    height: 36px;
-    margin-right: 10px;
-    border-radius: 50%; /* Add this line to make the image circular */
-}
+
+
 </style>

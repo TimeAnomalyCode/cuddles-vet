@@ -1,5 +1,4 @@
 <script>
-	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import AuthForm from '$lib/components/Auth/AuthForm.svelte';
 	import LoginWithGoogle from '$lib/components/Auth/LoginWithGoogle.svelte';
