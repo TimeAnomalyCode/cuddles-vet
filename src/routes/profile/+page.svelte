@@ -38,6 +38,7 @@
 
 <style>
 	.p-3 {
+		width: 100%;
 		font-size: 1.1vw;
 		background-color: rgba(208, 196, 190, 0.3);
 		font-family: Inter;

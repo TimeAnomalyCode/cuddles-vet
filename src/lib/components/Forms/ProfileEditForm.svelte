@@ -123,5 +123,6 @@
 
 	button[type='submit']:hover {
 		background-color: rgba(115, 109, 105, 0.3);
+		color: white;
 	}
 </style>

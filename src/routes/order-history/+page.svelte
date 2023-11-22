@@ -51,12 +51,13 @@
 
 	.p-3 {
 		background-color: rgba(208, 196, 190, 0.3);
-		font-family: Inter;
+		font-family: Inter, sans-serif;
 		color: #736d69;
 		font-size: 1.1vw;
 	}
 	h2{
 		margin-top: 2%;
+		margin-bottom: 2%;
 		color: #5c5957;
 		font-size: 23px;
 		margin-left: 5%;

@@ -227,7 +227,7 @@
   	}
 	
 	.hover_collapse .sidebar {
-		width: 74px;
+		width: 75px;
 	}
 
 	.main_container {
