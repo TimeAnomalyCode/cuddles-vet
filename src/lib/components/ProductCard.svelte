@@ -110,6 +110,7 @@
 		font-family: Inter;
 		color: #5C5957;
 		font-size:1vw;
+		padding:1rem;
 	}
 
 	#name, #price {
