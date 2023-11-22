@@ -17,7 +17,7 @@
 			return;
 		}
 		try {
-			const res = await fetch(`/api/addToCart/${user_id}/${product_id}/${counter}`, {
+			const res = await fetch(`/api/addToCart/${user_id}/${product_id}/${counter}/true`, {
 				method: 'POST'
 			});
 
@@ -59,7 +59,7 @@
 					src="/dash-circle.svg"
 					alt=""
 					on:click={() => {
-						if (counter > 0) {
+						if (counter > 1) {
 							counter -= 1;
 						}
 					}}
@@ -89,42 +89,40 @@
 </div>
 
 <style>
-	.btn{
-		background-color: #736D69; 
-		color: rgba(255, 255, 255, 0.7); 
-		border: none; 
-		padding: 2.5%; 
-		border-radius: 10px; 
+	.btn {
+		background-color: #736d69;
+		color: rgba(255, 255, 255, 0.7);
+		border: none;
+		padding: 2.5%;
+		border-radius: 10px;
 		cursor: pointer;
-		height:100%;
-		margin-top:2%;
-		font-size:1vw;
-		
+		height: 100%;
+		margin-top: 2%;
+		font-size: 1vw;
 	}
 
 	.btn:hover {
 		background-color: rgba(115, 109, 105, 0.25);
 	}
 
-	.card{
+	.card {
 		font-family: Inter;
-		color: #5C5957;
-		font-size:1vw;
-		padding:1rem;
+		color: #5c5957;
+		font-size: 1vw;
+		padding: 1rem;
 	}
 
-	#name, #price {
-		font-weight:900;
-		font-size:1.3vw;
+	#name,
+	#price {
+		font-weight: 900;
+		font-size: 1.3vw;
 	}
 
-    #plus-minus {
-        align-items: center; /* Align items vertically in the center */
-    }
-
-	#num-sold{
-		font-size:1vw;
+	#plus-minus {
+		align-items: center; /* Align items vertically in the center */
 	}
 
-	
+	#num-sold {
+		font-size: 1vw;
+	}
 </style>
