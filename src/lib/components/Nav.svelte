@@ -201,4 +201,11 @@
 		margin-left: 75px;
 		width: calc(100% - 75px);
 	}
+
+	.top_navbar .profile_wrap img {
+    width: 36px;
+    height: 36px;
+    margin-right: 10px;
+    border-radius: 50%; /* Add this line to make the image circular */
+}
 </style>
