@@ -402,6 +402,21 @@ export async function deleteCart(id) {
 }
 
 // Orders + Approve/Deny
+export async function getAllOrders(id) {
+    const orderCollection = await db.collection('orders').where('user_id', '==', id).get()
+
+    /**
+     * @type {{ id: string; }[]}
+     */
+    const orders = []
+    orderCollection.docs.forEach((doc) => {
+        const created_at = doc.data().created_at * 1000
+        const order_date = firestore.Timestamp.fromMillis(created_at)
+        orders.push({ id: doc.id, ...doc.data(), order_date: order_date.toDate() })
+    })
+
+    return orders
+}
 
 export async function changeOrderStatus(order_id, status) {
     const orderRef = db.collection('orders').doc(order_id)
