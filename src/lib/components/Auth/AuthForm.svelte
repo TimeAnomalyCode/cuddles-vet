@@ -87,6 +87,7 @@
 		border: 1px solid #5C5957; 
 		font-family: inter, sans-serif;
 		font-size: 1.1vw;
+		height:7vh;
 	}
 
 	.btn{

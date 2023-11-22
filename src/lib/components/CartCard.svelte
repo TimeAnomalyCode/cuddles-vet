@@ -107,13 +107,13 @@
     }
 
 	h2{
-		font-size:1.5vw;
+		font-size:1.4vw;
 		
 	}
 
 	#trash{
 		margin-right:-80%;
-		margin-top:-20%;
+		margin-top:-10%;
 	}
 
 </style>

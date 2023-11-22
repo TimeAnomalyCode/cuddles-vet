@@ -180,14 +180,22 @@
 	.image3 {
 		float: left;
 		margin-top: -15%;
-		margin-left: -2%;
+		margin-left: -5%;
 		width: 15%;
 		height: 60%;
 	}
 
+	.slideshow {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		width: 85%;
+	}
+
 	.slideshow img {
-		width: 100%;
-		margin-top: -1%;
+		max-width: 80%; /* Make sure the image does not exceed the container width */
+		max-height: 100%; /* Make sure the image does not exceed the container height */
 	}
 
 	@media (max-width: 768px) {

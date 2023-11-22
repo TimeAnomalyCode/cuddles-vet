@@ -72,22 +72,11 @@
 		width: 40%;
 	}
 
-	.icons {
-		position: absolute;
-		display: flex;
-		margin-top: 3%;
-		margin-left: 10%;
-	}
-
-	.icon {
-		margin-right: 10%; /* Add some space between the icons */
-		width: 45%;
-	}
-
 	.content {
-		margin-top: 4%;
+		margin-top: 3%;
 		margin-left: 20%; /* Add some space between the image and content */
 		width: 23%;
+		margin-bottom: 3%;
 	}
 
 	h1 {
@@ -122,6 +111,12 @@
 		margin-top: 2%;
 		border: 1px solid rgba(92, 89, 87, 0.5);
 		border-radius: 4px;
+		height:4vh;
+	}
+
+	input[type='message'],
+	textarea {
+		height:15vh;
 	}
 
 	/* Style the submit button */

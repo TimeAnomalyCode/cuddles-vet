@@ -81,6 +81,7 @@
 				<button type="submit" on:click={editAddress} class="btn btn-primary"> Edit Address </button>
 			{/if}
 		</span>
+		
 		<hr />
 		<div class="d-flex flex-column gap-3">
 			{#each cart.items as item (item.id)}
@@ -151,5 +152,9 @@
 
 	}
 
+	hr {
+	    border-color: rgb(42, 40, 39);
+		border-width: 1.5px; 
+	}
 
 </style>

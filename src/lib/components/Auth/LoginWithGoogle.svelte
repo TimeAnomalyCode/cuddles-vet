@@ -30,18 +30,17 @@
 <style>
 	button{
 		width: 83%;
+		margin: 4.5% 8.5%; /* Center the button horizontally */
+		align-items: center;
 		background-color: rgba(255, 255, 255, 0);
-    	color: #5C5957;
+		color: #5C5957;
 		font-size: 1.1vw;
 		font-weight: 600;
 		font-family: inter, sans-serif;
-		margin-top: 4.5%;
-		margin-bottom: 4.5%;
-    	padding: 3% 3%;
-    	border: 1px solid #5C5957;
-    	border-radius: 5px;
-    	cursor: pointer;
-		margin-left: 8%;
+		padding: 3% 3%;
+		border: 1px solid #5C5957;
+		border-radius: 5px;
+		cursor: pointer;
 	}
 
 	button:hover {
