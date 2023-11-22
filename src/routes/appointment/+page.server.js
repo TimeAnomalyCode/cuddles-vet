@@ -1,6 +1,6 @@
 // Forces route to go through hooks
 
-import { checkAppointmentAvailable } from '$lib/firebase/database.server'
+import { checkAppointmentAvailable, getAllDoctors } from '$lib/firebase/database.server'
 import { redirect } from '@sveltejs/kit'
 
 /** @type {import('./$types').PageServerLoad} */
@@ -23,13 +23,11 @@ export const actions = {
         const data = {
             book_date: date,
             start_time: start_time,
-            type_of_operation: formData.get("selectedOption")
+            type_of_operation: formData.get("type_of_operation")
         }
 
-        console.log(data)
+        // console.log(data)
 
-        // checkAppointmentAvailable
-
-        // throw redirect(300, `/`)
+        throw redirect(300, `/appointment/${data.book_date}/${data.start_time}/${data.type_of_operation}`)
     }
 }

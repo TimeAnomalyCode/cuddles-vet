@@ -8,7 +8,7 @@
 	// console.log(param_info);
 
 	function cancelAppointment() {
-		goto('/appointment2');
+		goto('/appointment');
 	}
 
 	async function addAppointment() {
