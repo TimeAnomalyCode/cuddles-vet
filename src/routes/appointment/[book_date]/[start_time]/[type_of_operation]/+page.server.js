@@ -60,6 +60,6 @@ export const actions = {
 
         console.log(data)
 
-        throw redirect(300, `/appointment2/${data.book_date}/${data.start_time}/${data.type_of_operation}`)
+        throw redirect(300, `/appointment/${data.book_date}/${data.start_time}/${data.type_of_operation}`)
     }
 }
