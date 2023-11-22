@@ -50,9 +50,9 @@
 				<p>
 					Cuddles Veterinary Clinic's history is a
 					<br />heartwarming tale of dedication and compassion. Founded
-					<br />in 2020 by the visionary, Dr. Yeow, our
-					<br />journey began with a singular mission: to champion the
-					<br />well-being of pets in George Town.
+					<br />in 2020 by the visionary, Dr. Yeow, our journey began
+					<br />with a singular mission: to champion the well-being of
+					<br />pets in George Town.
 				</p>
 				<p>
 					Through the years, Cuddles Veterinary Clinic
