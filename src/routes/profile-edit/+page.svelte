@@ -21,6 +21,7 @@
 		background-color: rgba(208, 196, 190, 0.3);
 		font-family: Inter;
 		color: #736d69;
+		font-size: 1.1vw;
 	}
 	.title{
 		margin-top: 2%;
