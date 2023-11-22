@@ -30,7 +30,7 @@
 		<div class="top_navbar">
 			<div class="logo">
 				<a class:active={$page.url.pathname === '/'} aria-current="page" href="/"
-					><img src="Logo.png" alt="logo" style="width:64px; height:70px" />
+					><img src="/Logo.png" alt="logo" style="width:64px; height:70px" />
 					Cuddles Vet Clinic
 				</a>
 			</div>
@@ -43,19 +43,19 @@
 						<div class="profile">
 							<a class:active={$page.url.pathname === '/profile'} href="/profile">
 								<span class="name">Hi, {name ? name : '...'}</span>
-								<img src="Profile.png" alt="Login" />
+								<img src="/Profile.png" alt="Login" />
 							</a>
 						</div>
 						<div class="cart">
 							<a class:active={$page.url.pathname === '/cart'} href="/cart">
-								<img src="Cart.png" alt="Cart" />
+								<img src="/Cart.png" alt="Cart" />
 							</a>
 						</div>
 						<div class="logout">
 							<!-- svelte-ignore a11y-click-events-have-key-events -->
 							<!-- svelte-ignore a11y-no-static-element-interactions -->
 							<span on:click={onLogout}>
-								<img src="logout.png" alt="Logout" />
+								<img src="/logout.png" alt="Logout" />
 							</span>
 						</div>
 					{:else}
@@ -63,12 +63,12 @@
 						<div class="profile_wrap">
 							<div class="profile">
 								<a class:active={$page.url.pathname === '/login'} href="/login">
-									<img src="Profile.png" alt="Login" />
+									<img src="/Profile.png" alt="Login" />
 								</a>
 							</div>
 							<div class="cart">
 								<a class:active={$page.url.pathname === '/cart'} href="/cart">
-									<img src="Cart.png" alt="Cart" />
+									<img src="/Cart.png" alt="Cart" />
 								</a>
 							</div>
 						</div>

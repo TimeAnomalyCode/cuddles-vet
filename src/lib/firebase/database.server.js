@@ -76,6 +76,12 @@ export async function getAllDoctors() {
     return doctors
 }
 
+export async function getAvailableDoctor() {
+    const doctorCollection = await db.collection('doctors').get()
+
+
+}
+
 export async function addDoctor(doctor) {
     const doctorCollection = db.collection('doctors')
 
@@ -83,7 +89,6 @@ export async function addDoctor(doctor) {
         name: doctor.name,
         position: doctor.position,
         description: doctor.description,
-        rating: 0,
         created_at: firestore.Timestamp.now().seconds,
     })
 
@@ -130,6 +135,14 @@ export async function deleteDoctor(id) {
 }
 
 // Products
+export async function addNumOfSold(id, num) {
+    const productCollection = db.collection('products').doc(id)
+
+    await productCollection.update({
+        num_of_sold: firestore.FieldValue.increment(num)
+    })
+}
+
 export async function getAllProducts() {
     const productCollection = await db.collection('products').get()
 
@@ -197,20 +210,75 @@ export async function deleteProduct(id) {
 }
 
 // Appointments
+export async function getAllAppointments(id) {
+    const orderCollection = await db.collection('appointments').where('user_id', '==', id).get()
 
-export async function checkAppointmentAvailable(doctor_id, date, start_time, end_time) {
-    const appointmentRef = await db.collection('appointments')
-        .where('appointment_date', '==', date)
+    const orders = []
+    for (const doc of orderCollection.docs) {
+        const data = doc.data()
+        const doctorInfo = await getDoctor(data.doctor_id)
+        orders.push(JSON.parse(
+            JSON.stringify(
+                {
+                    id: doc.id,
+                    date: data.appointment_date.toDate(),
+                    start_time: data.appointment_start_time.toDate(),
+                    end_time: data.appointment_end_time.toDate(),
+                    type_of_operation: data.type_of_operation,
+                    doctor: doctorInfo,
+                }
+            )
+        )
+        )
+    }
+
+    return orders
+}
+
+export async function checkAppointmentAvailable(doctor_id, start_time, end_time) {
+    const start_date = new Date()
+    start_date.setHours(0, 0, 0, 0)
+
+    const end_date = new Date()
+    end_date.setHours(0, 0, 0, 0)
+    end_date.setDate(end_date.getDate() + 1)
+
+    const todayAppointmentRef = await db.collection('appointments')
+        .where('appointment_date', '>=', start_date)
+        .where('appointment_date', '<=', end_date)
         .where('doctor_id', '==', doctor_id)
-        .where('appointment_start_time', '>=', start_time)
-        .where('appointment_end_time', '<=', end_time)
         .get()
 
-    if (appointmentRef.empty) {
+    // console.log(appointmentRef.docs)
+    // console.log(firestore.Timestamp.fromDate(date))
+    if (todayAppointmentRef.empty) {
         return true
     }
 
-    return false
+    for (const apt of todayAppointmentRef.docs) {
+        const data = { ...apt.data() }
+        // console.log(data)
+        // console.log("StartTime", start_time <= data.appointment_start_time.toDate())
+        // console.log("User Start", start_time.toString())
+        // console.log("Apt Start ", data.appointment_start_time.toDate().toString())
+
+        // console.log("EndTime", end_time >= data.appointment_end_time.toDate())
+        // console.log("User End", end_time.toString())
+        // console.log("Apt End ", data.appointment_end_time.toDate().toString())
+
+        const appointment_start_time = data.appointment_start_time.toDate()
+        const appointment_end_time = data.appointment_end_time.toDate()
+
+        if (
+            (start_time <= appointment_end_time && end_time >= appointment_end_time) ||
+            (start_time >= appointment_start_time && start_time < appointment_end_time) ||
+            (end_time > appointment_start_time && end_time <= appointment_end_time)
+        ) {
+            return false
+        }
+    }
+
+    return true
 }
 
 export async function addAppointment(appointment) {
@@ -219,9 +287,9 @@ export async function addAppointment(appointment) {
     const appointmentRef = await appointmentCollection.add({
         doctor_id: appointment.doctor_id,
         user_id: appointment.user_id,
-        appointment_date: appointment.appointment_date,
-        appointment_start_time: appointment.appointment_start_time,
-        appointment_end_time: appointment.appointment_end_time,
+        appointment_date: firestore.Timestamp.fromDate(appointment.appointment_date),
+        appointment_start_time: firestore.Timestamp.fromDate(appointment.appointment_start_time),
+        appointment_end_time: firestore.Timestamp.fromDate(appointment.appointment_end_time),
         type_of_operation: appointment.type_of_operation,
         created_at: firestore.Timestamp.now().seconds,
     })
@@ -358,6 +426,21 @@ export async function deleteCart(id) {
 }
 
 // Orders + Approve/Deny
+export async function getAllOrders(id) {
+    const orderCollection = await db.collection('orders').where('user_id', '==', id).get()
+
+    /**
+     * @type {{ id: string; }[]}
+     */
+    const orders = []
+    orderCollection.docs.forEach((doc) => {
+        const created_at = doc.data().created_at * 1000
+        const order_date = firestore.Timestamp.fromMillis(created_at)
+        orders.push({ id: doc.id, ...doc.data(), order_date: order_date.toDate() })
+    })
+
+    return orders
+}
 
 export async function changeOrderStatus(order_id, status) {
     const orderRef = db.collection('orders').doc(order_id)
@@ -378,18 +461,33 @@ export async function addOrder(order) {
     const orderRef = await orderCollection.add({
         user_id: order.user_id,
         cart_id: order.cart_id,
+        cart_items: order.cart_items,
+        address: order.address,
         total_price: order.total_price,
         is_approved: "pending",
+        main_picture: "",
         created_at: firestore.Timestamp.now().seconds,
     })
 
-    const mainPictureUrl = await saveFileToBucket(order.main_picture, `order_images/${orderRef.id}/main_picture_${firestore.Timestamp.now().seconds}`)
+    // const mainPictureUrl = await saveFileToBucket(order.main_picture, `order_images/${orderRef.id}/main_picture_${firestore.Timestamp.now().seconds}`)
 
-    await orderRef.update({
-        main_picture: mainPictureUrl
-    })
+    // await orderRef.update({
+    //     main_picture: mainPictureUrl
+    // })
 
     return orderRef.id
+}
+
+export async function editImageOrder(id, form) {
+    const orderRef = db.collection('orders').doc(id)
+    let mainPicture = form.main_picture || null
+
+    delete form.main_picture
+
+    if (mainPicture) {
+        const mainPictureUrl = await saveFileToBucket(mainPicture, `order_images/${orderRef.id}/main_picture_${firestore.Timestamp.now().seconds}`)
+        orderRef.update({ main_picture: mainPictureUrl })
+    }
 }
 
 export async function editOrder(id, form) {
@@ -422,4 +520,19 @@ export async function deleteOrder(id) {
         await deleteFolderFromBucket(`order_images/${orderRef.id}`)
         await orderRef.delete()
     }
+}
+
+// Contact
+export async function addContact(contact) {
+    const contactCollection = db.collection('contacts')
+
+    const contactRef = await contactCollection.add({
+        name: contact.name,
+        email: contact.email,
+        message: contact.message,
+        has_responded: false,
+        created_at: firestore.Timestamp.now().seconds,
+    })
+
+    return contactRef.id
 }

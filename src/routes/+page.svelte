@@ -1,7 +1,18 @@
 <script>
 	import { browser } from '$app/environment';
+	import { invalidateAll } from '$app/navigation';
+	import { onMount } from 'svelte';
+	import Carousel from 'svelte-carousel';
 	const images = ['slideshow1.jpg', 'slideshow2.jpg', 'slideshow3.jpg', 'slideshow4.jpg'];
 
+	let carousel;
+	const handleNextClick = () => {
+		carousel.goToNext();
+	};
+
+	onMount(() => {
+		invalidateAll();
+	});
 </script>
 
 <div class="section1">
@@ -64,6 +75,19 @@
 				Explore heartwarming moments, furry friends, and our dedicated team, showcasing our world of
 				<br />compassionate care and happy tails.
 			</p>
+			<div class="container2">
+				<img src="pawprints.png" alt="Paw prints" class="image3" />
+			</div>
+			<!-- HERE IS SLIDEs -->
+			{#if browser}
+				<Carousel bind:this={carousel} autoplay autoplayDuration={3000}>
+					{#each images as path}
+						<div class="slideshow">
+							<img src={path} alt="gallery-image" />
+						</div>
+					{/each}
+				</Carousel>
+			{/if}
 		</div>
 	</div>
 </div>
@@ -73,7 +97,7 @@
 </svelte:head>
 
 <style>
-	body {
+	* {
 		margin: 0;
 		padding: 0;
 		font-family: Inter Black, sans-serif;
@@ -164,25 +188,6 @@
 	.slideshow img {
 		width: 100%;
 		margin-top: -1%;
-	}
-
-	.controls {
-		margin-top: -33%;
-		display: flex;
-	}
-
-	.arrow {
-		width: 40px;
-		height: 70px;
-	}
-
-	#prevArrow {
-		margin-left: -3%;
-	}
-
-	#nextArrow {
-		margin-left: auto;
-		margin-right: -3%;
 	}
 
 	@media (max-width: 768px) {
