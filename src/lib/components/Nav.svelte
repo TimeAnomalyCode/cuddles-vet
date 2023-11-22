@@ -5,6 +5,7 @@
 	import messagesStore from '$lib/stores/messages.store';
 	export let isLoggedIn;
 	export let name;
+	export let main_picture;
 
 	let isOpen = false;
 
@@ -43,7 +44,7 @@
 						<div class="profile">
 							<a class:active={$page.url.pathname === '/profile'} href="/profile">
 								<span class="name">Hi, {name ? name : '...'}</span>
-								<img src="/Profile.png" alt="Login" />
+								<img src={main_picture ? main_picture : '/Profile.png'} alt="Login" />
 							</a>
 						</div>
 						<div class="cart">
