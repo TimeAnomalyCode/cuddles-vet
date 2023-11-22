@@ -63,8 +63,8 @@
 {/if}
 {#if !isEmpty}
 	<div class="p-3">
-		<div class="d-flex justify-content-between ">
-			<div class="d-flex gap-3">
+		<div class="d-flex justify-content-between">
+			<div class="d-flex gap-3 align-items-center">
 				<img src="addressicon.png" alt="address" class="image1" />
 				<h2 id="address">Delivery Address</h2>
 			</div>
@@ -125,12 +125,14 @@
 		background-color: rgba(208, 196, 190, 0.3);
 		font-family: Inter;
 		color: #736d69;
+		font-size:1vw;
 	}
 
 	.btn {
 		background-color: #736d69;
 		color: rgba(255, 255, 255, 0.7);
 		border: none;
+		font-size:1vw;
 	}
 
 	button[type='submit']:hover {
@@ -143,8 +145,10 @@
 	}
 
 	.image1{
-		width:9%;
-		height:80%;
+		height:50%;
+		width:10%;
+		margin-bottom:-5%;
+
 	}
 
 
