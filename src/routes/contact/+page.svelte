@@ -77,6 +77,7 @@
 		margin-left: 20%; /* Add some space between the image and content */
 		width: 23%;
 		margin-bottom: 3%;
+		font-size: 1vw;
 	}
 
 	h1 {
@@ -125,10 +126,11 @@
 		color: rgba(255, 255, 255, 0.7);
 		padding: 3% 35%;
 		border: none;
-		border-radius: 10px;
+		border-radius: 5px;
 		cursor: pointer;
 		margin-top: 5%;
 		margin-left: 25%;
+		font-size:1vw;
 	}
 
 	/* Change button color on hover */
