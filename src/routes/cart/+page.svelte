@@ -12,7 +12,7 @@
 	let cart = data.cart;
 	// console.log(data);
 
-	const isEmpty = !data.has_cart || cart.items !== 0;
+	const isEmpty = !data.has_cart || cart.items.length === 0;
 	const deliveryFee = 4.9;
 	const total = getTotal();
 	const nett_total = total + deliveryFee;
