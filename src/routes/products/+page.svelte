@@ -79,7 +79,7 @@
 	}
 
 	.gif{
-		width: 15%;
+		width: 20%;
 		margin: auto;
 	}
 
