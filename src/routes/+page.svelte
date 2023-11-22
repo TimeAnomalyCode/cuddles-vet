@@ -1,12 +1,7 @@
 <script>
 	import { browser } from '$app/environment';
-	import Carousel from 'svelte-carousel';
 	const images = ['slideshow1.jpg', 'slideshow2.jpg', 'slideshow3.jpg', 'slideshow4.jpg'];
 
-	let carousel;
-	const handleNextClick = () => {
-		carousel.goToNext();
-	};
 </script>
 
 <div class="section1">
@@ -69,16 +64,6 @@
 				Explore heartwarming moments, furry friends, and our dedicated team, showcasing our world of
 				<br />compassionate care and happy tails.
 			</p>
-			<!-- HERE IS SLIDEs -->
-			{#if browser}
-				<Carousel bind:this={carousel} autoplay autoplayDuration={3000}>
-					{#each images as path}
-						<div class="slideshow">
-							<img src={path} alt="gallery-image" />
-						</div>
-					{/each}
-				</Carousel>
-			{/if}
 		</div>
 	</div>
 </div>
