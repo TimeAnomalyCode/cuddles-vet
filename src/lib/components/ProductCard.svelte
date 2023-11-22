@@ -79,9 +79,8 @@
 			</div>
 			<button
 				type="submit"
-				class:btn-primary={counter != 0}
+				class:btn={counter != 0}
 				class:btn-danger={counter == 0}
-				class="btn"
 				on:click={addToCart}>{counter == 0 ? 'Remove Item' : 'Add to Cart'}</button
 			>
 		</div>
@@ -103,6 +102,7 @@
 
 	.btn:hover {
 		background-color: rgba(115, 109, 105, 0.25);
+		color: white;
 	}
 
 	.card {

@@ -19,7 +19,7 @@
 <style>
 	.p-3 {
 		background-color: rgba(208, 196, 190, 0.3);
-		font-family: Inter;
+		font-family: Inter, sans-serif;
 		color: #736d69;
 	}
 	.title{

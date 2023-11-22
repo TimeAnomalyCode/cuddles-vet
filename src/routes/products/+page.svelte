@@ -25,7 +25,7 @@
 			bind:value={searchValue}
 			class="form-control"
 		/>
-		<button type="submit" class="btn btn-primary" on:click={filterProducts}>Search</button>
+		<button type="submit" on:click={filterProducts}>Search</button>
 	</div>
 	<br />
 	{#if products.length == 0}
@@ -53,7 +53,7 @@
 </svelte:head>
 
 <style>
-	.btn {
+	button {
 		background-color: #736d69;
 		color: rgba(255, 255, 255, 0.7);
 		border: none;
@@ -62,7 +62,7 @@
 		cursor: pointer;
 		font-size: 1vw;
 	}
-	.btn:hover {
+	button:hover {
 		background-color: rgba(115, 109, 105, 0.25);
 	}
 

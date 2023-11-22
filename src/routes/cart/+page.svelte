@@ -66,19 +66,26 @@
 		<div class="d-flex justify-content-between">
 			<div class="d-flex gap-3 align-items-center">
 				<img src="addressicon.png" alt="address" class="image1" />
-				<h2 id="address">Delivery Address</h2>
+				<h2>Delivery Address</h2>
 			</div>
 		</div>
-		<span>
+		<span class="btn-container">
 			{#if is_edit_address}
-				<strong>Name</strong>: {name} | <strong>Address</strong>:
-				<input type="text" id="address" name="address" bind:value={address} />
-				<button type="submit" on:click={editAddress} class="btn btn-primary"> Save Address </button>
-				<button type="submit" on:click={cancelAddress} class="btn btn-primary"> Cancel </button>
+				<div>
+					<strong>Name</strong>: {name} | <strong>Address</strong>:
+					<input type="text" id="address" name="address" bind:value={address} />
+				</div>
+				<div class="btn-edit">
+					<button type="submit" on:click={editAddress} class="btn"> Save Address </button>
+					<button type="submit" on:click={cancelAddress} class="btn"> Cancel </button>
+				</div>
+				
 			{/if}
 			{#if !is_edit_address}
-				<strong>Name</strong>: {name} | <strong>Address</strong>: {current_address}
-				<button type="submit" on:click={editAddress} class="btn btn-primary"> Edit Address </button>
+				<div>
+					<strong>Name</strong>: {name} | <strong>Address</strong>: {current_address}
+				</div>
+				<button type="submit" on:click={editAddress} class="btn"> Edit Address </button>
 			{/if}
 		</span>
 
@@ -112,7 +119,7 @@
 		</div>
 		<hr />
 		<div class="d-flex flex-row-reverse">
-			<button type="submit" class="btn btn-primary" on:click={placeOrder}> Place Order </button>
+			<button type="submit" class="btn" on:click={placeOrder}> Place Order </button>
 		</div>
 	</div>
 {/if}
@@ -126,22 +133,30 @@
 		background-color: rgba(208, 196, 190, 0.3);
 		font-family: Inter;
 		color: #736d69;
-		font-size: 1vw;
+		font-size: 1.1vw;
 	}
-
+	.btn-container {
+		display: flex;
+		align-items: center;
+	}
 	.btn {
 		background-color: #736d69;
 		color: rgba(255, 255, 255, 0.7);
 		border: none;
-		font-size: 1vw;
+		font-size: 1.1vw;
+		margin-left: auto;
 	}
 
 	button[type='submit']:hover {
 		background-color: rgba(115, 109, 105, 0.25);
+		color: white;
+	}
+	.btn-edit{
+		margin-left: auto;
 	}
 
-	#address {
-		font-size: 1.2vw;
+	h2 {
+		font-size: 1.5vw;
 		font-weight: 900;
 	}
 
@@ -149,6 +164,14 @@
 		height: 50%;
 		width: 10%;
 		margin-bottom: -5%;
+	}
+	input[type='text']{
+		font-weight: regular;
+		padding: 5px;
+		font-size: 1.1vw;
+		border: 1px solid #736d69;
+		border-radius: 3px;
+		width: 400px;
 	}
 
 	hr {

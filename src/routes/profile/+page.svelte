@@ -14,7 +14,7 @@
 		<div class="d-flex flex-row gap-500 justify-content-evenly">
 			<div class="d-flex flex-column gap-3" id="col1">
 				<img src={data.profile.main_picture} alt="" class="profilepic" />
-				<button on:click={editProfile} type="submit" class="btn btn-primary"> Edit Details </button>
+				<button on:click={editProfile} type="submit"> Edit Details </button>
 			</div>
 			<div class="d-flex flex-column col-width" id="col2">
 				<p><strong>Name: </strong> {data.profile.name}</p>
@@ -55,11 +55,13 @@
 		margin: auto;
 	}
 
-	.btn {
+	button {
 		background-color: #736d69;
 		color: rgba(255, 255, 255, 0.7);
-		width: 100%;
 		border: none;
+		width: 100%;
+		height: 30px;
+		border-radius: 5px;
 	}
 
 	button[type='submit']:hover {
