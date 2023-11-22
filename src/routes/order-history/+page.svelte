@@ -44,7 +44,7 @@
 			<br />
 		{/each}
 	</div>
-	<button on:click={backToProfile} class="btn btn-primary">Back</button>
+	<button on:click={backToProfile} class="btn">Back</button>
 </div>
 
 <style>
@@ -80,10 +80,12 @@
 		border: none;
 		font-size: 1.1vw;
 		margin-left: 5%;
+		width: 100px;
 	}
 
 	.btn:hover {
 		background-color: rgba(115, 109, 105, 0.3);
+		color: white;
 	}
 
 	.col-width-long {

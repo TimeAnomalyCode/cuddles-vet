@@ -61,13 +61,14 @@
 		background-color: #736d69;
 		color: rgba(255, 255, 255, 0.7);
 		border: none;
-		width: 100%;
+		width: 120px;
 		height: 30px;
 		border-radius: 5px;
 	}
 
 	button[type='submit']:hover {
 		background-color: rgba(115, 109, 105, 0.3);
+		color: white;
 	}
 
 	.d-flex {
@@ -88,11 +89,13 @@
 		width: 90px;
 		border-radius: 50%;
 		margin-bottom: 5%;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	.vertical-line {
       border-left: 1px solid #736d69;
-      height: 25vh; 
+      height: 28vh; 
 	  margin-top:1.3%;
     }
 
