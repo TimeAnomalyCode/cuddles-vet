@@ -36,9 +36,14 @@ export async function editProfile(id, form) {
 
     await profileRef.update(form)
 
+    if (mainPicture && mainPicture.includes('placehold')) {
+        await profileRef.update({ main_picture: mainPicture })
+        return
+    }
+
     if (mainPicture) {
         const mainPictureUrl = await saveFileToBucket(mainPicture, `profile_images/${profileRef.id}/main_picture_${firestore.Timestamp.now().seconds}`)
-        profileRef.update({ main_picture: mainPictureUrl })
+        await profileRef.update({ main_picture: mainPictureUrl })
     }
 }
 

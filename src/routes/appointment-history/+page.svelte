@@ -3,7 +3,9 @@
 
 	/** @type {import('./$types').PageData} */
 	export let data;
-	const appointments = data.appointments;
+	const appointments = data.appointments.sort((a, b) => {
+		return new Date(b.date) - new Date(a.date);
+	});
 	// console.log(appointments);
 	function backToProfile() {
 		goto('/profile');
