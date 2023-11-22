@@ -27,7 +27,7 @@
 				</div>
 				<div class="col">
 					<strong>Start Time</strong>
-					<p>{new Date(apt.date).toTimeString()}</p>
+					<p>{new Date(apt.start_time).toTimeString()}</p>
 				</div>
 				<div class="col">
 					<strong>Doctor Name</strong>
