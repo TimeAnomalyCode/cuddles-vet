@@ -125,4 +125,12 @@
 	#num-sold {
 		font-size: 1vw;
 	}
+
+	#plus-minus img {
+        transition: transform 0.3s, box-shadow 0.3s; /* Add a smooth transition effect */
+    }
+
+    #plus-minus img:hover {
+        transform: scale(1.2); /* Enlarge the image on hover */
+    }
 </style>

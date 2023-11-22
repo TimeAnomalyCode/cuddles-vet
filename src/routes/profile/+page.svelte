@@ -23,6 +23,7 @@
 				<p class="address"><strong>Address: </strong> {data.profile.address}</p>
 				<p><strong>Tel No: </strong> {data.profile.phone_number}</p>
 			</div>
+			<div class="vertical-line"></div>
 			<div class="d-flex flex-column gap-3" id="col3">
 				<a href="/order-history">Order History</a>
 				<a href="/appointment-history">Appointment History</a>
@@ -37,6 +38,7 @@
 
 <style>
 	.p-3 {
+		font-size: 1.1vw;
 		background-color: rgba(208, 196, 190, 0.3);
 		font-family: Inter;
 		color: #736d69;
@@ -87,5 +89,11 @@
 		border-radius: 50%;
 		margin-bottom: 5%;
 	}
+
+	.vertical-line {
+      border-left: 1px solid #736d69;
+      height: 25vh; 
+	  margin-top:1.3%;
+    }
 
 </style>

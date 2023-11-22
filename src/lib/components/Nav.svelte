@@ -79,22 +79,22 @@
 				<ul>
 					<li>
 						<a class:active={$page.url.pathname === '/appointment'} href="/appointment">
-							<span class="icon">
-								<i class="bx bx-book-content" />
+							<span class="icon" data-tooltip="Appointments">
+								<i class="bx bx-book-content"></i> 
 							</span>
 						</a>
 					</li>
 					<li>
 						<a class:active={$page.url.pathname === '/products'} href="/products">
-							<span class="icon">
-								<i class="bx bx-shopping-bag" />
+							<span class="icon" data-tooltip="Products">
+								<i class="bx bx-shopping-bag"></i> 
 							</span>
 						</a>
 					</li>
 					<li>
 						<a class:active={$page.url.pathname === '/contact'} href="/contact">
-							<span class="icon">
-								<i class="bx bx-envelope" />
+							<span class="icon" data-tooltip="Contact">
+								<i class="bx bx-envelope"></i>
 							</span>
 						</a>
 					</li>
@@ -192,6 +192,38 @@
 	.sidebar ul li a:hover {
 		background-color: rgba(115, 109, 105, 0.4);
 	}
+
+	.sidebar ul li {
+    	position: relative;
+  	}
+
+	.sidebar ul li .icon::after {
+		content: attr(data-tooltip);
+		position: absolute;
+		display: none;
+		background-color: rgba(255, 255, 255, 0.9);
+		color: #736d69;
+		padding: 8px;
+		left: calc(100% + 10px);
+		transform: translateX(-50%);
+		white-space: nowrap;
+		font-size: 1.2vw;
+		border-radius: 5px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		transition: opacity 0.3s, transform 0.3s;
+		opacity: 0;
+		z-index: 1000; 
+  	}
+
+  	.sidebar ul li:hover .icon::after {
+    	display: block;
+		opacity: 1;
+		transform: translateX(0) translateY(-90%);
+  	}
+
+  	.sidebar ul li:hover {
+    	box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+  	}
 	
 	.hover_collapse .sidebar {
 		width: 74px;
@@ -203,6 +235,27 @@
 		width: calc(100% - 75px);
 	}
 
+	.top_navbar .logo img:hover {
+		transform: scale(1.1); /* Add a slight scale effect on hover */
+		transition: transform 0.3s ease; /* Add a smooth transition effect */
+		
+	}
 
+	.top_navbar .profile_wrap img:hover {
+		transform: scale(1.2); /* Add a slight scale effect on hover */
+		transition: transform 0.3s ease; /* Add a smooth transition effect */
 
+		}
+
+	.top_navbar .cart a:hover img {
+		transform: scale(1.2); /* Add a slight scale effect on hover */
+		transition: transform 0.3s ease; /* Add a smooth transition effect */
+	
+	}
+
+	.top_navbar .logout span:hover img {
+		transform: scale(1.2); /* Add a slight scale effect on hover */
+		transition: transform 0.3s ease; /* Add a smooth transition effect */
+	
+	}
 </style>

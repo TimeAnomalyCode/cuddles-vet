@@ -6,7 +6,7 @@
     <a href="https://www.instagram.com/cuddlesvet/"><i class="fa fa-instagram"></i></a>
     <a href="https://my.linkedin.com/in/melissa-yung-015792167"><i class="fa fa-linkedin"></i></a>
   </div>
-  <div class="text-center p-3">2023 Cuddles Vet Clinic</div>
+  <div class="text-center p-3">2023 Cuddles Vet Clinic &copy;</div>
 </footer>
 
 <style>

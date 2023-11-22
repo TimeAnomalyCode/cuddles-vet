@@ -57,8 +57,9 @@
 
 {#if isEmpty}
 	<div class="p-3 d-flex flex-column gap-3">
-		<h2 class="align-self-center">Cart is Empty</h2>
-		<p class="align-self-center">You can order in the products section</p>
+		<img src="saddog.gif" alt="Animated GIF" class="gif">
+		<h2 class="align-self-center" id="empty-cart1">Cart is Empty</h2>
+		<p class="align-self-center" id="empty-cart2">Explore our products and make the puppy happy!</p>
 	</div>
 {/if}
 {#if !isEmpty}
@@ -177,5 +178,19 @@
 	hr {
 		border-color: rgb(42, 40, 39);
 		border-width: 1.5px;
+	}
+
+	.gif{
+		width: 15%;
+		margin: auto;
+	}
+
+	#empty-cart2{
+		font-size:1.2vw;
+	}
+
+	#empty-cart1{
+		font-size:1.8vw;
+		font-weight: 800;
 	}
 </style>

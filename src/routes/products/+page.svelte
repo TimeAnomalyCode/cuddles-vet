@@ -29,7 +29,11 @@
 	</div>
 	<br />
 	{#if products.length == 0}
-		<p>No products found by that name</p>
+	<div class="p-3 d-flex flex-column gap-3">
+		<img src="walkdog.gif" alt="Animated GIF" class="gif">
+		<h2 class="align-self-center" id="no-product1">Oops! No products match that name.</h2>
+		<p class="align-self-center" id="no-product2">Keep exploring and enjoy your shopping journey!</p>
+	</div>
 	{/if}
 	<div class="row row-cols-3 g-4">
 		{#each products as product (product.id)}
@@ -68,5 +72,23 @@
 
 	.form-control {
 		height: 6vh;
+	}
+
+	#searchbox, p{
+		font-size:1vw;
+	}
+
+	.gif{
+		width: 20%;
+		margin: auto;
+	}
+
+	#no-product2{
+		font-size:1.2vw;
+	}
+
+	#no-product1{
+		font-size:1.8vw;
+		font-weight: 800;
 	}
 </style>

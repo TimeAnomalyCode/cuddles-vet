@@ -111,9 +111,22 @@
 		
 	}
 
-	#trash{
-		margin-right:-80%;
-		margin-top:-10%;
-	}
+	#trash {
+        margin-right: -80%;
+        margin-top: -10%;
+        transition: transform 0.3s; /* Add a smooth transition effect */
+    }
+
+    #trash:hover {
+        transform: scale(1.2); /* Enlarge the image on hover */
+    }
+
+	#plus-minus img {
+        transition: transform 0.3s, box-shadow 0.3s; /* Add a smooth transition effect */
+    }
+
+    #plus-minus img:hover {
+        transform: scale(1.2); /* Enlarge the image on hover */
+    }
 
 </style>
