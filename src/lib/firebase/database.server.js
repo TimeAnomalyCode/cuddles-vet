@@ -210,6 +210,30 @@ export async function deleteProduct(id) {
 }
 
 // Appointments
+export async function getAllAppointments(id) {
+    const orderCollection = await db.collection('appointments').where('user_id', '==', id).get()
+
+    const orders = []
+    for (const doc of orderCollection.docs) {
+        const data = doc.data()
+        const doctorInfo = await getDoctor(data.doctor_id)
+        orders.push(JSON.parse(
+            JSON.stringify(
+                {
+                    id: doc.id,
+                    date: data.appointment_date.toDate(),
+                    start_time: data.appointment_start_time.toDate(),
+                    end_time: data.appointment_end_time.toDate(),
+                    type_of_operation: data.type_of_operation,
+                    doctor: doctorInfo,
+                }
+            )
+        )
+        )
+    }
+
+    return orders
+}
 
 export async function checkAppointmentAvailable(doctor_id, start_time, end_time) {
     const start_date = new Date()
