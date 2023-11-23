@@ -36,7 +36,7 @@ export async function editProfile(id, form) {
 
     await profileRef.update(form)
 
-    if (mainPicture && mainPicture.includes('placehold')) {
+    if (typeof mainPicture === 'string' && mainPicture.includes('placehold')) {
         await profileRef.update({ main_picture: mainPicture })
         return
     }

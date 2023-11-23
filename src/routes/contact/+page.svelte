@@ -1,13 +1,31 @@
 <script>
 	import { enhance } from '$app/forms';
+	import { invalidateAll } from '$app/navigation';
+	import messagesStore from '$lib/stores/messages.store.js';
+	import { onMount } from 'svelte';
 
 	export let form;
+	let submitting = false;
 	$: if (form && form.success === false) {
 		submitting = false;
 	}
 
 	function submitForm(e) {
 		submitting = true;
+	}
+
+	$: {
+		if (form?.error_name) {
+			messagesStore.showError(form?.error_name);
+		}
+
+		if (form?.error_email) {
+			messagesStore.showError(form?.error_email);
+		}
+
+		if (form?.error_message) {
+			messagesStore.showError(form?.error_message);
+		}
 	}
 </script>
 
@@ -17,7 +35,7 @@
 			<div class="contactbox">
 				<div class="image-content">
 					<img src="contact1.png" alt="Dog and cat" class="image1" />
-					
+
 					<div class="content">
 						<h1>Contact Us</h1>
 						<p>Let's hear from you!</p>
@@ -112,12 +130,12 @@
 		margin-top: 2%;
 		border: 1px solid rgba(92, 89, 87, 0.5);
 		border-radius: 4px;
-		height:4vh;
+		height: 4vh;
 	}
 
 	input[type='message'],
 	textarea {
-		height:15vh;
+		height: 15vh;
 	}
 
 	/* Style the submit button */
@@ -130,7 +148,7 @@
 		cursor: pointer;
 		margin-top: 5%;
 		margin-left: 25%;
-		font-size:1vw;
+		font-size: 1vw;
 	}
 
 	/* Change button color on hover */

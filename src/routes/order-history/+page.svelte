@@ -30,7 +30,7 @@
 					<strong>Address</strong>
 					<p>{order.address}</p>
 				</div>
-				<div class="col col-width-long">
+				<div class="col col-width">
 					<strong>Items</strong>
 					{#each order.cart_items as item (item.id)}
 						<p>{item.name} x {item.qty}</p>
@@ -92,7 +92,7 @@
 	}
 
 	.col-width-long {
-		width: 19%; /* Adjust the width for the Order ID column */
+		width: 22%; /* Adjust the width for the Order ID column */
 	}
 	.col-width {
 		width: 11%;
