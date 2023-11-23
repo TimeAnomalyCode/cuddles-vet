@@ -15,7 +15,7 @@
 
 <div class="p-3">
 	<h2>Order History</h2>
-	<div class="container" >
+	<div class="container">
 		{#each orders as order (order.id)}
 			<div class="row">
 				<div class="col col-width-long">
@@ -25,6 +25,10 @@
 				<div class="col col-width">
 					<strong>Order Date</strong>
 					<p>{new Date(order.order_date).toDateString()}</p>
+				</div>
+				<div class="col col-width-long">
+					<strong>Address</strong>
+					<p>{order.address}</p>
 				</div>
 				<div class="col col-width-long">
 					<strong>Items</strong>
@@ -48,14 +52,13 @@
 </div>
 
 <style>
-
 	.p-3 {
 		background-color: rgba(208, 196, 190, 0.3);
 		font-family: Inter, sans-serif;
 		color: #736d69;
 		font-size: 1.1vw;
 	}
-	h2{
+	h2 {
 		margin-top: 2%;
 		margin-bottom: 2%;
 		color: #5c5957;
@@ -63,16 +66,14 @@
 		margin-left: 5%;
 		font-weight: 900;
 	}
-	
 
-	.container{
-		width:90%;
+	.container {
+		width: 90%;
 	}
 
-	.row{
-		background-color:rgba(255, 255, 255, 0.7);
-		padding:1rem;
-
+	.row {
+		background-color: rgba(255, 255, 255, 0.7);
+		padding: 1rem;
 	}
 
 	.btn {
@@ -99,11 +100,10 @@
 
 	.col {
 		flex: 1 1 auto; /* Make columns equal width */
-		 /* Adjust the space between columns */
+		/* Adjust the space between columns */
 	}
 
 	.col:last-child {
 		margin-right: 0;
 	}
-
 </style>
