@@ -45,8 +45,7 @@ export async function handle({ event, resolve }) {
         if (!user.emailVerified && url.pathname !== '/email-approve') {
             throw redirect(302, `/email-approve`)
         }
-
-        if (!has_set_profile && url.pathname !== '/profile-setup') {
+        else if (user.emailVerified && !has_set_profile && url.pathname !== '/profile-setup') {
             throw redirect(302, `/profile-setup`)
         }
     }
