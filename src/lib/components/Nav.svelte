@@ -5,7 +5,7 @@
 	import messagesStore from '$lib/stores/messages.store';
 	export let isLoggedIn;
 	export let name;
-	export let main_picture;
+	export let main_picture = '/Profile.png';
 
 	let isOpen = false;
 
@@ -41,7 +41,11 @@
 						<div class="profile">
 							<a class:active={$page.url.pathname === '/profile'} href="/profile">
 								<span class="name">Hi, {name ? name : '...'}</span>
-								<img src={main_picture ? main_picture : '/Profile.png'} alt="Login" class="profilepic"/>
+								<img
+									src={main_picture ? main_picture : '/Profile.png'}
+									alt="Login"
+									class="profilepic"
+								/>
 							</a>
 						</div>
 						<div class="cart">
@@ -64,7 +68,7 @@
 									<img src="/Profile.png" alt="Login" />
 								</a>
 							</div>
-							<div class="cart"> 
+							<div class="cart">
 								<a class="nav-link disabled" aria-disabled="true" href="/cart">
 									<img src="/Cart.png" alt="Cart" />
 								</a>
@@ -80,21 +84,21 @@
 					<li>
 						<a class:active={$page.url.pathname === '/appointment'} href="/appointment">
 							<span class="icon" data-tooltip="Appointments">
-								<i class="bx bx-book-content"></i> 
+								<i class="bx bx-book-content" />
 							</span>
 						</a>
 					</li>
 					<li>
 						<a class:active={$page.url.pathname === '/products'} href="/products">
 							<span class="icon" data-tooltip="Products">
-								<i class="bx bx-shopping-bag"></i> 
+								<i class="bx bx-shopping-bag" />
 							</span>
 						</a>
 					</li>
 					<li>
 						<a class:active={$page.url.pathname === '/contact'} href="/contact">
 							<span class="icon" data-tooltip="Contact">
-								<i class="bx bx-envelope"></i>
+								<i class="bx bx-envelope" />
 							</span>
 						</a>
 					</li>
@@ -103,7 +107,6 @@
 		</div>
 		<div class="main_container" />
 	</div>
-
 </body>
 
 <style>
@@ -175,7 +178,6 @@
 		width: 280px;
 		height: 26.5%;
 		background: #ffffff;
-		
 	}
 
 	.sidebar ul li a {
@@ -195,8 +197,8 @@
 	}
 
 	.sidebar ul li {
-    	position: relative;
-  	}
+		position: relative;
+	}
 
 	.sidebar ul li .icon::after {
 		content: attr(data-tooltip);
@@ -213,19 +215,19 @@
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 		transition: opacity 0.3s, transform 0.3s;
 		opacity: 0;
-		z-index: 1000; 
-  	}
+		z-index: 1000;
+	}
 
-  	.sidebar ul li:hover .icon::after {
-    	display: block;
+	.sidebar ul li:hover .icon::after {
+		display: block;
 		opacity: 1;
 		transform: translateX(0) translateY(-90%);
-  	}
+	}
 
-  	.sidebar ul li:hover {
-    	box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
-  	}
-	
+	.sidebar ul li:hover {
+		box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+	}
+
 	.hover_collapse .sidebar {
 		width: 75px;
 	}
@@ -239,24 +241,20 @@
 	.top_navbar .logo img:hover {
 		transform: scale(1.1); /* Add a slight scale effect on hover */
 		transition: transform 0.3s ease; /* Add a smooth transition effect */
-		
 	}
 
 	.top_navbar .profile_wrap img:hover {
 		transform: scale(1.2); /* Add a slight scale effect on hover */
 		transition: transform 0.3s ease; /* Add a smooth transition effect */
-
-		}
+	}
 
 	.top_navbar .cart a:hover img {
 		transform: scale(1.2); /* Add a slight scale effect on hover */
 		transition: transform 0.3s ease; /* Add a smooth transition effect */
-	
 	}
 
 	.top_navbar .logout span:hover img {
 		transform: scale(1.2); /* Add a slight scale effect on hover */
 		transition: transform 0.3s ease; /* Add a smooth transition effect */
-	
 	}
 </style>

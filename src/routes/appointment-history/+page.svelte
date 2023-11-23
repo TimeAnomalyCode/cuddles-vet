@@ -66,9 +66,11 @@
 	.container{
 		width: 90%;
 		background-color:rgba(255, 255, 255, 0.7);
-		padding: 10px 30px;
 	}
-
+	.row{
+		background-color:rgba(255, 255, 255, 0.7);
+		padding:1rem;
+	}
 	.btn {
 		background-color: #736d69;
 		color: rgba(255, 255, 255, 0.7);
