@@ -83,6 +83,7 @@
 		font-size: 1.1vw;
 		margin-left: 5%;
 		width: 100px;
+		margin-top: 2%;
 	}
 
 	.btn:hover {

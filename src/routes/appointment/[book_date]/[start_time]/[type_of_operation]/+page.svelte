@@ -28,8 +28,7 @@
 </script>
 
 <div class="card">
-	<img class="card-img-top" src="/Background.png" alt="" />
-	<div class="card-img-overlay">
+	<div>
 		<div class="d-flex justify-content-center flex-column text-center gap-3">
 			<h3>Give your pet the best care. Book an appointment now!</h3>
 			<form on:submit={submitForm} use:enhance enctype="multipart/form-data" method="POST">
@@ -130,5 +129,12 @@
 		border: none;
 		width: 120px;
 		height: 45px;
+	}
+
+	.card{
+		background-color: rgba(208, 196, 190, 0.3);
+		height: 100%;
+		width: 100%;
+		padding: 2%;
 	}
 </style>
