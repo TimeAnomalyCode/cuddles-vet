@@ -78,12 +78,8 @@
 	.image1{
   		/* Control the height of the image */
   		width: 100%;
-  		/* Center and scale the image nicely */
-  		background-position: center;
- 		background-repeat: no-repeat;
   		background-size: cover;
   		position: relative;
-		min-height: 85vh;
 	}
 	.container {
 		position: absolute;
