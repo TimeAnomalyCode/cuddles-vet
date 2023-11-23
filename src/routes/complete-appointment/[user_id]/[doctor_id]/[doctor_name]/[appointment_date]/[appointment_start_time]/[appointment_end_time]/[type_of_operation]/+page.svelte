@@ -30,17 +30,65 @@
 
 <div class="p-3">
 	<h1>Confirm Appointment</h1>
-	<p><strong>Doctor Name</strong>: {param_info.doctor_name}</p>
-	<p>
-		<strong>Date</strong>: {new Date(param_info.appointment_date).toDateString()}
-	</p>
-	<p>
-		<strong>Start Time</strong>: {new Date(param_info.appointment_start_time).toTimeString()}
-	</p>
-	<p>
-		<strong>End Time</strong>: {new Date(param_info.appointment_end_time).toTimeString()}
-	</p>
-	<p><strong>Type of Operation</strong>: {param_info.type_of_operation}</p>
+	<div class="container">
+		<p><strong>Doctor Name</strong>: {param_info.doctor_name}</p>
+		<p>
+			<strong>Date</strong>: {new Date(param_info.appointment_date).toDateString()}
+		</p>
+		<p>
+			<strong>Start Time</strong>: {new Date(param_info.appointment_start_time).toTimeString()}
+		</p>
+		<p>
+			<strong>End Time</strong>: {new Date(param_info.appointment_end_time).toTimeString()}
+		</p>
+		<p><strong>Type of Operation</strong>: {param_info.type_of_operation}</p>
+	</div>
 	<button on:click={cancelAppointment} type="submit" class="btn btn-danger">Cancel</button>
-	<button on:click={addAppointment} type="submit" class="btn btn-primary">Confirm</button>
+	<button on:click={addAppointment} type="submit" class="btn btn-custom">Confirm</button>	
 </div>
+
+<style>
+	.p-3 {
+		background-color: rgba(208, 196, 190, 0.3);
+		font-family: Inter, sans-serif;
+		color: #736d69;
+		font-size: 1.2vw;
+	}
+
+	h1{
+		margin-top: 2%;
+		margin-bottom: 2%;
+		color: #5c5957;
+		font-size: 23px;
+		margin-left: 5%;
+		font-weight: 900;
+	}
+	.container{
+		width: 40%;
+		height: 200px;
+		background-color:rgba(255, 255, 255, 0.7);
+		padding: 1rem;
+		margin-left: 5%;
+	}
+	.btn-danger{
+		border: none;
+		font-size: 1.1vw;
+		margin-left: 5%;
+		width: 100px;
+		margin-top: 2%;
+	}
+	.btn-custom{
+		background-color: #736d69;
+		color: white;
+		border: none;
+		font-size: 1.1vw;
+		margin-left: 1%;
+		width: 100px;
+		margin-top: 2%;
+	}
+
+	.btn-custom:hover {
+		background-color: rgba(115, 109, 105, 0.3);
+		color: white;
+	}
+</style>

@@ -68,8 +68,7 @@
 		background-color:rgba(255, 255, 255, 0.7);
 	}
 	.row{
-		background-color:rgba(255, 255, 255, 0.7);
-		padding:1rem;
+		padding: 1rem;
 	}
 	.btn {
 		background-color: #736d69;
