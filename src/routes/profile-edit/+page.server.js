@@ -27,7 +27,7 @@ export const actions = {
         }
 
         const profile = await getProfile(locals.user.id)
-        if (!profile.main_picture.includes("google")) {
+        if (!data.profile.main_picture && !profile.main_picture.includes("google")) {
             data.profile.main_picture = `https://placehold.co/500?text=${profile.name[0]}`
         }
         await editProfile(locals.user.id, data.profile)
