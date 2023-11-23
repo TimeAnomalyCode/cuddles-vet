@@ -5,7 +5,7 @@
 	export let data;
 
 	const user_id = data.user?.id;
-	const name = data.user.name;
+	const name = data.profile.name;
 	let current_address = data.profile.address;
 	let address = current_address;
 
@@ -57,7 +57,7 @@
 
 {#if isEmpty}
 	<div class="p-3 d-flex flex-column gap-3">
-		<img src="saddog.gif" alt="Animated GIF" class="gif">
+		<img src="saddog.gif" alt="Animated GIF" class="gif" />
 		<h2 class="align-self-center" id="empty-cart1">Cart is Empty</h2>
 		<p class="align-self-center" id="empty-cart2">Explore our products and make the puppy happy!</p>
 	</div>
@@ -80,7 +80,6 @@
 					<button type="submit" on:click={editAddress} class="btn"> Save Address </button>
 					<button type="submit" on:click={cancelAddress} class="btn"> Cancel </button>
 				</div>
-				
 			{/if}
 			{#if !is_edit_address}
 				<div>
@@ -152,7 +151,7 @@
 		background-color: rgba(115, 109, 105, 0.25);
 		color: white;
 	}
-	.btn-edit{
+	.btn-edit {
 		margin-left: auto;
 	}
 
@@ -166,7 +165,7 @@
 		width: 9%;
 		margin-bottom: -3%;
 	}
-	input[type='text']{
+	input[type='text'] {
 		font-weight: regular;
 		padding: 5px;
 		font-size: 1.1vw;
@@ -180,17 +179,17 @@
 		border-width: 1.5px;
 	}
 
-	.gif{
+	.gif {
 		width: 15%;
 		margin: auto;
 	}
 
-	#empty-cart2{
-		font-size:1.2vw;
+	#empty-cart2 {
+		font-size: 1.2vw;
 	}
 
-	#empty-cart1{
-		font-size:1.8vw;
+	#empty-cart1 {
+		font-size: 1.8vw;
 		font-weight: 800;
 	}
 </style>
